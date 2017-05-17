@@ -1,0 +1,26 @@
+- alias: "Show Rain Summary if expected to rain"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: numeric_state
+    entity_id: sensor.dark_sky_daily_max_precip_intensity
+    above: 2
+  action:
+    service: group.set_visibility
+    entity_id: group.weather_rain
+    data:
+      visible: True
+- alias: "Don't show rain summary if it won't rain"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: numeric_state
+    entity_id: sensor.dark_sky_daily_max_precip_intensity
+    below: 2
+  action:
+    service: group.set_visibility
+    entity_id: group.weather_rain
+    data:
+      visible: False

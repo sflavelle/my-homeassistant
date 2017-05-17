@@ -1,0 +1,12 @@
+- alias: "Simon home? Turn bedroom light on after dark"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "01:00:00"
+  condition:
+    condition: state
+    entity_id: device_tracker.simon_angler
+    state: home
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.simons_bedroom

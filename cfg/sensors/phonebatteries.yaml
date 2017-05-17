@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    simon_battery:
+      value_template: '{{states.device_tracker.enu7n16303001457.attributes.battery}}'
+      friendly_name: Simon's Phone Battery
+      unit_of_measurement: "%"

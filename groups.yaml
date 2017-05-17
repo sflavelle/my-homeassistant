@@ -1,0 +1,7 @@
+simonsroom:
+  entities:
+  - light.simons_bedroom
+  - media_player.simons_room
+  - media_player.simontv
+  name: Simon's Room
+  view: true

@@ -1,0 +1,12 @@
+- platform: darksky
+  api_key: !secret darksky
+  update_inverval: 00:30:00
+  monitored_conditions:
+    - daily_summary
+    - temperature_max
+    - temperature_min
+    - temperature
+    - summary
+    - precip_intensity
+    - precip_probability
+    - precip_intensity_max

@@ -1,0 +1,18 @@
+media_player.plex_web_chrome:
+  hidden: true
+media_player.simonwindows:
+  hidden: true
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: Today's High
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: Tonight's Low
+sensor.dark_sky_daily_max_precip_intensity:
+  friendly_name: Today's Max Rain
+sensor.dark_sky_daily_summary:
+  friendly_name: Week Summary
+sensor.dark_sky_precip_intensity:
+  friendly_name: Current Rain
+sensor.dark_sky_precip_probability:
+  friendly_name: Rain Probability
+sensor.dark_sky_temperature:
+  friendly_name: Current Temp

@@ -1,0 +1,13 @@
+weather:
+  name: Weather Summary
+  entities:
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_daily_summary
+weather_rain:
+  name: Rain Summary
+  entities:
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_daily_max_precip_intensity

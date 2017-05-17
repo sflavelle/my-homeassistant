@@ -1,0 +1,8 @@
+simonsroom:
+  name: Simon's Things
+  control: hidden
+  entities:
+    - light.simons_bedroom
+    - sensor.simon_battery
+    - media_player.simontv
+    - media_player.simons_room

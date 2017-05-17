@@ -1,0 +1,113 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret loc_lat
+  longitude: !secret loc_lon
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret loc_elv
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret tz
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+  exclude:
+    domains:
+      - group
+
+# View all events in a logbook
+logbook:
+  exclude:
+    domains:
+      - group
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+
+ifttt:
+  key: !secret ifttt_key
+
+# Various Location Tracking
+
+device_tracker:
+  - platform: gpslogger
+  - platform: nmap_tracker
+    hosts:
+      - 192.168.1.1/24
+      - 127.94.0.1
+      - 239.0.0.250
+    exclude:
+      - 192.168.1.1 # Router
+      - 192.168.1.6 # Server
+      - 192.168.1.8 # AppleTV
+      - 192.168.1.9 # WeMo Hub
+      - 192.168.1.20 # Wifi Repeater
+
+zone:
+  name: Boris Murgers
+  latitude: -36.7586623
+  longitude: 144.2769343
+  icon: mdi:briefcase
+
+zone 2:
+  name: Parents
+  latitude: -36.722806
+  longitude: 144.253940
+  icon: mdi:castle
+
+sensor: !include_dir_merge_list cfg/sensors/
+
+# camera:
+#   - platform: mjpeg
+#     mjpeg_url: http://192.168.1.14:8081/video
+#     name: Living Room
+#     username: admin
+#     password: admin
+
+notify:
+  - platform: joaoapps_join
+    api_key: !secret join_api
+    device_id: 28baf1b644fb4f05bf874035fc8525c1
+  - platform: discord
+    name: simonprivate
+    token: !secret discord_token
+
+joaoapps_join:
+  - name: android
+    device_id: group.android
+    api_key: !secret join_api
+
+group: !include_dir_merge_named cfg/groups/
+
+automation: !include_dir_merge_list cfg/auto/

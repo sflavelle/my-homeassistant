@@ -98,7 +98,7 @@ sensor: !include_dir_merge_list cfg/sensors/
 notify:
   - platform: joaoapps_join
     api_key: !secret join_api
-    device_id: 28baf1b644fb4f05bf874035fc8525c1
+    device_id: !secret join_device
   - platform: discord
     name: simonprivate
     token: !secret discord_token

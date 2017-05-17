@@ -76,14 +76,14 @@ device_tracker:
 
 zone:
   name: Boris Murgers
-  latitude: -36.7586623
-  longitude: 144.2769343
+  latitude: !secret loc_boris_lat
+  longitude: !secret loc_boris_lon
   icon: mdi:briefcase
 
 zone 2:
   name: Parents
-  latitude: -36.722806
-  longitude: 144.253940
+  latitude: !secret loc_parents_lat
+  longitude: !secret loc_parents_lon
   icon: mdi:castle
 
 sensor: !include_dir_merge_list cfg/sensors/

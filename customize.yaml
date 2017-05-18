@@ -4,12 +4,16 @@ media_player.simonwindows:
   hidden: true
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High
+  icon: mdi:weather-sunny
 sensor.dark_sky_daily_low_temperature:
   friendly_name: Tonight's Low
+  icon: mdi:weather-night
 sensor.dark_sky_daily_max_precip_intensity:
   friendly_name: Today's Max Rain
+sensor.dark_sky_hourly_summary:
+  friendly_name: Today
 sensor.dark_sky_daily_summary:
-  friendly_name: Week Summary
+  friendly_name: This Week
 sensor.dark_sky_precip_intensity:
   friendly_name: Current Rain
 sensor.dark_sky_precip_probability:

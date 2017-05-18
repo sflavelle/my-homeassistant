@@ -5,7 +5,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.dark_sky_daily_max_precip_intensity
-    above: 2
+    above: 1
   action:
     service: group.set_visibility
     entity_id: group.weather_rain
@@ -18,7 +18,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.dark_sky_daily_max_precip_intensity
-    below: 2
+    below: 1
   action:
     service: group.set_visibility
     entity_id: group.weather_rain

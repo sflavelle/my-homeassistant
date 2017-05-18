@@ -88,6 +88,14 @@ zone 2:
 
 sensor: !include_dir_merge_list cfg/sensors/
 
+input_slider:
+  bedroom_brightness:
+    name: Brightness
+    initial: 100
+    min: 0
+    max: 100
+    step: 1
+    
 # camera:
 #   - platform: mjpeg
 #     mjpeg_url: http://192.168.1.14:8081/video

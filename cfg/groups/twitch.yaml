@@ -1,0 +1,6 @@
+twitch:
+  name: Twitch Streams
+  entities:
+    - sensor.bobross
+    - sensor.misterrogers
+    - sensor.gamesdonequick

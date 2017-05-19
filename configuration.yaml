@@ -98,10 +98,10 @@ input_slider:
 
 camera:
   - platform: mjpeg
-    mjpeg_url: http://192.168.1.14:8081/video
+    mjpeg_url: http://192.168.1.14:8020/videoView
     name: Living Room
-    username: admin
-    password: admin
+    # username: admin
+    # password: admin
 
 notify:
   - platform: joaoapps_join

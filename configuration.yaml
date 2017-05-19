@@ -91,17 +91,17 @@ sensor: !include_dir_merge_list cfg/sensors/
 input_slider:
   bedroom_brightness:
     name: Brightness
-    initial: 100
+    initial: 255
     min: 0
-    max: 100
+    max: 255
     step: 1
-    
-# camera:
-#   - platform: mjpeg
-#     mjpeg_url: http://192.168.1.14:8081/video
-#     name: Living Room
-#     username: admin
-#     password: admin
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.1.14:8081/video
+    name: Living Room
+    username: admin
+    password: admin
 
 notify:
   - platform: joaoapps_join

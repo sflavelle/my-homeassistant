@@ -4,6 +4,7 @@ simonsroom:
   entities:
     - light.simons_bedroom
     - input_slider.bedroom_brightness
+    - switch.heater_switch
     - sensor.simon_battery
     - media_player.simontv
     - media_player.simons_room

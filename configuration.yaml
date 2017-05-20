@@ -58,10 +58,18 @@ tts:
 ifttt:
   key: !secret ifttt_key
 
+wemo:
+  static:
+    - 192.168.1.7
+    - 192.168.1.9
+
 # Various Location Tracking
 
 device_tracker:
   - platform: gpslogger
+  - platform: icloud
+    username: !secret icloud_user
+    password: !secret icloud_pass
   - platform: nmap_tracker
     hosts:
       - 192.168.1.1/24
@@ -95,13 +103,6 @@ input_slider:
     min: 0
     max: 255
     step: 1
-
-camera:
-  - platform: mjpeg
-    mjpeg_url: http://192.168.1.14:8020/videoView
-    name: Living Room
-    # username: admin
-    # password: admin
 
 notify:
   - platform: joaoapps_join

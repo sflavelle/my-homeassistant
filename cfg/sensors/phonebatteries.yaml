@@ -1,6 +1,10 @@
 - platform: template
   sensors:
-    simon_battery:
-      value_template: '{{states.device_tracker.enu7n16303001457.attributes.battery}}'
-      friendly_name: Simon's Phone Battery
+    simon_iphonebattery:
+      value_template: '{{states.device_tracker.simonsiphone.attributes.battery | round(0, 'ceil')}}'
+      friendly_name: Simon's iPhone Battery
+      unit_of_measurement: "%"
+    simon_watchbattery:
+      value_template: '{{states.device_tracker.simonsapple_watch.attributes.battery | int}}'
+      friendly_name: Simon's Apple Watch Battery
       unit_of_measurement: "%"

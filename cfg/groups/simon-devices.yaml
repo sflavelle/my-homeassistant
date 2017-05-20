@@ -1,0 +1,7 @@
+simondevices:
+  name: Simon's Devices
+  entities:
+    - device_tracker.simonsiphone
+    - sensor.simon_iphonebattery
+    - device_tracker.simonsapple_watch
+    - sensor.simon_watchbattery

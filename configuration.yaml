@@ -1,3 +1,7 @@
+# This config uses:
+# Custom-UI by @andrey-git
+# ha-history-stats by @bokub
+
 homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
@@ -95,6 +99,11 @@ zone 2:
   latitude: !secret loc_parents_lat
   longitude: !secret loc_parents_lon
   icon: mdi:castle
+
+media_player:
+  - platform: apple_tv
+    host: 192.168.1.8
+    login_id: 00000000-6075-0234-de72-4422edd64499
 
 sensor: !include_dir_merge_list cfg/sensors/
 

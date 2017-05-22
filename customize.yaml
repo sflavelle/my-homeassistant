@@ -21,17 +21,8 @@ light.simons_bedroom:
 switch.heater_switch:
   friendly_names:
     group.simonsroom: Heater
-  extra_data_template:
-    {on_latest_time}
   extra_badge:
-    attribute: today_energy_kwh
-    unit: KWH
-sensor.dark_sky_*:
-  hidden_in:
-    - group.weatherbadges
-device_tracker.simon*:
-  hidden_in:
-    - group.simonsdevices
+    entity_id: sensor.heater_runtime_today
 
 # Custom DarkSky Names
 sensor.dark_sky_daily_high_temperature:

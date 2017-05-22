@@ -3,8 +3,8 @@ simonsroom:
   entities:
     - group.simonsdevices
     - light.simons_bedroom
-    - input_slider.bedroom_brightness
     - switch.heater_switch
+    - sensor.heater_runtime_today
 simonsdevices:
   entities:
     - device_tracker.simonsiphone
@@ -14,6 +14,7 @@ simonsdevices:
 simonsmedia:
   name: Now Playing
   entities:
+    - media_player.apple_tv
     - media_player.simontv
     - media_player.simons_room
 simonsauto:

@@ -16,4 +16,5 @@ simon_view:
   view: yes
   entities:
     - group.simonsroom
+    - group.simonsmedia
     - group.simonsauto

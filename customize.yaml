@@ -1,9 +1,39 @@
+"*.*":
+  custom_ui_state_card: custom-ui
+
+# Hide Extra Plex Clients
 media_player.plex_web_chrome:
   hidden: true
 media_player.simonwindows:
   hidden: true
 media_player.simontv:
   hidden: true
+
+# Custom-UI specific changes
+group.simonsdevices:
+  state_card_mode: badges
+group.weatherbadges:
+  state_card_mode: badges
+light.simons_bedroom:
+  show_last_changed: true
+  friendly_names:
+    group.simonsroom: Light
+switch.heater_switch:
+  friendly_names:
+    group.simonsroom: Heater
+  extra_data_template:
+    {on_latest_time}
+  extra_badge:
+    attribute: today_energy_kwh
+    unit: KWH
+sensor.dark_sky_*:
+  hidden_in:
+    - group.weatherbadges
+device_tracker.simon*:
+  hidden_in:
+    - group.simonsdevices
+
+# Custom DarkSky Names
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High
   icon: mdi:weather-sunny

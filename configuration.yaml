@@ -10,7 +10,7 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret tz
-  customize: !include customize.yaml
+  customize_glob: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -58,6 +58,8 @@ tts:
 ifttt:
   key: !secret ifttt_key
 
+ios:
+
 wemo:
   static:
     - 192.168.1.7
@@ -95,14 +97,6 @@ zone 2:
   icon: mdi:castle
 
 sensor: !include_dir_merge_list cfg/sensors/
-
-input_slider:
-  bedroom_brightness:
-    name: Brightness
-    initial: 255
-    min: 0
-    max: 255
-    step: 1
 
 notify:
   - platform: joaoapps_join

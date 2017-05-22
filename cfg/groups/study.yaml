@@ -1,0 +1,5 @@
+studyroom:
+  name: The Study
+  entities:
+    - light.study
+    - input_slider.study_brightness

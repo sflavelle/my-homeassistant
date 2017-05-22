@@ -1,0 +1,19 @@
+default_view:
+  name: Home
+  view: yes
+  entities:
+    - sun.sun
+    - sensor.dark_sky_summary
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - group.locations
+    - group.weather
+    - group.livingroom
+    - group.studyroom
+    - group.twitch
+simon_view:
+  name: Simon
+  view: yes
+  entities:
+    - group.simonsroom
+    - group.simonsauto

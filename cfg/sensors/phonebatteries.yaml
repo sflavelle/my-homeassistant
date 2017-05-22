@@ -1,9 +1,14 @@
 - platform: template
   sensors:
     simon_iphonebattery:
-      value_template: '{{states.device_tracker.simonsiphone.attributes.battery | round(0, 'ceil')}}'
       friendly_name: Simon's iPhone Battery
       unit_of_measurement: "%"
+      value_template: >-
+            {%- if states.device_tracker.simonsiphone.attributes.battery %}
+                {{ states.device_tracker.simonsiphone.attributes.battery|round }}
+            {% else %}
+                {{ states.sensor.simons_iphonebattery.state }}
+            {%- endif %}
     simon_watchbattery:
       value_template: '{{states.device_tracker.simonsapple_watch.attributes.battery | int}}'
       friendly_name: Simon's Apple Watch Battery

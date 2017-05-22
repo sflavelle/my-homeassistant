@@ -1,10 +1,22 @@
 simonsroom:
-  name: Simon's Things
-  control: hidden
+  name: Simon
   entities:
+    - group.simonsdevices
     - light.simons_bedroom
     - input_slider.bedroom_brightness
     - switch.heater_switch
-    - sensor.simon_battery
+simonsdevices:
+  entities:
+    - device_tracker.simonsiphone
+    - sensor.simon_iphonebattery
+    - device_tracker.simonsapple_watch
+    - sensor.simon_watchbattery
+simonsmedia:
+  name: Now Playing
+  entities:
     - media_player.simontv
     - media_player.simons_room
+simonsauto:
+  name: Automations
+  entities:
+    - automation.simon_home_turn_bedroom_light_on_after_dark

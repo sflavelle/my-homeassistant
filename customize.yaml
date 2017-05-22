@@ -14,6 +14,8 @@ group.simonsdevices:
   state_card_mode: badges
 group.weatherbadges:
   state_card_mode: badges
+group.locations:
+  state_card_mode: badges
 light.simons_bedroom:
   show_last_changed: true
   friendly_names:

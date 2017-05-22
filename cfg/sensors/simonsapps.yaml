@@ -1,0 +1,4 @@
+- platform: pocketcasts
+  username: !secret pcasts_email
+  password: !secret pcasts_pass
+  

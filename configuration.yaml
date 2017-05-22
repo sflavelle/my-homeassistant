@@ -107,6 +107,8 @@ media_player:
 
 sensor: !include_dir_merge_list cfg/sensors/
 
+switch: !include_dir_merge_list cfg/switches/
+
 notify:
   - platform: joaoapps_join
     api_key: !secret join_api

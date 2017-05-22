@@ -1,0 +1,12 @@
+- platform: command_line
+  switches:
+    docker_bucket:
+      command_on: docker start bucket
+      command_off: docker stop bucket
+      command_state: "docker ps | grep bucket"
+      friendly_name: Bucket
+    docker_beatbot:
+      command_on: docker start beatbot
+      command_off: docker stop beatbot
+      command_state: "docker ps | grep beatbot"
+      friendly_name: Beatbot

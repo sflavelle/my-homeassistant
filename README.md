@@ -24,3 +24,7 @@ The configuration also makes use of these programs or custom components:
 - [ ] Security cameras / "dog cam"
 - [ ] Figure out weather radar "camera"
 - [ ] Look at this Z-Wave thing?
+- [ ] What sort of relevant data can I get out of the command line?
+
+# Contact
+The best way to get in contact with me regarding this configuration (for praise or suggestions, especially the latter) is to [tweet me](http://www.twitter.com/Lucadergon) or create an issue or PR here on Github. Thank you for reading through this readme and enjoy the rest of your day!

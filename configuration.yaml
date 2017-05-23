@@ -69,6 +69,23 @@ wemo:
     - 192.168.1.7
     - 192.168.1.9
 
+android_ip_webcam:
+  - host: 192.168.1.5
+    port: 2244
+    sensors:
+      - battery_level
+    switches:
+      - exposure_lock
+      - focus
+      - night_vision
+      - torch
+      - whitebalance_lock
+
+weblink:
+  entities:
+    - name: Router
+      url: http://192.168.1.1
+
 # Various Location Tracking
 
 device_tracker:

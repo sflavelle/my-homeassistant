@@ -1,0 +1,12 @@
+androidcamera:
+  name: Camera Settings
+  entities:
+    - camera.ip_webcam
+    - sensor.ip_webcam_audio_connections
+    - sensor.ip_webcam_video_connections
+    - sensor.ip_webcam_battery_level
+    - switch.ip_webcam_exposure_lock
+    - switch.ip_webcam_focus
+    - switch.ip_webcam_night_vision
+    - switch.ip_webcam_torch
+    - switch.ip_webcam_white_balance_lock

@@ -8,6 +8,7 @@ default_view:
     - sensor.speedtest_upload
     - group.locations
     - group.weather
+    - group.androidcamera
     - group.livingroom
     - group.studyroom
     - group.twitch
@@ -17,7 +18,13 @@ simon_view:
   entities:
     - sensor.pocketcasts_unlistened_episodes
     - sensor.speedtest_download
-    - sensor.speedtest_upload    
+    - sensor.speedtest_upload
+    - sensor.breaches_neurariagmailcom
+    - sensor.breaches_neurarioicloudcom
+    - sensor.breaches_simonflavellegmailcom
+    - sensor.breaches_simonflavelleicloudcom
+    - sensor.breaches_simonsayslpsgmailcom
+    - sensor.breaches_simonsayslpsicloudcom
     - group.simonsroom
     - group.simonsmedia
     - group.tedbeet

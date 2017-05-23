@@ -16,6 +16,8 @@ simon_view:
   view: yes
   entities:
     - sensor.pocketcasts_unlistened_episodes
+    - sensor.speedtest_download
+    - sensor.speedtest_upload    
     - group.simonsroom
     - group.simonsmedia
     - group.tedbeet

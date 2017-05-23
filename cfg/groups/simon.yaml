@@ -21,3 +21,4 @@ simonsauto:
   name: Automations
   entities:
     - automation.simon_home_turn_bedroom_light_on_after_dark
+    - automation.turn_off_the_heater_two_hours_after_this_is_switched_on

@@ -1,0 +1,14 @@
+- alias: "Turn off the heater two hours after this is switched on"
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
+    state: 'on'
+    for:
+      hours: 2
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.heater_switch
+    - service: notify.ios_simons_iphone
+      data:
+        message: "Your heater was switched off at this time."

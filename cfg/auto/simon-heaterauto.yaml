@@ -10,7 +10,7 @@
     - service: homeassistant.turn_off
       entity_id: switch.heater_switch
     - service: notify.ios_simons_iphone
-      data:
-        message: "Your heater was switched off at this time."
+      data_template:
+        message: "Your heater was switched off at {{ now() }}."
     - service: homeassistant.turn_off
       entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on

@@ -1,5 +1,5 @@
 livingroom:
   name: Living Room
   entities:
-    - camera.living_room
+    - camera.ip_webcam
     - media_player.lounge

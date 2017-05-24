@@ -70,7 +70,7 @@ wemo:
     - 192.168.1.9
 
 android_ip_webcam:
-  - host: 192.168.1.5
+  - host: 192.168.1.2
     port: 2244
     sensors:
       - battery_level

@@ -29,3 +29,9 @@ simon_view:
     - group.simonsmedia
     - group.tedbeet
     - group.simonsauto
+settings:
+  name: Settings
+  icon: mdi:settings
+  view: yes
+  entities:
+    - group.androidcamera_settings

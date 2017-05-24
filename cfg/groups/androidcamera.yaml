@@ -1,7 +1,6 @@
-androidcamera:
-  name: Camera Settings
+androidcamera_settings:
+  name: Living Room Camera
   entities:
-    - camera.ip_webcam
     - sensor.ip_webcam_audio_connections
     - sensor.ip_webcam_video_connections
     - sensor.ip_webcam_battery_level

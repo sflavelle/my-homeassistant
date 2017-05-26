@@ -24,6 +24,9 @@ switch.heater_switch:
   friendly_names:
     group.simonsroom: Heater
 
+camera.ip_webcam:
+  friendly_name: Lounge Room / "Dog Cam"
+
 # Custom DarkSky Names
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High

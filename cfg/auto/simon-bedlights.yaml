@@ -4,14 +4,9 @@
     event: sunset
     offset: "01:00:00"
   condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: device_tracker.enu7n16303001457
-        state: home
-      - condition: state
-        entity_id: device_tracker.simonsiphone
-        state: home
+    condition: state
+    entity_id: device_tracker.simonsiphone
+    state: home
   action:
     service: homeassistant.turn_on
     entity_id: light.simons_bedroom

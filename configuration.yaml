@@ -74,6 +74,8 @@ android_ip_webcam:
     port: 2244
     sensors:
       - battery_level
+      - light
+      - motion
     switches:
       - exposure_lock
       - focus

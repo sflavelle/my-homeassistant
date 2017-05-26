@@ -35,3 +35,5 @@ settings:
   view: yes
   entities:
     - group.androidcamera_settings
+    - group.tedbeet
+    - group.mediaserver

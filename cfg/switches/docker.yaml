@@ -10,3 +10,13 @@
       command_off: docker stop beatbot
       command_state: "docker ps | grep beatbot"
       friendly_name: Beatbot
+    docker_sonarr:
+      command_on: docker start sonarr
+      command_off: docker stop sonarr
+      command_state: "docker ps | grep sonarr"
+      friendly_name: Sonarr (TV Shows)
+    docker_cardigann:
+      command_on: docker start cardigann
+      command_off: docker stop cardigann
+      command_state: "docker ps | grep cardigann"
+      friendly_name: Cardigann

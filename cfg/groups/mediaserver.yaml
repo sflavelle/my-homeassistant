@@ -1,0 +1,6 @@
+mediaserver:
+  name: Media Server
+  entities:
+    - switch.docker_sonarr
+    - switch.docker_cardigann
+    

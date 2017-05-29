@@ -19,7 +19,6 @@
     entity_id: device_tracker.simonsiphone
     state: home
   action:
-    # learn how to fade brightness on wemo lights
     service: light.turn_on
     entity_id: light.simons_bedroom
     data:

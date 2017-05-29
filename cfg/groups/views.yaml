@@ -36,4 +36,5 @@ settings:
   entities:
     - group.androidcamera_settings
     - group.tedbeet
+    - group.autopresence
     - group.mediaserver

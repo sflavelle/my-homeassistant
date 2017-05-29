@@ -1,0 +1,11 @@
+- alias: "Turn Simon's things off when he leaves"
+  trigger:
+    platform: state
+    entity_id: device_tracker.simonsiphone
+    state: 'not_home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.simonsroom
+    - service: notify.ios_simons_iphone
+      data_template:
+        message: "Your devices were automatically switched off."

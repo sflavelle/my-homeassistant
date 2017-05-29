@@ -1,0 +1,4 @@
+autopresence:
+  name: Presence Automations
+  entities:
+    - automation.turn_simons_things_off_when_he_leaves

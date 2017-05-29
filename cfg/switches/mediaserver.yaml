@@ -1,0 +1,4 @@
+- platform: transmission
+  host: 127.0.0.1
+  username: simon
+  password: !secret transmission_pass

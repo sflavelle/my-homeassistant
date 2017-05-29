@@ -10,3 +10,18 @@
   action:
     service: homeassistant.turn_on
     entity_id: light.simons_bedroom
+- alias: "Simon home? Wake up with bedroom lights"
+  trigger:
+    platform: time
+    after: '07:00:00'
+  condition:
+    condition: state
+    entity_id: device_tracker.simonsiphone
+    state: home
+  action:
+    # learn how to fade brightness on wemo lights
+    service: light.turn_on
+    entity_id: light.simons_bedroom
+    data:
+      transition: 1800
+      brightness_pct: 100

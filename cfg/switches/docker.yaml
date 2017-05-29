@@ -20,3 +20,8 @@
       command_off: docker stop cardigann
       command_state: "docker ps | grep cardigann"
       friendly_name: Cardigann
+    docker_jackett:
+      command_on: docker start jackett
+      command_off: docker stop jackett
+      command_state: "docker ps | grep jackett"
+      friendly_name: Jackett

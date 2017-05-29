@@ -83,11 +83,6 @@ android_ip_webcam:
       - torch
       - whitebalance_lock
 
-weblink:
-  entities:
-    - name: Router
-      url: http://192.168.1.1
-
 # Various Location Tracking
 
 device_tracker:
@@ -108,16 +103,14 @@ device_tracker:
       - 192.168.1.20 # Wifi Repeater
 
 zone:
-  name: Boris Murgers
-  latitude: !secret loc_boris_lat
-  longitude: !secret loc_boris_lon
-  icon: mdi:briefcase
-
-zone 2:
-  name: Parents
-  latitude: !secret loc_parents_lat
-  longitude: !secret loc_parents_lon
-  icon: mdi:castle
+  - name: Boris Murgers
+    latitude: !secret loc_boris_lat
+    longitude: !secret loc_boris_lon
+    icon: mdi:briefcase
+  - name: Parents
+    latitude: !secret loc_parents_lat
+    longitude: !secret loc_parents_lon
+    icon: mdi:castle
 
 media_player:
   - platform: apple_tv
@@ -144,3 +137,16 @@ joaoapps_join:
 group: !include_dir_merge_named cfg/groups/
 
 automation: !include_dir_merge_list cfg/auto/
+
+weblink:
+  entities:
+    - name: Router
+      url: http://192.168.1.1/
+    - name: Home Assistant
+      url: https://home-assistant.io
+    - name: Sonarr
+      url: http://192.168.1.6:8909
+    - name: Cardigann
+      url: http://192.168.1.6:5060
+    - name: Jackett
+      url: http://192.168.1.6:5117

@@ -2,4 +2,7 @@ studyroom:
   name: The Study
   entities:
     - light.study
-    - input_slider.study_brightness
+    - binary_sensor.cassies_pc
+    - binary_sensor.simons_mac_mini
+    - binary_sensor.martins_laptop
+    - binary_sensor.epson_wf3640_multifunction_printer

@@ -21,7 +21,7 @@ The configuration also makes use of these programs or custom components:
 ![simon view](https://i.imgur.com/wwkewEx.png)
 
 # Things I would like to do next:
-- [ ] Security cameras / "dog cam"
+- [x] Security cameras / "dog cam"
 - [ ] Figure out weather radar "camera"
 - [ ] Look at this Z-Wave thing?
 - [ ] What sort of relevant data can I get out of the command line?

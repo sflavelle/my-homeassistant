@@ -3,6 +3,7 @@ studyroom:
   entities:
     - light.study
     - binary_sensor.cassies_pc
-    - binary_sensor.simons_mac_mini
     - binary_sensor.martins_laptop
+    - binary_sensor.simons_mac_mini
+    - binary_sensor.simons_windows_pc
     - binary_sensor.epson_wf3640_multifunction_printer

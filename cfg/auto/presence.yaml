@@ -2,7 +2,12 @@
   trigger:
     platform: state
     entity_id: device_tracker.simonsiphone
-    state: 'not_home'
+    from: 'home'
+    to: 'not_home'
+  condition:
+    condition: state
+    entity_id: group.simonsroom
+    state: on
   action:
     - service: homeassistant.turn_off
       entity_id: group.simonsroom

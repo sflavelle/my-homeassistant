@@ -2,6 +2,7 @@ studyroom:
   name: The Study
   entities:
     - light.study
+    - sensor.simonsayslps
     - binary_sensor.cassies_pc
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini

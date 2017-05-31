@@ -7,7 +7,7 @@
   condition:
     condition: state
     entity_id: group.simonsroom
-    state: on
+    state: 'on'
   action:
     - service: homeassistant.turn_off
       entity_id: group.simonsroom

@@ -10,6 +10,7 @@ default_view:
     - group.weather
     - group.androidcamera
     - group.livingroom
+    - group.livingdevices
     - group.studyroom
     - group.twitch
 simon_view:

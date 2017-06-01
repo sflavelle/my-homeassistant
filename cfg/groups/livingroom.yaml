@@ -2,4 +2,10 @@ livingroom:
   name: Living Room
   entities:
     - camera.ip_webcam
+livingdevices:
+  name: Living Room Devices
+  entities:
     - media_player.lounge
+    - binary_sensor.nintendo_wii_u
+    - binary_sensor.playstation_4
+    - binary_sensor.xbox_one

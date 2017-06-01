@@ -27,6 +27,7 @@ simon_view:
     - sensor.breaches_simonsayslpsgmailcom
     - sensor.breaches_simonsayslpsicloudcom
     - group.simonsroom
+    - group.simonstats
     - group.simonsmedia
     - group.tedbeet
     - group.simonsauto

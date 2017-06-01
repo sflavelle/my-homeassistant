@@ -1,0 +1,14 @@
+- platform: rest
+  resource: http://api.whatpulse.org/user.php?format=json&user=neurario
+  value_template: '{{ value_json.Keys }}'
+  name: Simon - Keys Pressed
+  unit_of_measurement: Keys
+- platform: rest
+  resource: http://api.whatpulse.org/user.php?format=json&user=neurario
+  value_template: '{{ value_json.Clicks }}'
+  name: Simon - Mice Clicked
+  unit_of_measurement: Clicks
+- platform: rest
+  resource: http://ip.jsontest.com
+  name: External IP
+  value_template: '{{ value_json.ip }}'

@@ -1,7 +1,8 @@
 locations:
-  name: Where Y'all At
+  name: Estimated Locations
   entities:
     # - device_tracker.enu7n16303001457
+    - sensor.external_ip
     - device_tracker.simonsiphone
     - device_tracker.b4527e6d959f
     - device_tracker.f0c1f1bbb69f

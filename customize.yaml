@@ -26,6 +26,32 @@ switch.heater_switch:
 
 camera.ip_webcam:
   friendly_name: Lounge Room / "Dog Cam"
+sensor.simon__mice_clicked:
+  icon: mdi:mouse
+  friendly_names:
+    group.simonstats: Buttons Clicked
+sensor.simon__keys_pressed:
+  icon: mdi:keyboard
+  friendly_names:
+    group.simonstats: Keys Pressed
+
+# Fancy Ping Icons
+binary_sensor.simons_mac_mini:
+  icon: mdi:apple
+binary_sensor.simons_windows_pc:
+  icon: mdi:desktop-tower
+binary_sensor.martins_laptop:
+  icon: mdi:laptop-windows
+binary_sensor.cassies_pc:
+  icon: mdi:desktop-tower
+binary_sensor.epson_wf3640_multifunction_printer:
+  icon: mdi:printer
+binary_sensor.nintendo_wii_u:
+  icon: mdi:wiiu
+binary_sensor.playstation_4:
+  icon: mdi:playstation
+binary_sensor.xbox_one:
+  icon: mdi:xbox
 
 # Custom DarkSky Names
 sensor.dark_sky_daily_high_temperature:

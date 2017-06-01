@@ -24,3 +24,8 @@ simonsauto:
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.switch_on_the_heater_in_the_morning
+simonstats:
+  name: Statistics
+  entities:
+    - sensor.simon__mice_clicked
+    - sensor.simon__keys_pressed

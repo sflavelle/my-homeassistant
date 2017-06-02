@@ -1,5 +1,5 @@
 - platform: ping
-  host: 192.168.1.6
+  host: 192.168.1.40
   name: Simon's Mac Mini
 - platform: ping
   host: 192.168.1.3

@@ -6,3 +6,7 @@
     - 'current_status'
     - 'download_speed'
     - 'upload_speed'
+- platform: plex
+  username: !secret plex_user
+  password: !secret plex_password
+  server: 'That Was A Demo'

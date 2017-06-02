@@ -1,5 +1,10 @@
 - platform: command_line
   switches:
+    docker_plex:
+      command_on: docker start plex
+      command_off: docker stop plex
+      command_state: "docker ps | grep plex"
+      friendly_name: Plex Server
     docker_bucket:
       command_on: docker start bucket
       command_off: docker stop bucket

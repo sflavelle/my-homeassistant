@@ -1,6 +1,8 @@
 mediaserver:
   name: Media Server
   entities:
+    - switch.docker_plex
+    - sensor.plex
     - switch.transmission
     - switch.docker_sonarr
     - weblink.sonarr

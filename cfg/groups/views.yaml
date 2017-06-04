@@ -13,6 +13,7 @@ default_view:
     - group.livingdevices
     - group.studyroom
     - group.twitch
+    - group.cctv
 simon_view:
   name: Simon
   view: yes

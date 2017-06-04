@@ -65,9 +65,6 @@ ifttt:
 ios:
 
 wemo:
-  static:
-    - 192.168.1.7
-    - 192.168.1.9
 
 android_ip_webcam:
   - host: 192.168.1.2
@@ -97,9 +94,8 @@ device_tracker:
       - 239.0.0.250
     exclude:
       - 192.168.1.1 # Router
-      - 192.168.1.6 # Server
+      - 192.168.1.40 # Server
       - 192.168.1.8 # AppleTV
-      - 192.168.1.9 # WeMo Hub
       - 192.168.1.20 # Wifi Repeater
 
 zone:
@@ -152,3 +148,6 @@ weblink:
       url: http://192.168.1.6:5060
     - name: Jackett
       url: http://192.168.1.6:5117
+
+input_select: !include_dir_merge_named cfg/input_select/
+script: !include_dir_merge_named cfg/scripts/

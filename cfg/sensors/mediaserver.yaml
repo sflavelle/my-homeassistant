@@ -1,11 +1,3 @@
-- platform: transmission
-  host: 127.0.0.1
-  username: simon
-  password: !secret transmission_pass
-  monitored_variables:
-    - 'current_status'
-    - 'download_speed'
-    - 'upload_speed'
 - platform: plex
   username: !secret plex_user
   password: !secret plex_password

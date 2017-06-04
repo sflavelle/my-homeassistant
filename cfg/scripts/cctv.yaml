@@ -1,0 +1,15 @@
+cctv:
+  alias: Play Live TV on Chromecast
+  sequence:
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.tv_receiver", "Living Room") %} media_player.lounge
+          {% elif is_state("input_select.tv_receiver", "Simon's Room") %} media_player.simons_room
+          {% elif is_state("input_select.tv_receiver", "All") %} media_player.all_chromecast
+          {% endif %}
+        media_content_id: >
+          {% if is_state("input_select.tv_station", "ABC News 24") %} http://iphonestreaming.abc.net.au/news24/news24_hi.m3u8
+          {% elif is_state("input_select.tv_station", "Seven") %} https://melbourneseven-i.akamaihd.net/hls/live/263658/MEL1/master.m3u8
+          {% endif %}
+        media_content_type: 'video'

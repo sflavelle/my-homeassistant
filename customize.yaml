@@ -8,6 +8,8 @@ media_player.simonwindows:
   hidden: true
 media_player.simontv:
   hidden: true
+media_player.all_chromecast:
+  hidden: true
 
 # Custom-UI specific changes
 group.simonsdevices:
@@ -34,6 +36,9 @@ sensor.simon__keys_pressed:
   icon: mdi:keyboard
   friendly_names:
     group.simonstats: Keys Pressed
+script.cctv:
+  icon: mdi:play
+  friendly_name: Start Playing
 
 # Fancy Ping Icons
 binary_sensor.simons_mac_mini:

@@ -11,5 +11,16 @@ cctv:
         media_content_id: >
           {% if is_state("input_select.tv_station", "ABC News 24") %} http://iphonestreaming.abc.net.au/news24/news24_hi.m3u8
           {% elif is_state("input_select.tv_station", "Seven") %} https://melbourneseven-i.akamaihd.net/hls/live/263658/MEL1/master.m3u8
+          {% elif is_state("input_select.tv_station", "7TWO") %} https://melbourneseven-i.akamaihd.net/hls/live/263659-b/MEL2/master.m3u8
+          {% elif is_state("input_select.tv_station", "7Mate") %} https://melbourneseven-i.akamaihd.net/hls/live/263661/MEL3/master.m3u8
+          {% elif is_state("input_select.tv_station", "7flix") %} https://melbourneseven-i.akamaihd.net/hls/live/263662/MEL6/master.m3u8
+          {% elif is_state("input_select.tv_station", "Channel 9") %} https://9nowch9livehls-i.akamaihd.net/hls/live/250962/melbourne/master.m3u8
+          {% elif is_state("input_select.tv_station", "9Gem") %} https://9nowgemlivehls-i.akamaihd.net/hls/live/250972/melbourne/master.m3u8
+          {% elif is_state("input_select.tv_station", "9Go!") %} https://9nowgolivehls-i.akamaihd.net/hls/live/250977/melbourne/master.m3u8
+          {% elif is_state("input_select.tv_station", "9Life") %} https://9nowlifelivehls-i.akamaihd.net/hls/live/250992/melbourne/master.m3u8
+          {% elif is_state("input_select.tv_station", "ten") %} http://csm-e.cds1.yospace.com/csm/extlive/networkten01,SDATV.m3u8
+          {% elif is_state("input_select.tv_station", "SBS") %} http://sbslivefvstreaming.sbs.com.au/out/u/sbs1-mo-000-c3093-delpkg1-delpkg1-abr/index-root-ipad.m3u8
+          {% elif is_state("input_select.tv_station", "SBS Viceland") %} http://sbslivefvstreaming.sbs.com.au/out/u/sbs2-mo-000-c3093-delpkg1-delpkg1-abr/index-root-ipad.m3u8
+          {% elif is_state("input_select.tv_station", "Fox Sports News") %} http://foxsportshlsg01-lh.akamaihd.net/i/fsnewshls_0@301672/index_4628_av-p.m3u8
           {% endif %}
         media_content_type: 'video'

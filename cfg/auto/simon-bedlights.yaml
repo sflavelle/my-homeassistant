@@ -22,6 +22,8 @@
         entity_id: device_tracker.simonsiphone
         state: home
       - condition: time
+        after: '08:00:00'
+        before: '22:00:00'
         weekday:
           - mon
           - wed

@@ -65,6 +65,10 @@ ifttt:
 ios:
 
 wemo:
+  static:
+    # Turns out these still need to be detected manually, so giving them fixed IPs
+    - 192.168.1.90
+    - 192.168.1.91
 
 android_ip_webcam:
   - host: 192.168.1.2

@@ -4,10 +4,17 @@
     entity_id: device_tracker.simonsiphone
     from: 'home'
     to: 'not_home'
+    for:
+      minutes: 2
   condition:
-    condition: state
-    entity_id: group.simonsroom
-    state: 'on'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.simonsroom
+        state: 'on'
+      - condition: time
+        after: '08:00:00'
+        before: '22:00:00'
   action:
     - service: homeassistant.turn_off
       entity_id: group.simonsroom

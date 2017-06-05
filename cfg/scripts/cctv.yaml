@@ -22,5 +22,8 @@ cctv:
           {% elif is_state("input_select.tv_station", "SBS") %} http://sbslivefvstreaming.sbs.com.au/out/u/sbs1-mo-000-c3093-delpkg1-delpkg1-abr/index-root-ipad.m3u8
           {% elif is_state("input_select.tv_station", "SBS Viceland") %} http://sbslivefvstreaming.sbs.com.au/out/u/sbs2-mo-000-c3093-delpkg1-delpkg1-abr/index-root-ipad.m3u8
           {% elif is_state("input_select.tv_station", "Fox Sports News") %} http://foxsportshlsg01-lh.akamaihd.net/i/fsnewshls_0@301672/index_4628_av-p.m3u8
+          {% elif is_state("input_select.tv_station", "Adult Swim") %} http://adultswimhls-i.akamaihd.net/hls/live/238460/adultswim/main/1/master.m3u8
+          {% elif is_state("input_select.tv_station", "Toonami") %} http://amd.cdn.turner.com/adultswim/big/streams/playlists/toonami.m3u8
+          {% elif is_state("input_select.tv_station", "TWiT.tv") %} http://iphone-streaming.ustream.tv/uhls/1524/streams/live/iphone/playlist.m3u8
           {% endif %}
         media_content_type: 'video'

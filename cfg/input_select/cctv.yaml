@@ -17,6 +17,9 @@ tv_station:
     - SBS
     - SBS Viceland
     - Fox Sports News
+    - Adult Swim
+    - Toonami
+    - TWiT.tv
   icon: mdi:radio-tower
 tv_receiver:
   name: 'Select TV:'

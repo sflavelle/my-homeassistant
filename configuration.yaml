@@ -103,10 +103,15 @@ device_tracker:
       - 192.168.1.20 # Wifi Repeater
 
 zone:
+  - name: Home
+    latitude: !secret loc_lat
+    longitude: !secret loc_lon
+    radius: 150
   - name: Boris Murgers
     latitude: !secret loc_boris_lat
     longitude: !secret loc_boris_lon
     icon: mdi:briefcase
+    passive: true
   - name: Parents
     latitude: !secret loc_parents_lat
     longitude: !secret loc_parents_lon
@@ -121,6 +126,12 @@ media_player:
     children:
       - media_player.lounge
       - media_player.simons_room
+  - platform: universal
+    name: Simon's TV
+    children:
+      - media_player.apple_tv
+      - media_player.simons_room
+      - media_player.simontv
 
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 

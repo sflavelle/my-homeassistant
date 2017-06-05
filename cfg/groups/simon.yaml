@@ -15,9 +15,7 @@ simonsdevices:
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.apple_tv
-    - media_player.simontv
-    - media_player.simons_room
+    - media_player.simons_tv
 simonsauto:
   name: Automations
   entities:

@@ -12,6 +12,8 @@ simonsdevices:
     - sensor.simon_iphonebattery
     - device_tracker.simonsapple_watch
     - sensor.simon_watchbattery
+    - device_tracker.simonsipad
+    - sensor.simon_ipadbattery
 simonsmedia:
   name: Now Playing
   entities:

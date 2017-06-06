@@ -17,8 +17,9 @@ The configuration also makes use of these programs or custom components:
 - [HA History Stats](https://github.com/bokub/ha-history-stats)
 
 # Screenshots
-![main view](https://i.imgur.com/W0ZtUMs.png)
-![simon view](https://i.imgur.com/wwkewEx.png)
+![main view](screenshots/17-6-5 22-42-04.png)
+![simon view](screenshots/17-6-5 22-42-22.png)
+![settings](screenshots/17-6-5 22-42-38.png)
 
 # Things I would like to do next:
 - [x] Security cameras / "dog cam"

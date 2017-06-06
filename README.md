@@ -3,7 +3,7 @@
 This is my personal configuration for a server running on my Mac Mini. I am fairly new to "smart home" accessories and "home automation" so expect this to grow as I acquire more gadgets for a home I am renting in, lol.
 
 # Devices
-This config currently uses the folllowing devices (Australian URLs):
+This config currently uses the following devices (Australian URLs):
 
 - [WeMo LED Lighting Starter Kit](http://www.belkin.com/au/p/P-F5Z0489/) (2 lights + WeMo Link)
 - 1 x [WeMo Insight Switch](http://www.belkin.com/au/F7C029-Belkin/p/P-F7C029)
@@ -15,11 +15,6 @@ The configuration also makes use of these programs or custom components:
 
 - [HA Custom UI](https://github.com/andrey-git/home-assistant-custom-ui)
 - [HA History Stats](https://github.com/bokub/ha-history-stats)
-
-# Screenshots
-![main view](screenshots/17-6-5 22-42-04.png)
-![simon view](screenshots/17-6-5 22-42-22.png)
-![settings](screenshots/17-6-5 22-42-38.png)
 
 # Things I would like to do next:
 - [x] Security cameras / "dog cam"

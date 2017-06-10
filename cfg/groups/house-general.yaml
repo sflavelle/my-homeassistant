@@ -1,0 +1,4 @@
+house_general:
+  name: Info To Remember
+  entities:
+    - sensor.garbage_type

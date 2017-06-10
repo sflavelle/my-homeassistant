@@ -1,0 +1,19 @@
+- platform: template
+  sensors:
+    garbage_type:
+      friendly_name: 'Next Garbage Collection Type'
+      entity_id: calendar.garbage_collection
+      value_template: >-
+        {%- if is_state_attr('calendar.garbage_collection','message','Recycling Day #Collection 0') %}
+        Rubbish and Recycling
+        {% elif is_state_attr('calendar.garbage_collection','message','Organics Day #Collection 0') %}
+        Organics and Rubbish
+        {% endif %}
+      icon_template: >-
+        {%- if is_state_attr('calendar.garbage_collection','message','Recycling Day #Collection 0') %}
+        mdi:recycle
+        {% elif is_state_attr('calendar.garbage_collection','message','Organics Day #Collection 0') %}
+        mdi:tree
+        {% else %}
+        mdi:delete
+        {% endif %}

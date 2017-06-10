@@ -6,6 +6,7 @@ default_view:
     - sensor.dark_sky_summary
     - sensor.speedtest_download
     - sensor.speedtest_upload
+    - group.house_general
     - group.locations
     - group.weather
     - group.androidcamera

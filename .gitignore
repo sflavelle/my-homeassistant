@@ -26,3 +26,4 @@ ip_bans.yaml
 /icloud/*
 custom_components
 cfg/sensors/pwned.yaml
+google_calendars.yaml

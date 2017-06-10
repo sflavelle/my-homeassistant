@@ -6,6 +6,7 @@ livingdevices:
   name: Living Room Devices
   entities:
     - media_player.lounge
+    - media_player.playstation_4
     - binary_sensor.nintendo_wii_u
     - binary_sensor.playstation_4
     - binary_sensor.xbox_one

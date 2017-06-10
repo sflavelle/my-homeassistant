@@ -41,3 +41,4 @@ settings:
     - group.tedbeet
     - group.autopresence
     - group.mediaserver
+    - group.all_devices

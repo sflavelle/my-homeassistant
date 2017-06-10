@@ -40,6 +40,10 @@ script.cctv:
   icon: mdi:play
   friendly_name: Start Playing
 
+group.all_devices:
+  friendly_name: All Devices
+  hidden: false
+
 # Fancy Ping Icons
 binary_sensor.simons_mac_mini:
   icon: mdi:apple

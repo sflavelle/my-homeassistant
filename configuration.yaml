@@ -127,6 +127,9 @@ media_player:
     login_id: 00000000-6075-0234-de72-4422edd64499
   - platform: ps4
     host: 192.168.1.102
+  - platform: vlc
+    name: Mac Mini Speaker
+    arguments: "--aout=auhal --auhal-audio-device=117" #This DeviceID was a bitch to find
   - platform: universal
     name: All Chromecast
     children:

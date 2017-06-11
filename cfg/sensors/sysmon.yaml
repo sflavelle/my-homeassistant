@@ -1,0 +1,7 @@
+- platform: systemmonitor
+  resources:
+    - type: load_1m
+    - type: load_15m
+    - type: processor_use
+    - type: last_boot
+    - type: memory_free

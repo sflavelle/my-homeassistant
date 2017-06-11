@@ -27,3 +27,4 @@ ip_bans.yaml
 custom_components
 cfg/sensors/pwned.yaml
 google_calendars.yaml
+ps4-games.json

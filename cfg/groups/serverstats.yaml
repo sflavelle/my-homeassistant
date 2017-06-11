@@ -1,0 +1,8 @@
+serverstats:
+  name: Server Stats
+  entities:
+    - sensor.last_boot
+    - sensor.ram_free
+    - sensor.cpu_use
+    - sensor.average_load_1m
+    - sensor.average_load_15m

@@ -2,6 +2,8 @@ simonsroom:
   name: Simon
   entities:
     - group.simonsdevices
+    - script.morningbriefing_simon
+    - scene.goodnight_simon
     - light.simons_bedroom
     - switch.heater_switch
     - sensor.heater_runtime_today

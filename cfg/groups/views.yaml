@@ -7,7 +7,6 @@ default_view:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - group.house_general
-    - group.serverstats
     - group.locations
     - group.weather
     - group.androidcamera
@@ -39,6 +38,7 @@ settings:
   icon: mdi:settings
   view: yes
   entities:
+    - group.serverstats
     - group.androidcamera_settings
     - group.tedbeet
     - group.autopresence

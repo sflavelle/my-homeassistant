@@ -177,6 +177,13 @@ weblink:
       url: http://192.168.1.6:5060
     - name: Jackett
       url: http://192.168.1.6:5117
+scene:
+  - name: Goodnight Simon
+    entities:
+      switch.heater_switch: on
+      light.simons_bedroom:
+        state: on
+        brightness: 10
 
 input_select: !include_dir_merge_named cfg/input_select/
 script: !include_dir_merge_named cfg/scripts/

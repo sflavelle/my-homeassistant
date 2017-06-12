@@ -25,6 +25,10 @@ light.simons_bedroom:
 switch.heater_switch:
   friendly_names:
     group.simonsroom: Heater
+scene.goodnight_simon:
+  friendly_names:
+    group.simonsroom: Prepare For Bed
+  icon: mdi:hotel
 
 camera.ip_webcam:
   friendly_name: Lounge Room / "Dog Cam"

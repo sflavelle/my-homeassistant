@@ -1,0 +1,15 @@
+- platform: universal
+  name: All Chromecast
+  children:
+    - media_player.lounge
+    - media_player.simons_room
+- platform: universal
+  name: Simon's TV
+  children:
+    - media_player.apple_tv
+    - media_player.simons_room
+    - media_player.simontv
+- platform: universal
+  name: All Audio
+  children:
+    - media_player.mac_mini_speaker

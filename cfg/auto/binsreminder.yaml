@@ -1,0 +1,10 @@
+- alias: "Remind everyone when bins need to go out"
+  trigger:
+    platform: state
+    entity_id: calendar.garbage_collection
+    to: 'on'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.mac_mini_speaker
+      data_template:
+        message: "Hi everyone. Just a reminder that the {{ states('sensor.garbage_type') }} bins need to be taken out before you to go bed tonight."

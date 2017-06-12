@@ -44,3 +44,4 @@ settings:
     - group.autopresence
     - group.mediaserver
     - group.all_devices
+    - group.auto_testing

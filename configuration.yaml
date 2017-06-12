@@ -121,26 +121,7 @@ zone:
     longitude: !secret loc_parents_lon
     icon: mdi:castle
 
-media_player:
-  - platform: apple_tv
-    host: 192.168.1.8
-    login_id: 00000000-6075-0234-de72-4422edd64499
-  - platform: ps4
-    host: 192.168.1.102
-  - platform: vlc
-    name: Mac Mini Speaker
-    arguments: "--aout=auhal --auhal-audio-device=117" #This DeviceID was a bitch to find
-  - platform: universal
-    name: All Chromecast
-    children:
-      - media_player.lounge
-      - media_player.simons_room
-  - platform: universal
-    name: Simon's TV
-    children:
-      - media_player.apple_tv
-      - media_player.simons_room
-      - media_player.simontv
+media_player: !include_dir_merge_list cfg/media
 
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 

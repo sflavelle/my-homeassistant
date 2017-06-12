@@ -22,6 +22,6 @@ morningbriefing_simon:
           {% if is_state('calendar.garbage_collection', 'on') %}
           Remember, you need to put out the {{ states('sensor.garbage_type') }} bins.
           {% endif %}
-          {% if states('device_tracker.simonsipad.attributes.battery') | float < 10 %}
+          {% if states('device_tracker.simon_ipad.attributes.battery') | float < 10 %}
           You should also charge your iPad today. It's currently sitting at {{ states('sensor.simon_ipadbattery') | int }} percent.
           {% endif %}

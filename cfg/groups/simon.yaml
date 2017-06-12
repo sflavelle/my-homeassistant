@@ -10,16 +10,15 @@ simonsroom:
     - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
 simonsdevices:
   entities:
-    - device_tracker.simonsiphone
+    - device_tracker.simon_iphone
     - sensor.simon_iphonebattery
-    - device_tracker.simonsapple_watch
-    - sensor.simon_watchbattery
-    - device_tracker.simonsipad
+    - device_tracker.simon_ipad
     - sensor.simon_ipadbattery
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.simons_tv
+    - media_player.apple_tv
+    - media_player.simons_room
 simonsauto:
   name: Automations
   entities:

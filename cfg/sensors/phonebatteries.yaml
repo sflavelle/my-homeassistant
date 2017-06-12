@@ -4,26 +4,17 @@
       friendly_name: Simon's iPhone Battery
       unit_of_measurement: "%"
       value_template: >-
-            {%- if states.device_tracker.simonsiphone.attributes.battery %}
-                {{ states.device_tracker.simonsiphone.attributes.battery|round }}
+            {%- if states.device_tracker.simon_iphone.attributes.battery %}
+                {{ states.device_tracker.simon_iphone.attributes.battery|round }}
             {% else %}
-                {{ states.sensor.simons_iphonebattery.state }}
+                ???
             {%- endif %}
-    simon_watchbattery:
-      value_template: >-
-            {%- if states.device_tracker.simonsapple_watch.attributes.battery %}
-                {{ states.device_tracker.simonsapple_watch.attributes.battery|round }}
-            {% else %}
-                {{ states.sensor.simon_watchbattery.state }}
-            {%- endif %}
-      friendly_name: Simon's Apple Watch Battery
-      unit_of_measurement: "%"
     simon_ipadbattery:
       value_template: >-
-            {%- if states.device_tracker.simonsipad.attributes.battery %}
-                {{ states.device_tracker.simonsipad.attributes.battery|round }}
+            {%- if states.device_tracker.simon_ipad.attributes.battery %}
+                {{ states.device_tracker.simon_ipad.attributes.battery|round }}
             {% else %}
-                {{ states.sensor.simons_ipadbattery.state }}
+                ???
             {%- endif %}
       friendly_name: Simon's iPad Battery
       unit_of_measurement: "%"

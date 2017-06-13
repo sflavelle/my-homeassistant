@@ -7,4 +7,7 @@ studyroom:
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini
     - binary_sensor.simons_windows_pc
+    - sensor.steam_76561198027088353
+    - sensor.steam_76561198067639524
+    - sensor.steam_76561197986199864
     - binary_sensor.epson_wf3640_multifunction_printer

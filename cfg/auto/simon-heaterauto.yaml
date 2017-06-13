@@ -21,7 +21,7 @@
     offset: "-00:30:00"
   condition:
     condition: state
-    entity_id: device_tracker.simonsiphone
+    entity_id: device_tracker.simon_iphone
     state: 'home'
   action:
     service: homeassistant.turn_on

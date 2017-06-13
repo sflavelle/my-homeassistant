@@ -1,7 +1,7 @@
 - alias: "Turn Simon's things off when he leaves"
   trigger:
     platform: state
-    entity_id: device_tracker.simonsiphone
+    entity_id: device_tracker.simon_iphone
     from: 'home'
     to: 'not_home'
     for:

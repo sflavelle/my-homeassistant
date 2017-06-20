@@ -1,18 +1,20 @@
 studyroom:
   name: The Study
   entities:
-    - light.study
+    - media_player.lounge
     - sensor.simonsayslps
     - binary_sensor.cassies_pc
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini
     - binary_sensor.simons_windows_pc
+    - binary_sensor.epson_wf3640_multifunction_printer
+consoles:
+  name: Console Status
+  entities:
+    - media_player.playstation_4
     - sensor.steam_76561198027088353
     - sensor.steam_76561198067639524
-    - sensor.steam_76561197986199864
-    - binary_sensor.epson_wf3640_multifunction_printer
-    - media_player.lounge
-    - media_player.playstation_4
+    - sensor.steam_76561197986199864    
     - binary_sensor.nintendo_wii_u
     - binary_sensor.playstation_4
     - binary_sensor.xbox_one

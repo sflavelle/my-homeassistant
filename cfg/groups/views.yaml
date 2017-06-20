@@ -9,10 +9,8 @@ default_view:
     - group.house_general
     - group.locations
     - group.weather
-    - group.androidcamera
-    - group.livingroom
-    - group.livingdevices
     - group.studyroom
+    - group.consoles
     - group.twitch
     - group.cctv
 simon_view:

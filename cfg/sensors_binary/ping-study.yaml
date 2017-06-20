@@ -1,9 +1,9 @@
 - platform: ping
   host: 192.168.1.40
   name: Simon's Mac Mini
-# - platform: ping
-#   host: 192.168.1.3
-#   name: Epson WF-3640 Multifunction Printer
+- platform: ping
+  host: 192.168.1.4
+  name: Epson WF-3640 Multifunction Printer
 - platform: ping
   host: 192.168.1.4
   name: Cassie's PC

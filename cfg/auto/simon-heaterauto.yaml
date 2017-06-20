@@ -16,9 +16,8 @@
       entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
 - alias: "Switch on the heater in the morning"
   trigger:
-    platform: sun
-    event: sunrise
-    offset: "-00:30:00"
+    platform: time
+    at: '06:45:00'
   condition:
     condition: state
     entity_id: device_tracker.simon_iphone

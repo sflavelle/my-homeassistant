@@ -7,7 +7,7 @@ default_view:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.external_ip
-    - device_tracker.simon_iphone
+    - device_tracker.simonsiphone
     - device_tracker.b4527e6d959f
     - device_tracker.f0c1f1bbb69f
     - group.house_general
@@ -15,7 +15,7 @@ default_view:
     - group.weather
     - group.studyroom
     - group.consoles
-    - group.twitch
+#    - group.twitch
     - group.cctv
 simon_view:
   name: Simon

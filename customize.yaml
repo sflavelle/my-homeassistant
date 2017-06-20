@@ -18,6 +18,8 @@ group.weatherbadges:
   state_card_mode: badges
 group.locations:
   state_card_mode: badges
+group.gamebadges:
+  state_card_mode: badges
 light.simons_bedroom:
   show_last_changed: true
   friendly_names:
@@ -29,7 +31,6 @@ scene.goodnight_simon:
   friendly_names:
     group.simonsroom: Prepare For Bed
   icon: mdi:hotel
-
 camera.ip_webcam:
   friendly_name: Lounge Room / "Dog Cam"
 sensor.simon__mice_clicked:
@@ -43,6 +44,9 @@ sensor.simon__keys_pressed:
 script.cctv:
   icon: mdi:play
   friendly_name: Start Playing
+device_tracker.simonsiphone:
+  friendly_names:
+    group.default_view: Simon
 
 group.all_devices:
   friendly_name: All Devices

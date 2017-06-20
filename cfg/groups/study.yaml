@@ -2,7 +2,6 @@ studyroom:
   name: The Study
   entities:
     - media_player.lounge
-    - sensor.simonsayslps
     - binary_sensor.cassies_pc
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini
@@ -11,10 +10,15 @@ studyroom:
 consoles:
   name: Console Status
   entities:
+    - group.gamebadges
     - media_player.playstation_4
-    - sensor.steam_76561198027088353
-    - sensor.steam_76561198067639524
-    - sensor.steam_76561197986199864    
     - binary_sensor.nintendo_wii_u
     - binary_sensor.playstation_4
     - binary_sensor.xbox_one
+gamebadges:
+  name: Gaming badges
+  entities:
+    - sensor.simonsayslps
+    - sensor.steam_76561198027088353
+    - sensor.steam_76561198067639524
+    - sensor.steam_76561197986199864

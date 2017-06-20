@@ -6,14 +6,15 @@ simonsroom:
     - scene.goodnight_simon
     - light.simons_bedroom
     - switch.heater_switch
-    - sensor.heater_runtime_today
     - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
 simonsdevices:
   entities:
-    - device_tracker.simon_iphone
+    - device_tracker.simonsiphone
     - sensor.simon_iphonebattery
-    - device_tracker.simon_ipad
+    - device_tracker.simonsipad
     - sensor.simon_ipadbattery
+    - device_tracker.simonsapple_watch
+    - sensor.simon_watchbattery
 simonsmedia:
   name: Now Playing
   entities:

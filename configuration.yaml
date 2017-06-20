@@ -82,6 +82,9 @@ wemo:
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 150
+  - platform: icloud
+    username: !secret icloud_user
+    password: !secret icloud_pass
 
 zone:
   - name: Home

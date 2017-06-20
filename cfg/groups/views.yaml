@@ -6,6 +6,10 @@ default_view:
     - sensor.dark_sky_summary
     - sensor.speedtest_download
     - sensor.speedtest_upload
+    - sensor.external_ip
+    - device_tracker.simon_iphone
+    - device_tracker.b4527e6d959f
+    - device_tracker.f0c1f1bbb69f
     - group.house_general
     - group.locations
     - group.weather
@@ -29,7 +33,6 @@ simon_view:
     - group.simonsroom
     - group.simonstats
     - group.simonsmedia
-    - group.tedbeet
     - group.simonsauto
 settings:
   name: Settings
@@ -37,7 +40,6 @@ settings:
   view: yes
   entities:
     - group.serverstats
-    - group.androidcamera_settings
     - group.tedbeet
     - group.autopresence
     - group.mediaserver

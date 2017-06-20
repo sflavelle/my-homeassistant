@@ -19,7 +19,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.simon_iphone
+        entity_id: device_tracker.simonsiphone
         state: home
       - condition: time
         weekday:

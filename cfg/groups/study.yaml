@@ -11,3 +11,8 @@ studyroom:
     - sensor.steam_76561198067639524
     - sensor.steam_76561197986199864
     - binary_sensor.epson_wf3640_multifunction_printer
+    - media_player.lounge
+    - media_player.playstation_4
+    - binary_sensor.nintendo_wii_u
+    - binary_sensor.playstation_4
+    - binary_sensor.xbox_one

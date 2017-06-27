@@ -12,11 +12,24 @@ default_view:
     - device_tracker.f0c1f1bbb69f
     - group.house_general
     - group.locations
-    - group.weather
     - group.studyroom
     - group.consoles
-#    - group.twitch
+tv_view:
+  name: Televisions
+  icon: mdi:television
+  view: yes
+  entities:
+    - group.twitch
     - group.cctv
+    - media_player.playstation_4
+    - media_player.lounge
+    - group.simonsmedia
+weather_view:
+  name: Weather
+  icon: mdi:weather-sunny
+  view: yes
+  entities:
+    - group.weather
 simon_view:
   name: Simon
   view: yes

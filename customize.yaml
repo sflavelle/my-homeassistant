@@ -11,6 +11,9 @@ media_player.simontv:
 media_player.all_chromecast:
   hidden: true
 
+switch.docker_*:
+  homebridge_hidden: true
+
 # Custom-UI specific changes
 group.simonsdevices:
   state_card_mode: badges

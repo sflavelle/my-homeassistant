@@ -4,6 +4,9 @@
 tv_station:
   name: 'Select TV Station:'
   options:
+    - Games Done Quick (Twitch)
+    - Bob Ross (Twitch)
+    - Vinesauce (Twitch)
     - ABC News 24
     - Seven
     - 7TWO

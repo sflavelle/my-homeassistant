@@ -124,6 +124,10 @@ weblink:
       url: http://192.168.1.6:5060
     - name: Jackett
       url: http://192.168.1.6:5117
+
+shell_command:
+  livestream: livestreamer --twitch-oauth-token gn4dfwud6on2x446oith2pon3sso5g {{url}} 720p --player-passthrough hls -p castnow -a '"{filename}" --device "{{device}}" --exit'
+
 scene:
   - name: Goodnight Simon
     entities:

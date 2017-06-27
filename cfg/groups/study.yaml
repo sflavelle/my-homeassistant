@@ -1,7 +1,6 @@
 studyroom:
   name: The Study
   entities:
-    - media_player.lounge
     - binary_sensor.cassies_pc
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini
@@ -11,7 +10,6 @@ consoles:
   name: Console Status
   entities:
     - group.gamebadges
-    - media_player.playstation_4
     - binary_sensor.nintendo_wii_u
     - binary_sensor.playstation_4
     - binary_sensor.xbox_one

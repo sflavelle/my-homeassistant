@@ -1,0 +1,15 @@
+# I hope someday I'll be able to find out how to merge both these CCTV scripts
+cctv_twitch:
+  alias: Play Twitch on Chromecast
+  sequence:
+    - service: shell_command.livestream
+      data_template:
+        device: >
+          {% if is_state("input_select.tv_receiver", "Simon's Room") %} media_player.simons_room
+          {% else %} media_player.lounge
+          {% endif %}
+        url: >
+          {% if is_state("input_select.tv_station", "Games Done Quick (Twitch)") %} https://www.twitch.tv/gamesdonequick
+          {% elif is_state("input_select.tv_station", "Bob Ross (Twitch)") %} https://www.twitch.tv/bobross
+          {% elif is_state("input_select.tv_station", "Vinesauce (Twitch)") %} https://www.twitch.tv/vinesauce
+          {% endif %}

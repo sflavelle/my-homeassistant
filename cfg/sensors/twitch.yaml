@@ -4,3 +4,13 @@
     - BobRoss
     - GamesDoneQuick
     - SimonSaysLPs
+- platform: template
+  sensors:
+    gdq_nowplaying:
+      value_template: >
+        {% if is_state('sensor.gamesdonequick', 'streaming') %}
+        {{states.sensor.gamesdonequick.attributes.game}}
+        {% else %}
+        N/A
+        {% endif %}
+      friendly_name: 'Current Speedrun'

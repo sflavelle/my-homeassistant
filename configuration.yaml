@@ -161,5 +161,4 @@ input_boolean:
     name: Simon's reported to Centrelink?
     initial: off
 
-
 script: !include_dir_merge_named cfg/scripts/

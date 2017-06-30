@@ -1,8 +1,7 @@
 - alias: "Automatically wake up Simon with the briefing"
   trigger:
-    - platform: time
-      at: '07:03:00'
+    - platform: state
+      entity_id: sensor.sleep_simon
   action:
     service: script.turn_on
     entity_id: script.morningbriefing_simon
-    

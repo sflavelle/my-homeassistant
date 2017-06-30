@@ -1,4 +1,4 @@
 - platform: plex
   username: !secret plex_user
   password: !secret plex_password
-  server: 'That Was A Demo'
+  server: 'Simon Says'

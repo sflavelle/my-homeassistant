@@ -20,8 +20,8 @@
       unit_of_measurement: "%"
     simon_ipadbattery:
       value_template: >-
-            {%- if states.device_tracker.simonsipad.attributes.battery %}
-                {{ states.device_tracker.simonsipad.attributes.battery|round }}
+            {%- if states.device_tracker.simonflavellesipad.attributes.battery %}
+                {{ states.device_tracker.simonflavellesipad.attributes.battery|round }}
             {% else %}
                 ???
             {%- endif %}

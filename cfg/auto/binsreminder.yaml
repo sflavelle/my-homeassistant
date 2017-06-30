@@ -7,7 +7,7 @@
     weekday:
       - mon
   action:
-    - service: tts.google_say
-      entity_id: media_player.mac_mini_speaker
-      data_template:
-        message: "Hi everyone. Just a reminder that the {{ states('sensor.garbage_type') }} bins need to be taken out before you head to bed tonight."
+    - service: ifttt.trigger
+      data_template: 
+        event: "ha_voip_message"
+        value1: "Hi everyone. Just a reminder that the {{ states('sensor.garbage_type') }} bins need to be taken out before you head to bed tonight."

@@ -1,4 +1,4 @@
-- platform: vlc
-  name: Mac Mini Speaker
-  arguments: "--aout=auhal --auhal-audio-device=117" #This DeviceID was a bitch to find
+# - platform: vlc
+#   name: Mac Mini Speaker
+#   arguments: "--aout=auhal --auhal-audio-device=117" #This DeviceID was a bitch to find
   # For anyone that needs to find this in future, I ran VLC with -vv --aout=auhal

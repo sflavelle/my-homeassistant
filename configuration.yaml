@@ -29,7 +29,7 @@ http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
+  base_url: !secret url
 
 # Checks for available updates
 updater:
@@ -77,6 +77,13 @@ wemo:
     - 192.168.1.90
     - 192.168.1.91
 
+camera:
+  platform: generic
+  still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
+  name: Rain Radar
+  limit_refetch_to_url_change: true
+
+
 # Various Location Tracking
 
 device_tracker:
@@ -85,6 +92,13 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
+  - platform: arpscan_tracker
+    interval_seconds: 15
+    consider_home: 60
+    track_new_devices: true
+    scan_options: --interface=en1 -l -g -t1 -q
+    exclude:
+      - 192.168.1.1
 
 zone:
   - name: Home
@@ -96,6 +110,10 @@ zone:
     longitude: !secret loc_parents_lon
     icon: mdi:castle
 
+emulated_hue:
+  type: alexa
+  listen_port: 8020
+
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 sensor: !include_dir_merge_list cfg/sensors/
@@ -105,9 +123,9 @@ notify:
   - platform: joaoapps_join
     api_key: !secret join_api
     device_id: !secret join_device
-  - platform: discord
-    name: simonprivate
-    token: !secret discord_token
+  - platform: command_line
+    name: osx_notify
+    command: "terminal-notifier -message "
 
 group: !include_dir_merge_named cfg/groups/
 automation: !include_dir_merge_list cfg/auto/
@@ -137,4 +155,11 @@ scene:
         brightness: 10
 
 input_select: !include_dir_merge_named cfg/input_select/
+
+input_boolean:
+  centrelink_reported_simon:
+    name: Simon's reported to Centrelink?
+    initial: off
+
+
 script: !include_dir_merge_named cfg/scripts/

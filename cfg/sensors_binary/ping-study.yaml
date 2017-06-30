@@ -5,7 +5,7 @@
   host: 192.168.1.4
   name: Epson WF-3640 Multifunction Printer
 - platform: ping
-  host: 192.168.1.4
+  host: 192.168.1.5
   name: Cassie's PC
 - platform: ping
   host: 192.168.1.17

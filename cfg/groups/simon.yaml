@@ -1,25 +1,31 @@
 simonsroom:
   name: Simon
   entities:
-    - group.simonsdevices
     - script.morningbriefing_simon
+    - automation.automatically_wake_up_simon_with_the_briefing
+    - input_boolean.centrelink_reported_simon
     - scene.goodnight_simon
+simonsdevicebadges:
+  entities:
+    - device_tracker.simonsiphone
+    - sensor.simons_iphone_battery_level
+    - sensor.simon_flavelles_ipad_battery_level
+    - sensor.simon_watchbattery
+simonsdevices:
+  name: Simon's Devices
+  entities:
+    - group.simonsdevicebadges
+    - sensor.simons_iphone_battery_state
+    - sensor.simon_flavelles_ipad_battery_state
     - light.simons_bedroom
     - switch.heater_switch
     - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
-simonsdevices:
-  entities:
-    - device_tracker.simonsiphone
-    - sensor.simon_iphonebattery
-    - device_tracker.simonsipad
-    - sensor.simon_ipadbattery
-    - device_tracker.simonsapple_watch
-    - sensor.simon_watchbattery
 simonsmedia:
   name: Now Playing
   entities:
     - media_player.apple_tv
     - media_player.simons_room
+    - media_player.spotify
 simonsauto:
   name: Automations
   entities:
@@ -31,3 +37,4 @@ simonstats:
   entities:
     - sensor.simon__mice_clicked
     - sensor.simon__keys_pressed
+    - sensor.sleep_simon

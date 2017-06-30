@@ -4,3 +4,4 @@ twitch:
     - sensor.bobross
     - sensor.misterrogers
     - sensor.gamesdonequick
+    - sensor.gdq_nowplaying

@@ -15,7 +15,7 @@ switch.docker_*:
   homebridge_hidden: true
 
 # Custom-UI specific changes
-group.simonsdevices:
+group.simonsdevicebadges:
   state_card_mode: badges
 group.weatherbadges:
   state_card_mode: badges
@@ -50,6 +50,20 @@ script.cctv:
 device_tracker.simonsiphone:
   friendly_names:
     group.default_view: Simon
+script.morningbriefing_simon:
+  icon: mdi:phone-in-talk
+input_boolean.centrelink_reported_simon:
+  icon: mdi:bank
+  friendly_names:
+    group.simonsroom: Reported to Centrelink?
+automation.automatically_wake_up_simon_with_the_briefing:
+  icon: mdi:alarm
+  friendly_names:
+    group.simonsroom: Play on wake-up?
+sensor.sleep_simon:
+  icon: mdi:sleep
+  friendly_names:
+    group.simonstats: Last Sleep
 
 group.all_devices:
   friendly_name: All Devices

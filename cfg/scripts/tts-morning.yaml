@@ -12,6 +12,10 @@ morningbriefing_simon:
           {% else %}
           Good evening.
           {% endif %}
+          It's currently {{ now().strftime("%-I:%M %p") }}.
+          {% if now().strftime("%H")|int < 12 %}
+          You've slept for a total of {{ states('sensor.sleep_simon')|replace('h', ' hours and ')|replace('m', ' minutes')}}.
+          {% endif %}
           It's currently {{ states('sensor.dark_sky_temperature')|int }} degrees,
           {% if now().strftime("%H")|int < 16 %}
           with a predicted high of {{ states('sensor.dark_sky_daily_high_temperature')|int }}.

@@ -1,11 +1,10 @@
 morningbriefing_simon:
-  alias: Play Simon's Briefing
+  alias: Simon's Briefing
   sequence:
-    - service: tts.google_say
+    - service: ifttt.trigger
       data_template:
-        cache: false
-        entity_id: media_player.mac_mini_speaker # For now
-        message: >
+        event: "ha_voip_message"
+        value1: >
           {% if now().strftime("%H")|int < 12 %}
           Good morning, Simon.
           {% elif now().strftime("%H")|int < 18 %}
@@ -22,6 +21,6 @@ morningbriefing_simon:
           {% if is_state('calendar.garbage_collection', 'on') %}
           Remember, you need to put out the {{ states('sensor.garbage_type') }} bins.
           {% endif %}
-          {% if states('device_tracker.simon_ipad.attributes.battery') | float < 10 %}
+          {% if states('device_tracker.simonflavellesipad.attributes.battery') | float < 10 %}
           You should also charge your iPad today. It's currently sitting at {{ states('sensor.simon_ipadbattery') | int }} percent.
           {% endif %}

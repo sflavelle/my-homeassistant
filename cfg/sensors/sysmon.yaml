@@ -5,3 +5,7 @@
     - type: processor_use
     - type: last_boot
     - type: memory_free
+    - type: disk_free
+      arg: /Volumes/Media HD
+    - type: disk_free
+      arg: /

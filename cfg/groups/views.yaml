@@ -23,12 +23,19 @@ tv_view:
     - group.cctv
     - media_player.playstation_4
     - media_player.lounge
-    - group.simonsmedia
+    - media_player.apple_tv
+    - media_player.simons_room
 weather_view:
   name: Weather
   icon: mdi:weather-sunny
   view: yes
   entities:
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_daily_max_precip_intensity
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
     - group.weather
     - camera.rain_radar
 simon_view:

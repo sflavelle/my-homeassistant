@@ -78,10 +78,13 @@ wemo:
     - 192.168.1.91
 
 camera:
-  platform: generic
-  still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
-  name: Rain Radar
-  limit_refetch_to_url_change: true
+  - platform: generic
+    still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
+    name: Rain Radar
+    limit_refetch_to_url_change: true
+  - platform: generic
+    still_image_url: https://icons.wunderground.com/webcamramdisk/b/e/BendigoPete/1/current.jpg
+    name: Mitchell/Palmerson St
 
 
 # Various Location Tracking

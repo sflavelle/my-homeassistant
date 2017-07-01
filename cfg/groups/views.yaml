@@ -38,6 +38,7 @@ weather_view:
     - sensor.dark_sky_daily_low_temperature
     - group.weather
     - camera.rain_radar
+    - camera.mitchellpalmerson_st
 simon_view:
   name: Simon
   view: yes

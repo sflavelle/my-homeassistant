@@ -21,13 +21,12 @@ group.weatherbadges:
   state_card_mode: badges
 group.locations:
   state_card_mode: badges
-group.gamebadges:
-  state_card_mode: badges
 light.simons_bedroom:
   show_last_changed: true
   friendly_names:
     group.simonsroom: Light
 switch.heater_switch:
+  show_last_changed: true
   friendly_names:
     group.simonsroom: Heater
 scene.goodnight_simon:
@@ -64,6 +63,12 @@ sensor.sleep_simon:
   icon: mdi:sleep
   friendly_names:
     group.simonstats: Last Sleep
+sensor.gamesdonequick:
+  extra_data_template: '{game!=""}'
+sensor.vinesauce:
+  extra_data_template: '{game!=""}'
+sensor.simonsayslps:
+  extra_data_template: '{game!=""}'
 
 group.all_devices:
   friendly_name: All Devices

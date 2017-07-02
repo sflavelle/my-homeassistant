@@ -64,11 +64,17 @@ sensor.sleep_simon:
   friendly_names:
     group.simonstats: Last Sleep
 sensor.gamesdonequick:
-  extra_data_template: '{game!=""}'
+  extra_data_template: '{game}'
 sensor.vinesauce:
-  extra_data_template: '{game!=""}'
+  extra_data_template: '{game}'
 sensor.simonsayslps:
-  extra_data_template: '{game!=""}'
+  extra_data_template: '{game}'
+media_player.apple_tv:
+  friendly_names:
+    group.tv_view: Simon's Apple TV
+media_player.lounge:
+  friendly_names:
+    group.tv_view: Lounge Room Chromecast
 
 group.all_devices:
   friendly_name: All Devices

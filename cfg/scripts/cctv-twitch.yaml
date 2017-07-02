@@ -5,8 +5,8 @@ cctv_twitch:
     - service: shell_command.livestream
       data_template:
         device: >
-          {% if is_state("input_select.tv_receiver", "Simon's Room") %} media_player.simons_room
-          {% else %} media_player.lounge
+          {% if is_state("input_select.tv_receiver", "Simon's Room") %} Simon's Room
+          {% else %} Lounge
           {% endif %}
         url: >
           {% if is_state("input_select.tv_station", "Games Done Quick (Twitch)") %} https://www.twitch.tv/gamesdonequick

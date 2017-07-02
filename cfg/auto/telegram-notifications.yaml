@@ -1,0 +1,25 @@
+- alias: "Alert Simon when Bucket has updated its state"
+  trigger:
+    - platform: state
+      entity_id: switch.docker_bucket
+  action:
+    service: notify.telegram_simon
+    data_template:
+      title: '*Bucket was switched {{ states('switch.docker_bucket') }}*'
+      message: '{% if is_state('switch.docker_bucket', 'off') %}*This usually shouldn't happen.* {% endif %}If you need to switch it back, click a button below.'
+      data:
+        inline_keyboard:
+          - '🎚:/switch switch.docker_bucket'
+- alias: "Telegram switch toggle command"
+  trigger:
+    - platform: event
+      event_type: telegram_command
+      event_data:
+        command: '/switch'
+  action:
+    - service: homeassistant.toggle
+      data_template:
+        entity_id: "{{ trigger.event.data["arg"] }}"
+    - service: notify.telegram_simon
+      data_template:
+        message: '{{ trigger.event.data["arg"] }} was toggled.'

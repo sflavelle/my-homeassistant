@@ -5,7 +5,7 @@
   action:
     service: notify.telegram_simon
     data_template:
-      title: '*Bucket was switched {{ states('switch.docker_bucket') }}*'
+      title: "*Bucket was switched {{ states('switch.docker_bucket') }}*"
       message: '{% if is_state('switch.docker_bucket', 'off') %}*This usually shouldn't happen.* {% endif %}If you need to switch it back, click a button below.'
       data:
         inline_keyboard:

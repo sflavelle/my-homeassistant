@@ -6,7 +6,7 @@
     service: notify.telegram_simon
     data_template:
       title: "*Bucket was switched {{ states('switch.docker_bucket') }}*"
-      message: '{% if is_state('switch.docker_bucket', 'off') %}*This usually shouldn't happen.* {% endif %}If you need to switch it back, click a button below.'
+      message: "{% if is_state('switch.docker_bucket', 'off') %}*This usually shouldn't happen.* {% endif %}If you need to switch it back, click a button below."
       data:
         inline_keyboard:
           - 'Toggle:/switch switch.docker_bucket'
@@ -19,7 +19,7 @@
   action:
     - service: homeassistant.toggle
       data_template:
-        entity_id: "{{ trigger.event.data["arg"] }}"
+        entity_id: '{{ trigger.event.data["arg"] }}'
     - service: notify.telegram_simon
       data_template:
         message: '{{ trigger.event.data["arg"] }} was toggled.'

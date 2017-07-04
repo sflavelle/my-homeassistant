@@ -52,7 +52,8 @@ simon_view:
     - sensor.breaches_simonflavelleicloudcom
     - sensor.breaches_simonsayslpsgmailcom
     - sensor.breaches_simonsayslpsicloudcom
-    - group.simonsroom
+    - group.simon
+    - group.simonsbedroom
     - group.simonsdevices
     - group.simonstats
     - group.simonsmedia

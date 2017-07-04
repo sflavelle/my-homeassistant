@@ -114,8 +114,7 @@ zone:
     icon: mdi:castle
 
 emulated_hue:
-  type: alexa
-  listen_port: 8020
+  listen_port: 80
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/

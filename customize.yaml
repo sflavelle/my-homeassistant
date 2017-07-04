@@ -24,11 +24,12 @@ group.locations:
 light.simons_bedroom:
   show_last_changed: true
   friendly_names:
-    group.simonsroom: Light
-switch.heater_switch:
+    group.simonsbedroom: Light
+switch.simons_heater:
   show_last_changed: true
+  icon: mdi:radiator
   friendly_names:
-    group.simonsroom: Heater
+    group.simonsbedroom: Heater
 scene.goodnight_simon:
   friendly_names:
     group.simonsroom: Prepare For Bed
@@ -69,12 +70,23 @@ sensor.vinesauce:
   extra_data_template: '{game}'
 sensor.simonsayslps:
   extra_data_template: '{game}'
+sensor.steam_76561198027088353:
+  extra_data_template: '{Game}'
+sensor.steam_76561198067639524:
+  extra_data_template: '{Game}'
+sensor.steam_76561197986199864:
+  extra_data_template: '{Game}'
 media_player.apple_tv:
   friendly_names:
     group.tv_view: Simon's Apple TV
 media_player.lounge:
   friendly_names:
     group.tv_view: Lounge Room Chromecast
+
+sensor.nexus6p_battery:
+  icon: mdi:battery
+sensor.nexus6p_memfree:
+  icon: mdi:memory
 
 group.all_devices:
   friendly_name: All Devices

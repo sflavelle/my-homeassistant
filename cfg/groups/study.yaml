@@ -1,6 +1,7 @@
 studyroom:
   name: The Study
   entities:
+    - light.study
     - binary_sensor.cassies_pc
     - binary_sensor.martins_laptop
     - binary_sensor.simons_mac_mini
@@ -12,7 +13,7 @@ consoles:
     - sensor.steam_76561198027088353
     - sensor.steam_76561198067639524
     - sensor.steam_76561197986199864
-    - sensor.simonsayslps    
+    - sensor.simonsayslps
     - binary_sensor.nintendo_wii_u
     - binary_sensor.playstation_4
     - binary_sensor.xbox_one

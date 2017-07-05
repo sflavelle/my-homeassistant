@@ -2,6 +2,11 @@
   trigger:
     - platform: state
       entity_id: sensor.asleep_simon
+      state: "awake"
+  condition:
+    condition: time
+    after: '02:00:00'
+    before: '12:00:00'
   action:
     service: script.turn_on
     entity_id: script.morningbriefing_simon

@@ -23,11 +23,16 @@ group.locations:
   state_card_mode: badges
 light.simons_bedroom:
   show_last_changed: true
+  state_card_mode: break-slider-toggle
+  stretch_slider: true
   friendly_names:
     group.simonsbedroom: Light
 switch.simons_heater:
   show_last_changed: true
   icon: mdi:radiator
+  extra_badge:
+    attribute: current_power_w
+    unit: W
   friendly_names:
     group.simonsbedroom: Heater
 scene.goodnight_simon:
@@ -56,10 +61,6 @@ input_boolean.centrelink_reported_simon:
   icon: mdi:bank
   friendly_names:
     group.simonsroom: Reported to Centrelink?
-automation.automatically_wake_up_simon_with_the_briefing:
-  icon: mdi:alarm
-  friendly_names:
-    group.simonsroom: Play on wake-up?
 sensor.sleep_simon:
   icon: mdi:sleep
   friendly_names:
@@ -82,6 +83,20 @@ media_player.apple_tv:
 media_player.lounge:
   friendly_names:
     group.tv_view: Lounge Room Chromecast
+sensor.todays_sleep_simon:
+  friendly_names:
+    group.simonstats: Today's Sleep
+
+automation.automatically_wake_up_simon_with_the_briefing:
+  icon: mdi:alarm
+automation.prepare_room_for_bedtime:
+  icon: mdi:sleep
+automation.simon_home_turn_bedroom_light_on_after_dark:
+  icon: mdi:lightbulb  
+automation.simon_home_wake_up_with_bedroom_lights:
+  icon: mdi:weather-sunset-up
+automation.switch_on_the_heater_in_the_morning:
+  icon: mdi:weather-sunset-up
 
 sensor.nexus6p_battery:
   icon: mdi:battery

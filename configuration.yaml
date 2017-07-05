@@ -122,15 +122,9 @@ sensor: !include_dir_merge_list cfg/sensors/
 switch: !include_dir_merge_list cfg/switches/
 
 notify:
-  - platform: joaoapps_join
-    api_key: !secret join_api
-    device_id: !secret join_device
-  - platform: command_line
-    name: osx_notify
-    command: "terminal-notifier -message "
-  - name: telegram_simon
-    platform: telegram
-    chat_id: !secret tgram_simon
+  - name: discord
+    platform: discord
+    token: !secret discord_token
 
 telegram_bot:
   - platform: polling

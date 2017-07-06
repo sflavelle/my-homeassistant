@@ -2,13 +2,13 @@ simon:
   name: Simon
   entities:
     - script.morningbriefing_simon
-    - automation.automatically_wake_up_simon_with_the_briefing
     - scene.goodnight_simon
     - sensor.asleep_simon
     - input_boolean.centrelink_reported_simon
 simonsdevicebadges:
   entities:
     - device_tracker.simonsiphone
+    - sensor.nexus6p_battery
     - sensor.simons_iphone_battery_level
     - sensor.simon_flavelles_ipad_battery_level
     - sensor.simon_watchbattery
@@ -18,8 +18,9 @@ simonsdevices:
     - group.simonsdevicebadges
     - sensor.simons_iphone_battery_state
     - sensor.simon_flavelles_ipad_battery_state
-    - sensor.nexus6p_battery
     - sensor.nexus6p_memfree
+    - sensor.nexus6p_wifi
+    - sensor.nexus6p_silent
 simonsbedroom:
   name: Simon's Bedroom
   entities:
@@ -35,12 +36,15 @@ simonsmedia:
 simonsauto:
   name: Automations
   entities:
+    - automation.automatically_wake_up_simon_with_the_briefing
+    - automation.prepare_room_for_bedtime
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.switch_on_the_heater_in_the_morning
 simonstats:
   name: Statistics
   entities:
+    - sensor.todays_sleep_simon
     - sensor.simon__mice_clicked
     - sensor.simon__keys_pressed
     - sensor.sleep_simon

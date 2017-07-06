@@ -3,13 +3,26 @@
     platform: sun
     event: sunset
     offset: "01:00:00"
-  condition:
-    condition: state
-    entity_id: device_tracker.simon_iphone
-    state: home
   action:
-    service: homeassistant.turn_on
-    entity_id: light.simons_bedroom
+    - service: homeassistant.turn_on
+      entity_id: light.simons_bedroom
+    - service: notify.discord
+      data:
+        message: "Your lights were turned on automatically, because it's now one hour after sunset."
+        target: 314277320552611840
+
+- alias: "Prepare room for bedtime"
+  trigger:
+    platform: time
+    at: '20:00:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: scene.goodnight_simon
+    - service: notify.discord
+      data:
+        message: "Your room is preparing for when you head to bed, because it's now 8PM."
+        target: 314277320552611840
+
 - alias: "Simon home? Wake up with bedroom lights"
   trigger:
     platform: sun
@@ -18,9 +31,6 @@
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: device_tracker.simonsiphone
-        state: home
       - condition: time
         weekday:
           - mon

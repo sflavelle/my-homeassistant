@@ -30,3 +30,8 @@
       command_off: docker stop jackett
       command_state: "docker ps | grep jackett"
       friendly_name: Jackett
+    forever_homebridge:
+      command_on: forever start -o .homebridge/out.log /usr/local/bin/homebridge
+      command_off: forever stop /usr/local/bin/homebridge
+      command_state: "forever list | grep homebridge"
+      friendly_name: Homebridge

@@ -7,4 +7,4 @@
     service: notify.discord
     data_template:
       message: "*Bucket was switched {{ states('switch.docker_bucket') }}*\n{% if is_state('switch.docker_bucket', 'off') %}*This usually shouldn't happen. Bucket might be updating, otherwise <@49288117307310080> should check Docker's console.*{% endif %}"
-      target: 
+      target: 314277320552611840 

@@ -154,10 +154,10 @@ shell_command:
 scene:
   - name: Goodnight Simon
     entities:
-      switch.heater_switch: on
+      switch.simons_heater: on
       light.simons_bedroom:
         state: on
-        brightness: 10
+        brightness: 1
 
 input_select: !include_dir_merge_named cfg/input_select/
 

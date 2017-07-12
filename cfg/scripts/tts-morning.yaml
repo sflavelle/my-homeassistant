@@ -1,6 +1,8 @@
 morningbriefing_simon:
   alias: Simon's Briefing
   sequence:
+    - delay:
+        seconds: 10
     - service: ifttt.trigger
       data_template:
         event: "ha_voip_message"

@@ -23,8 +23,6 @@ group.locations:
   state_card_mode: badges
 light.simons_bedroom:
   show_last_changed: true
-  state_card_mode: break-slider-toggle
-  stretch_slider: true
   friendly_names:
     group.simonsbedroom: Light
 switch.simons_heater:
@@ -110,12 +108,16 @@ group.all_devices:
 # Fancy Ping Icons
 binary_sensor.simons_mac_mini:
   icon: mdi:apple
+  show_last_changed: true
 binary_sensor.simons_windows_pc:
   icon: mdi:desktop-tower
+  show_last_changed: true
 binary_sensor.martins_laptop:
   icon: mdi:laptop-windows
+  show_last_changed: true
 binary_sensor.cassies_pc:
   icon: mdi:desktop-tower
+  show_last_changed: true
 binary_sensor.epson_wf3640_multifunction_printer:
   icon: mdi:printer
 binary_sensor.nintendo_wii_u:

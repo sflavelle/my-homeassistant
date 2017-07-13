@@ -10,3 +10,7 @@ mediaserver:
     - weblink.cardigann
     - switch.docker_jackett
     - weblink.jackett
+ha_server:
+  name: Home Assistant Server
+  entities:
+    - switch.forever_homebridge

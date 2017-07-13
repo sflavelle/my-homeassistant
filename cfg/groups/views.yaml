@@ -67,5 +67,6 @@ settings:
     - group.tedbeet
     - group.autopresence
     - group.mediaserver
+    - group.ha_server
     - group.all_devices
     - group.auto_testing

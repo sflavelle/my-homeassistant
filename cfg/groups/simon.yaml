@@ -27,6 +27,7 @@ simonsbedroom:
         - light.simons_bedroom
         - switch.simons_heater
         - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
+        - automation.only_run_the_heater_for_two_hours
 simonsmedia:
   name: Now Playing
   entities:
@@ -41,6 +42,7 @@ simonsauto:
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.switch_on_the_heater_in_the_morning
+    - automation.only_run_the_heater_for_two_hours
 simonstats:
   name: Statistics
   entities:

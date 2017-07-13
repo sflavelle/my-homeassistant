@@ -25,9 +25,8 @@
 
 - alias: "Simon home? Wake up with bedroom lights"
   trigger:
-    platform: sun
-    event: sunrise
-    offset: "-01:00:00"
+    platform: time
+    at: '07:00:00'
   condition:
     condition: and
     conditions:

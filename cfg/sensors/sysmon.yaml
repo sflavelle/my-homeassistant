@@ -18,4 +18,3 @@
     - 'swap_free'
     - 'processor_load'
     - 'process_running'
-    - 'cpu_temp'

@@ -9,3 +9,13 @@
       arg: /Volumes/Media HD
     - type: disk_free
       arg: /
+
+- platform: glances
+  host: 192.168.1.41
+  resources:
+    - 'disk_free'
+    - 'memory_free'
+    - 'swap_free'
+    - 'processor_load'
+    - 'process_running'
+    - 'cpu_temp'

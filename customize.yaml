@@ -90,7 +90,7 @@ automation.automatically_wake_up_simon_with_the_briefing:
 automation.prepare_room_for_bedtime:
   icon: mdi:sleep
 automation.simon_home_turn_bedroom_light_on_after_dark:
-  icon: mdi:lightbulb  
+  icon: mdi:lightbulb
 automation.simon_home_wake_up_with_bedroom_lights:
   icon: mdi:weather-sunset-up
 automation.switch_on_the_heater_in_the_morning:
@@ -146,3 +146,15 @@ sensor.dark_sky_precip_probability:
   friendly_name: Rain Probability
 sensor.dark_sky_temperature:
   friendly_name: Current Temp
+
+# Custom Glances Names (for Simon-Windows)
+sensor.glances_cpu_load:
+  friendly_name: CPU Load
+sensor.glances_disk_free:
+  friendly_name: Disk Free C:\
+sensor.glances_ram_free:
+  friendly_name: RAM Free
+sensor.glances_running:
+  friendly_name: Running Processes
+sensor.glances_swap_free:
+  friendly_name: Swap Free

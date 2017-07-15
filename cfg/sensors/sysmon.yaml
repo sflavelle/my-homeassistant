@@ -18,3 +18,18 @@
     - 'swap_free'
     - 'processor_load'
     - 'process_running'
+
+# Right now on a stock Glances config HA can only see the
+# first (system) drive. I'm getting two more connected to
+# the Glances system through the API here
+- platform: rest
+  resource: http://127.0.0.1:61208/api/2/fs/device_name/D:%5C
+  name: Glances Disk Free D
+  value_template: '{{ value_json.free / 1024 / 1024 | round(0)}}'
+  unit_of_measurement: 'GiB'
+
+- platform: rest
+  resource: http://127.0.0.1:61208/api/2/fs/device_name/E:%5C
+  name: Glances Disk Free E
+  value_template: '{{ value_json.free / 1024 / 1024 | round(0)}}'
+  unit_of_measurement: 'GiB'

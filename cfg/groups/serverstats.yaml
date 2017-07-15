@@ -8,3 +8,11 @@ serverstats:
     - sensor.cpu_use
     - sensor.disk_free_volumesmedia_hd
     - sensor.disk_free_
+windowsstats:
+  name: Simon's PC Statistics
+  entities:
+    - sensor.glances_cpu_load
+    - sensor.glances_disk_free
+    - sensor.glances_ram_free
+    - sensor.glances_running
+    - sensor.glances_swap_free

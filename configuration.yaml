@@ -95,13 +95,6 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
-  - platform: arpscan_tracker
-    interval_seconds: 15
-    consider_home: 60
-    track_new_devices: true
-    scan_options: --interface=en1 -l -g -t1 -q
-    exclude:
-      - 192.168.1.1
 
 zone:
   - name: Home
@@ -112,9 +105,6 @@ zone:
     latitude: !secret loc_parents_lat
     longitude: !secret loc_parents_lon
     icon: mdi:castle
-
-emulated_hue:
-  listen_port: 80
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/

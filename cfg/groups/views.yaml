@@ -1,6 +1,7 @@
 default_view:
   name: Home
   view: yes
+  icon: mdi:home
   entities:
     - sun.sun
     - sensor.dark_sky_summary
@@ -42,6 +43,7 @@ weather_view:
 simon_view:
   name: Simon
   view: yes
+  icon: mdi:account
   entities:
     - sensor.pocketcasts_unlistened_episodes
     - sensor.speedtest_download
@@ -58,15 +60,25 @@ simon_view:
     - group.simonstats
     - group.simonsmedia
     - group.simonsauto
+cassmartin_view:
+  name: Cass and Martin
+  view: yes
+  icon: mdi:account-multiple
+servers:
+  name: Servers
+  view: yes
+  icon: mdi:server-network
+  entities:
+    - group.serverstats
+    - group.windowsstats
+    - group.mediaserver
 settings:
   name: Settings
   icon: mdi:settings
   view: yes
   entities:
-    - group.serverstats
     - group.tedbeet
     - group.autopresence
-    - group.mediaserver
     - group.ha_server
     - group.all_devices
     - group.auto_testing

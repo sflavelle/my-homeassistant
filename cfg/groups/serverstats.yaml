@@ -13,6 +13,8 @@ windowsstats:
   entities:
     - sensor.glances_cpu_load
     - sensor.glances_disk_free
+    - sensor.glances_disk_free_d
+    - sensor.glances_disk_free_e
     - sensor.glances_ram_free
     - sensor.glances_running
     - sensor.glances_swap_free

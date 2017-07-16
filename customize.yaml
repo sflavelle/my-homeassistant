@@ -151,7 +151,11 @@ sensor.dark_sky_temperature:
 sensor.glances_cpu_load:
   friendly_name: CPU Load
 sensor.glances_disk_free:
-  friendly_name: Disk Free C:\
+  friendly_name: Disk Free C:\ (System)
+sensor.glances_disk_free_d:
+  friendly_name: Disk Free D:\ (Data)
+sensor.glances_disk_free_e:
+  friendly_name: Disk Free E:\ (Recording)
 sensor.glances_ram_free:
   friendly_name: RAM Free
 sensor.glances_running:

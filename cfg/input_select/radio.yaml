@@ -1,0 +1,16 @@
+# Chromecast TV
+# Adapted from a forum post by Bob_NL
+# https://community.home-assistant.io/t/chromecast-radio-with-station-and-player-selection/12732
+audiostream:
+  name: 'Select Audio Stream:'
+  options:
+    - Soundscape - Forest Raindrops (56m)
+    - Soundscape - Thunderstorm 1 (1h)
+    - Soundscape - Wet Ambience 1 (2h5m)
+  icon: mdi:radio-tower
+audio_receiver:
+  name: 'Select Output:'
+  options:
+    - Simon's Room
+  # initial: All
+  icon: mdi:speaker

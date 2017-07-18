@@ -1,0 +1,14 @@
+radio:
+  alias: Play Audio
+  sequence:
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.audio_receiver", "Simon's Room") %} media_player.simons_bedroom_speaker
+          {% endif %}
+        media_content_id: >
+          {% if is_state("input_select.audiostream", "Soundscape - Wet Ambience 1 (2h5m)") %} http://127.0.0.1:8080/Music/Soundscapes/NewHouse-WetAmbience.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Thunderstorm 1 (1h)") %} http://127.0.0.1:8080/Music/Soundscapes/Simplynoise.com/Unknown%20Album/Thunderstorm%20Soundscape.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Forest Raindrops (56m)") %} http://127.0.0.1:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/05%20Forest%20Raindrops.mp3
+          {% endif %}
+        media_content_type: 'music'

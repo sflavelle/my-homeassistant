@@ -84,6 +84,9 @@ media_player.lounge:
 sensor.todays_sleep_simon:
   friendly_names:
     group.simonstats: Today's Sleep
+media_player.simons_bedroom_speaker:
+  friendly_names:
+    group.simonsmedia: Chromecast Audio
 
 automation.automatically_wake_up_simon_with_the_briefing:
   icon: mdi:alarm

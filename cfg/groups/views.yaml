@@ -22,10 +22,13 @@ tv_view:
   entities:
     - group.twitch
     - group.cctv
+    - group.radioplayer
+    - media_player.lounge_speakers
     - media_player.playstation_4
     - media_player.lounge
     - media_player.apple_tv
     - media_player.simons_room
+
 weather_view:
   name: Weather
   icon: mdi:weather-sunny

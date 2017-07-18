@@ -31,6 +31,7 @@ simonsbedroom:
 simonsmedia:
   name: Now Playing
   entities:
+    - media_player.simons_bedroom_speaker
     - media_player.apple_tv
     - media_player.simons_room
     - media_player.spotify

@@ -12,5 +12,6 @@ audio_receiver:
   name: 'Select Output:'
   options:
     - Simon's Room
+    - Lounge Room
   # initial: All
   icon: mdi:speaker

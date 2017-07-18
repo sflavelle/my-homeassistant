@@ -9,6 +9,7 @@ This config currently uses the following devices (Australian URLs):
 - 1 x [WeMo Insight Switch](http://www.belkin.com/au/F7C029-Belkin/p/P-F7C029)
 - 1 x [Apple TV 4th Generation](https://www.apple.com/au/shop/buy-tv/apple-tv) (only 4th gen available)
 - 2 x [Google Chromecast 1st Generation](https://store.google.com/config/chromecast_2015?hl=en-AU) (only 2nd gen available)
+- 2 x [Google Chromecast Audio](https://store.google.com/product/chromecast_audio)
 
 # Software
 The configuration also makes use of these programs or custom components:

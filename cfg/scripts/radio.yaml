@@ -11,5 +11,11 @@ radio:
           {% if is_state("input_select.audiostream", "Soundscape - Wet Ambience 1 (2h5m)") %} http://192.168.1.40:8080/Music/Soundscapes/NewHouse-WetAmbience.mp3
           {% elif is_state("input_select.audiostream", "Soundscape - Thunderstorm 1 (1h)") %} http://192.168.1.40:8080/Music/Soundscapes/Simplynoise.com/Unknown%20Album/Thunderstorm%20Soundscape.mp3
           {% elif is_state("input_select.audiostream", "Soundscape - Forest Raindrops (56m)") %} http://192.168.1.40:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/05%20Forest%20Raindrops.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Rainstorm 1 (2h4m)") %} http://192.168.1.40:8080/Music/Soundscapes/Simon%20Says/May%207%20Storms.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Forest Nightfall (59m)") %} http://192.168.1.40:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/03%20Woodland%20Nightfall.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Mountain Stream (57m)") %} http://192.168.1.40:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/04%20Mountain%20Stream.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Monastery Garden (58m)") %} http://192.168.1.40:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/08%20Monastery%20Garden.mp3
+          {% elif is_state("input_select.audiostream", "Soundscape - Rainforest (58m)") %} http://192.168.1.40:8080/Music/Soundscapes/Relax%20With%20Nature/Relax%20With%20Nature/09%20Rainforest.mp3
+          {% elif is_state("input_select.audiostream", "ABC News Radio") %} http://www.abc.net.au/res/streaming/audio/mp3/news_radio.pls
           {% endif %}
         media_content_type: 'music'

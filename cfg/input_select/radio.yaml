@@ -5,6 +5,8 @@ audiostream:
   name: 'Select Audio Stream:'
   options:
     - ABC News Radio
+    - ABC Radio Melbourne
+    - Hit 91.9 FM Bendigo
     - Soundscape - Forest Nightfall (59m)
     - Soundscape - Forest Raindrops (56m)
     - Soundscape - Mountain Stream (57m)

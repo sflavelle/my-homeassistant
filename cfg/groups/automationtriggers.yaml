@@ -1,4 +1,0 @@
-auto_testing:
-  name: Manually Trigger Automations
-  entities:
-    - automation.remind_everyone_when_bins_need_to_go_out

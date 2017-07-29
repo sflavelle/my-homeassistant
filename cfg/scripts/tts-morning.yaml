@@ -3,10 +3,10 @@ morningbriefing_simon:
   sequence:
     - delay:
         seconds: 10
-    - service: ifttt.trigger
+    - service: tts.google_say
+      entity_id: media_player.simons_bedroom_speaker
       data_template:
-        event: "ha_voip_message"
-        value1: >
+        message: >
           {% if now().strftime("%H")|int < 12 %}
           Good morning, Simon.
           {% elif now().strftime("%H")|int < 18 %}

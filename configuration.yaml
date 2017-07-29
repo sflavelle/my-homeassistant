@@ -82,29 +82,14 @@ camera:
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
     name: Rain Radar
     limit_refetch_to_url_change: true
-  - platform: generic
-    still_image_url: https://icons.wunderground.com/webcamramdisk/b/e/BendigoPete/1/current.jpg
-    name: Mitchell/Palmerson St
 
 
 # Various Location Tracking
 
 device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 150
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
-
-zone:
-  - name: Home
-    latitude: !secret loc_lat
-    longitude: !secret loc_lon
-    radius: 150
-  - name: Parents
-    latitude: !secret loc_parents_lat
-    longitude: !secret loc_parents_lon
-    icon: mdi:castle
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
@@ -128,15 +113,9 @@ automation: !include_dir_merge_list cfg/auto/
 weblink:
   entities:
     - name: Router
-      url: http://192.168.1.1/
+      url: http://192.168.0.1/
     - name: Home Assistant
       url: https://home-assistant.io
-    - name: Sonarr
-      url: http://192.168.1.6:8909
-    - name: Cardigann
-      url: http://192.168.1.6:5060
-    - name: Jackett
-      url: http://192.168.1.6:5117
 
 shell_command:
   livestream: livestreamer --twitch-oauth-token gn4dfwud6on2x446oith2pon3sso5g {{url}} 720p --player-passthrough hls -p castnow -a '"{filename}" --device "{{device}}" --exit'

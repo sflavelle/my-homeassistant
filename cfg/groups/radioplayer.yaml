@@ -1,6 +1,0 @@
-radioplayer:
-  name: Radio Player
-  entities:
-    - input_select.audiostream
-    - input_select.audio_receiver
-    - script.radio

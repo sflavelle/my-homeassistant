@@ -1,9 +1,0 @@
-- platform: universal
-  name: All Chromecast
-  children:
-    - media_player.lounge
-    - media_player.simons_room
-- platform: universal
-  name: All Audio
-  children:
-    - media_player.mac_mini_speaker

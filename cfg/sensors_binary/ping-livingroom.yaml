@@ -1,9 +1,0 @@
-- platform: ping
-  host: 192.168.1.100
-  name: Xbox One
-- platform: ping
-  host: 192.168.1.101
-  name: Nintendo Wii U
-- platform: ping
-  host: 192.168.1.102
-  name: Playstation 4

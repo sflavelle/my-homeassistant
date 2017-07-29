@@ -1,26 +1,14 @@
 "*.*":
   custom_ui_state_card: custom-ui
 
-# Hide Extra Plex Clients
-media_player.plex_web_chrome:
-  hidden: true
-media_player.simonwindows:
-  hidden: true
-media_player.simontv:
-  hidden: true
-media_player.all_chromecast:
-  hidden: true
-
+# Hide from Homebridge etc
 switch.docker_*:
   homebridge_hidden: true
 
-# Custom-UI specific changes
+# Badge groups
 group.simonsdevicebadges:
   state_card_mode: badges
-group.weatherbadges:
-  state_card_mode: badges
-group.locations:
-  state_card_mode: badges
+
 light.simons_bedroom:
   show_last_changed: true
   friendly_names:
@@ -37,8 +25,6 @@ scene.goodnight_simon:
   friendly_names:
     group.simonsroom: Prepare For Bed
   icon: mdi:hotel
-camera.ip_webcam:
-  friendly_name: Lounge Room / "Dog Cam"
 sensor.simon__mice_clicked:
   icon: mdi:mouse
   friendly_names:
@@ -63,30 +49,16 @@ sensor.sleep_simon:
   icon: mdi:sleep
   friendly_names:
     group.simonstats: Last Sleep
+
+# Make Twitch/Steam sensors show what game is being played
 sensor.gamesdonequick:
   extra_data_template: '{game}'
 sensor.vinesauce:
   extra_data_template: '{game}'
 sensor.simonsayslps:
   extra_data_template: '{game}'
-sensor.steam_76561198027088353:
-  extra_data_template: '{Game}'
-sensor.steam_76561198067639524:
-  extra_data_template: '{Game}'
 sensor.steam_76561197986199864:
   extra_data_template: '{Game}'
-media_player.apple_tv:
-  friendly_names:
-    group.tv_view: Simon's Apple TV
-media_player.lounge:
-  friendly_names:
-    group.tv_view: Lounge Room Chromecast
-sensor.todays_sleep_simon:
-  friendly_names:
-    group.simonstats: Today's Sleep
-media_player.simons_bedroom_speaker:
-  friendly_names:
-    group.simonsmedia: Chromecast Audio
 
 automation.automatically_wake_up_simon_with_the_briefing:
   icon: mdi:alarm

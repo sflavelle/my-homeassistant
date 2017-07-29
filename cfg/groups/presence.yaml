@@ -1,0 +1,5 @@
+presence:
+  name: Who's Home?
+  entities:
+    - device_tracker.michelesiphone
+    - device_tracker.simonsiphone

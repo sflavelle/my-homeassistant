@@ -71,12 +71,6 @@ ios:
 mqtt:
   broker: 127.0.0.1
 
-wemo:
-  static:
-    # Turns out these still need to be detected manually, so giving them fixed IPs
-    - 192.168.1.90
-    - 192.168.1.91
-
 camera:
   - platform: generic
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
@@ -90,6 +84,10 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
+  - platform: netgear
+    host: 192.168.0.1
+    username: !secret router_user
+    password: !secret router_pass
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/

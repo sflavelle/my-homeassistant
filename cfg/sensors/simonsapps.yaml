@@ -1,11 +1,3 @@
 - platform: pocketcasts
   username: !secret pcasts_email
   password: !secret pcasts_pass
-  
-- platform: history_stats
-  name: "Today's Sleep (Simon)"
-  entity_id: sensor.asleep_simon
-  state: 'asleep'
-  type: time
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'

@@ -1,0 +1,7 @@
+cctv:
+  name: Chromecast TV
+  entities:
+    - input_select.tv_station
+    - input_select.tv_receiver
+    - script.cctv
+    - script.cctv_twitch

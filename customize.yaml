@@ -59,6 +59,16 @@ sensor.simonsayslps:
   extra_data_template: '{game}'
 sensor.steam_76561197986199864:
   extra_data_template: '{Game}'
+sensor.steam_76561198017715656:
+  extra_data_template: '{Game}'
+sensor.steam_76561198020794803:
+  extra_data_template: '{Game}'
+sensor.steam_76561198025423254:
+  extra_data_template: '{Game}'
+sensor.steam_76561198025395819:
+  extra_data_template: '{Game}'
+sensor.steam_76561198033550036:
+  extra_data_template: '{Game}'
 
 automation.automatically_wake_up_simon_with_the_briefing:
   icon: mdi:alarm

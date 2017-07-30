@@ -134,3 +134,8 @@ input_boolean:
     initial: off
 
 script: !include_dir_merge_named cfg/scripts/
+
+media_extractor:
+  customize:
+    media_player.simons_speaker:
+      video: bestaudio[ext=mp3]

@@ -4,7 +4,7 @@ radio:
     - service: media_player.play_media
       data_template:
         entity_id: >
-          {% if is_state("input_select.audio_receiver", "Simon's Room") %} media_player.simons_bedroom_speaker
+          {% if is_state("input_select.audio_receiver", "Simon's Room") %} media_player.simons_speaker
           {% elif is_state("input_select.audio_receiver", "Lounge Room") %} media_player.lounge_speakers
           {% endif %}
         media_content_id: >

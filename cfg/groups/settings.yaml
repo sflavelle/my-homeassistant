@@ -1,0 +1,5 @@
+tedbeet:
+  name: TedBeet
+  entities:
+    - switch.docker_bucket
+    - switch.docker_beatbot

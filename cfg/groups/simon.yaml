@@ -1,16 +1,3 @@
-# View
-simonview:
-  name: Simon
-  view: yes
-  entities:
-    - group.simon
-    - group.simonsdevices
-    - group.simonsbedroom
-    - group.simonsmedia
-    - group.simonsauto
-    - group.simonstats
-
-# Groups
 simon:
   name: Simon
   entities:
@@ -37,14 +24,14 @@ simonsdevices:
 simonsbedroom:
   name: Simon's Bedroom
   entities:
-        - light.simons_bedroom
+        - light.simon
         - switch.simons_heater
         - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
         - automation.only_run_the_heater_for_two_hours
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.simons_bedroom_speaker
+    - media_player.simons_speaker
     - media_player.apple_tv
     - media_player.simons_room
     - media_player.spotify

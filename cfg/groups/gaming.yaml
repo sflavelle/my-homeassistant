@@ -13,3 +13,11 @@ xboxaccounts:
   entities:
     - sensor.mikkauren
     - sensor.izzyeatssouls
+
+twitch:
+  name: Twitch Streams
+  entities:
+    - sensor.bobross
+    - sensor.misterrogers
+    - sensor.gamesdonequick
+    - sensor.vinesauce

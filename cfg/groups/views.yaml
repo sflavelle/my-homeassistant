@@ -1,0 +1,73 @@
+default_view:
+  view: yes
+  name: Home
+  entities:
+    - sensor.dark_sky_summary
+    - sun.sun
+    - sensor.external_ip
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - group.presence
+    - group.radioplayer
+    - group.cctv
+
+weather_view:
+  name: Weather
+  icon: mdi:weather-sunny
+  view: yes
+  entities:
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_daily_max_precip_intensity
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - group.weather
+    - camera.rain_radar
+
+gaming_view:
+  name: Gaming
+  icon: mdi:gamepad-variant
+  view: yes
+  entities:
+    - group.steamaccounts
+    - group.xboxaccounts
+    - group.twitch
+
+simonview:
+  name: Simon
+  view: yes
+  entities:
+    - binary_sensor.workday_sensor
+    - sensor.pocketcasts_unlistened_episodes
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.breaches_neurariagmailcom
+    - sensor.breaches_neurarioicloudcom
+    - sensor.breaches_simonflavellegmailcom
+    - sensor.breaches_simonflavelleicloudcom
+    - sensor.breaches_simonsayslpsgmailcom
+    - sensor.breaches_simonsayslpsicloudcom
+    - group.simon
+    - group.simonsdevices
+    - group.simonsbedroom
+    - group.simonsmedia
+    - group.simonsauto
+    - group.simonstats
+
+servers:
+  name: Servers
+  view: yes
+  icon: mdi:server-network
+  entities:
+    - group.serverstats
+
+settings:
+  name: Settings
+  icon: mdi:settings
+  view: yes
+  entities:
+    - group.tedbeet
+    - group.ha_server
+    - group.all_devices
+    - group.auto_testing

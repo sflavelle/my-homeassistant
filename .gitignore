@@ -12,6 +12,7 @@ home-assistant_v2.db*
 lib
 deps
 tts
+panels
 secrets.yaml
 known_devices.yaml
 *.conf
@@ -28,3 +29,4 @@ custom_components
 cfg/sensors/pwned.yaml
 google_calendars.yaml
 ps4-games.json
+update.sh

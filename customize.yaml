@@ -9,8 +9,12 @@ switch.docker_*:
 group.simonsdevicebadges:
   state_card_mode: badges
 
-light.simons_bedroom:
+light.simon:
   show_last_changed: true
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    pin: true
   friendly_names:
     group.simonsbedroom: Light
 switch.simons_heater:

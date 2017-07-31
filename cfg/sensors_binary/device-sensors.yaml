@@ -1,0 +1,18 @@
+- platform: template
+  sensors: 
+    pc_simon: # Desktops
+      friendly_name: "Simon's PC"
+      value_template: " {{ states.device_tracker.simonswindows.state == 'home' }} "
+      entity_id: device_tracker.simonswindows
+    pc_simonmac:
+      friendly_name: "Simon's Mac Mini"
+      value_template: " {{ states.device_tracker.simonsays.state == 'home' }} "
+      entity_id: device_tracker.simonsays
+    pc_beth:
+      friendly_name: "Beth's PC"
+      value_template: " {{ states.device_tracker.bethpc.state == 'home' }} "
+      entity_id: device_tracker.bethpc
+    pc_matt:
+      friendly_name: "Matt's PC"
+      value_template: " {{ states.device_tracker.desktop11ft84o.state == 'home' }} "
+      entity_id: device_tracker.desktop11ft84o

@@ -3,3 +3,12 @@ presence:
   entities:
     - device_tracker.michelesiphone
     - device_tracker.simonsiphone
+    - device_tracker.bethsiphone
+
+computers:
+  name: Computers
+  entities:
+    - binary_sensor.pc_matt
+    - binary_sensor.pc_simon
+    - binary_sensor.pc_simonmac
+    - binary_sensor.pc_beth

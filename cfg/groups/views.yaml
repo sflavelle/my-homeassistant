@@ -8,6 +8,7 @@ default_view:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - group.presence
+    - group.computers
     - group.radioplayer
     - group.cctv
 

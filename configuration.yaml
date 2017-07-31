@@ -88,6 +88,8 @@ device_tracker:
     host: 192.168.0.1
     username: !secret router_user
     password: !secret router_pass
+    interval_seconds: 30
+    consider_home: 300
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/

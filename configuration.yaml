@@ -31,6 +31,15 @@ http:
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret url
 
+recorder:
+  purge_days: 7
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+
+
 # Checks for available updates
 updater:
 
@@ -51,6 +60,10 @@ logbook:
   exclude:
     domains:
       - group
+    entities:
+      - sensor.average_load_15m
+      - sensor.average_load_1m
+      - sensor.external_ip
 
 # Track the sun
 sun:
@@ -124,7 +137,7 @@ scene:
   - name: Goodnight Simon
     entities:
       switch.simons_heater: on
-      light.simons_bedroom:
+      light.simon:
         state: on
         brightness: 1
 

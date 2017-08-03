@@ -35,7 +35,7 @@ gaming_view:
     - group.xboxaccounts
     - group.twitch
 
-simonview:
+simon_view:
   name: Simon
   view: yes
   entities:

@@ -9,27 +9,3 @@
       arg: /Volumes/Media HD
     - type: disk_free
       arg: /
-
-- platform: glances
-  host: 192.168.0.60
-  resources:
-    - 'disk_free'
-    - 'memory_free'
-    - 'swap_free'
-    - 'processor_load'
-    - 'process_running'
-
-# Right now on a stock Glances config HA can only see the
-# first (system) drive. I'm getting two more connected to
-# the Glances system through the API here
-# - platform: rest
-#   resource: http://192.168.1.41:61208/api/2/fs/device_name/D:%5C
-#   name: Glances Disk Free D
-#   value_template: '{{ value_json["D:\\"][0].free / 1024 / 1024 / 1024 | round | int }}'
-#   unit_of_measurement: 'GiB'
-#
-# - platform: rest
-#   resource: http://192.168.1.41:61208/api/2/fs/device_name/E:%5C
-#   name: Glances Disk Free E
-#   value_template: '{{ value_json["E:\\"][0].free / 1024 / 1024 / 1024 | round | int }}'
-#   unit_of_measurement: 'GiB'

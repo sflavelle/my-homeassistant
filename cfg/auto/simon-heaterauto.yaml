@@ -1,0 +1,41 @@
+- alias: "Turn off the heater two hours after this is switched on"
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
+    to: 'on'
+    for:
+      hours: 2
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.simons_heater
+    - service: notify.ios_simons_iphone
+      data_template:
+        message: "Your heater was switched off at {{ now() }}."
+    - service: homeassistant.turn_off
+      entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
+- alias: "ONLY run the heater for two hours"
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.simons_heater
+    to: 'on'
+    for:
+      hours: 2
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.simons_heater
+    - service: notify.ios_simons_iphone
+      data_template:
+        message: "Your heater was switched off at {{ now() }}."
+- alias: "Switch on the heater in the morning"
+  trigger:
+    platform: time
+    at: '06:45:00'
+  condition:
+    condition: state
+    entity_id: device_tracker.simonsiphone
+    state: 'home'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.simons_heater

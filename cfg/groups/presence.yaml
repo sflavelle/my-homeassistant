@@ -4,6 +4,7 @@ presence:
     - device_tracker.michelesiphone
     - device_tracker.simonsiphone
     - device_tracker.bethsiphone
+    - device_tracker.jonosiphone
 
 computers:
   name: Computers
@@ -12,3 +13,13 @@ computers:
     - binary_sensor.pc_simon
     - binary_sensor.pc_simonmac
     - binary_sensor.pc_beth
+    - binary_sensor.pc_jono
+    - binary_sensor.pc_izzy
+    - binary_sensor.laptop_mum
+
+consoles:
+  name: Consoles
+  entities:
+    - binary_sensor.console_wiiu
+    - binary_sensor.console_ps4
+    - binary_sensor.console_xb1

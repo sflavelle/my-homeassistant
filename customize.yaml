@@ -57,23 +57,32 @@ sensor.sleep_simon:
 
 # Make Twitch/Steam sensors show what game is being played
 sensor.gamesdonequick:
-  extra_data_template: '{game}'
+  extra_data_template: >
+    ${attributes.game !== "None" ? (attributes.game) : ''}
 sensor.vinesauce:
-  extra_data_template: '{game}'
+  extra_data_template: >
+    ${attributes.game !== "None" ? (attributes.game) : ''}
 sensor.simonsayslps:
-  extra_data_template: '{game}'
+  extra_data_template: >
+    ${attributes.game !== "None" ? (attributes.game) : ''}
 sensor.steam_76561197986199864:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 sensor.steam_76561198017715656:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 sensor.steam_76561198020794803:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 sensor.steam_76561198025423254:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 sensor.steam_76561198025395819:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 sensor.steam_76561198033550036:
-  extra_data_template: '{Game}'
+  extra_data_template: >
+    ${attributes.Game !== "None" ? (attributes.Game) : ''}
 
 automation.automatically_wake_up_simon_with_the_briefing:
   icon: mdi:alarm
@@ -102,20 +111,26 @@ binary_sensor.pc_simonmac:
 binary_sensor.pc_simon:
   icon: mdi:desktop-tower
   show_last_changed: true
-binary_sensor.martins_laptop:
-  icon: mdi:laptop-windows
-  show_last_changed: true
 binary_sensor.pc_matt:
   icon: mdi:desktop-tower
   show_last_changed: true
 binary_sensor.pc_beth:
   icon: mdi:desktop-tower
   show_last_changed: true
-binary_sensor.nintendo_wii_u:
+binary_sensor.pc_jono:
+  icon: mdi:desktop-tower
+  show_last_changed: true
+binary_sensor.pc_izzy:
+  icon: mdi:desktop-tower
+  show_last_changed: true
+binary_sensor.laptop_mum:
+  icon: mdi:laptop-windows
+  show_last_changed: true
+binary_sensor.console_wiiu:
   icon: mdi:wiiu
-binary_sensor.playstation_4:
+binary_sensor.ps4:
   icon: mdi:playstation
-binary_sensor.xbox_one:
+binary_sensor.xb1:
   icon: mdi:xbox
 
 # Custom DarkSky Names

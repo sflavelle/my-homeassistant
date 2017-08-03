@@ -15,8 +15,9 @@ light.simon:
   stretch_slider: true
   slider_theme:
     pin: true
+  friendly_name: Simon's Bedroom Light
   friendly_names:
-    group.simonsbedroom: Light
+    group.simon_view: Light
 switch.simons_heater:
   show_last_changed: true
   icon: mdi:radiator
@@ -95,20 +96,21 @@ group.all_devices:
   hidden: false
 
 # Fancy Ping Icons
-binary_sensor.simons_mac_mini:
+binary_sensor.pc_simonmac:
   icon: mdi:apple
   show_last_changed: true
-binary_sensor.simons_windows_pc:
+binary_sensor.pc_simon:
   icon: mdi:desktop-tower
   show_last_changed: true
 binary_sensor.martins_laptop:
   icon: mdi:laptop-windows
   show_last_changed: true
-binary_sensor.cassies_pc:
+binary_sensor.pc_matt:
   icon: mdi:desktop-tower
   show_last_changed: true
-binary_sensor.epson_wf3640_multifunction_printer:
-  icon: mdi:printer
+binary_sensor.pc_beth:
+  icon: mdi:desktop-tower
+  show_last_changed: true
 binary_sensor.nintendo_wii_u:
   icon: mdi:wiiu
 binary_sensor.playstation_4:

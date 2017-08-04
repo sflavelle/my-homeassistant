@@ -5,6 +5,7 @@ simon:
     - scene.goodnight_simon
     - sensor.asleep_simon
     - input_boolean.centrelink_reported_simon
+    - sensor.simon__video_editing
 simonsdevicebadges:
   entities:
     - device_tracker.simonsiphone
@@ -21,6 +22,9 @@ simonsdevices:
     - sensor.nexus6p_memfree
     - sensor.nexus6p_wifi
     - sensor.nexus6p_silent
+    - device_tracker.simonsiphone
+    - binary_sensor.pc_simon
+    - switch.wake_simons_pc
 simonsbedroom:
   name: Simon's Bedroom
   entities:

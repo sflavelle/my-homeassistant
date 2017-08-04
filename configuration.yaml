@@ -156,3 +156,5 @@ media_extractor:
     media_player.simons_speaker:
       video: bestaudio
       audio: bestaudio
+
+wake_on_lan:

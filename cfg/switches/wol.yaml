@@ -4,6 +4,6 @@
   mac_address: "D0-50-99-2E-D3-19"
   turn_off:
     service: mqtt.publish
-      data:
-        topic: /eventghost/simon/remote
-        payload: "shutdown"
+    data:
+      topic: /eventghost/simon/remote
+      payload: "shutdown"

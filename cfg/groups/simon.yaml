@@ -6,25 +6,20 @@ simon:
     - sensor.asleep_simon
     - input_boolean.centrelink_reported_simon
     - sensor.simon__video_editing
-simonsdevicebadges:
-  entities:
-    - device_tracker.simonsiphone
-    - sensor.nexus6p_battery
-    - sensor.simons_iphone_battery_level
-    - sensor.simon_flavelles_ipad_battery_level
-    - sensor.simon_watchbattery
 simonsdevices:
   name: Simon's Devices
   entities:
-    - group.simonsdevicebadges
-    - sensor.simons_iphone_battery_state
-    - sensor.simon_flavelles_ipad_battery_state
+    - sensor.simons_iphone_battery_level
+    - sensor.simon_flavelles_ipad_battery_level
+    - sensor.simon_watchbattery
+    - sensor.nexus6p_battery
     - sensor.nexus6p_memfree
     - sensor.nexus6p_wifi
     - sensor.nexus6p_silent
-    - device_tracker.simonsiphone
+    - binary_sensor.pc_simonmac
     - binary_sensor.pc_simon
     - switch.wake_simons_pc
+    - binary_sensor.3ds_simon
 simonsbedroom:
   name: Simon's Bedroom
   entities:

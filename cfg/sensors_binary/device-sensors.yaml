@@ -41,3 +41,7 @@
       friendly_name: "Xbox One"
       value_template: " {{ states.device_tracker.xboxone.state == 'home' }} "
       entity_id: device_tracker.xboxone
+    3ds_simon:
+      friendly_name: "Simon's Nintendo 3DS"
+      value_template: " {{ states.device_tracker.simons_nintendo_3ds.state == 'home' }} "
+      entity_id: device_tracker.simons_nintendo_3ds

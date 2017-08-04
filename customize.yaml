@@ -16,28 +16,33 @@ light.simon:
   slider_theme:
     pin: true
   friendly_name: Simon's Bedroom Light
-  friendly_names:
-    group.simon_view: Light
+  group:
+    group.simon_view:
+      friendly_name: Light
 switch.simons_heater:
   show_last_changed: true
   icon: mdi:radiator
   extra_badge:
     attribute: current_power_w
     unit: W
-  friendly_names:
-    group.simonsbedroom: Heater
+  group:
+    group.simon_view:
+      friendly_name: Heater
 scene.goodnight_simon:
-  friendly_names:
-    group.simonsroom: Prepare For Bed
+  group:
+    group.simon_view:
+      friendly_name: Prepare For Bed
   icon: mdi:hotel
 sensor.simon__mice_clicked:
   icon: mdi:mouse
-  friendly_names:
-    group.simonstats: Buttons Clicked
+  group:
+    group.simon_view:
+      friendly_name: Buttons Clicked
 sensor.simon__keys_pressed:
   icon: mdi:keyboard
-  friendly_names:
-    group.simonstats: Keys Pressed
+  group:
+    group.simon_view:
+      friendly_name: Keys Pressed
 script.cctv:
   icon: mdi:play
   friendly_name: Start Playing
@@ -48,12 +53,23 @@ script.morningbriefing_simon:
   icon: mdi:phone-in-talk
 input_boolean.centrelink_reported_simon:
   icon: mdi:bank
-  friendly_names:
-    group.simonsroom: Reported to Centrelink?
+  group:
+    group.simon_view:
+      friendly_name: Reported to Centrelink?
 sensor.sleep_simon:
   icon: mdi:sleep
   friendly_names:
     group.simonstats: Last Sleep
+switch.wake_simons_pc:
+  confirm_controls_show_lock: true
+  group:
+    group.simon_view:
+      friendly_name: PC Power
+sensor.simon__video_editing:
+  group:
+    group.simon_view:
+      friendly_name: Video Editing?
+  icon: mdi:video
 
 # Make Twitch/Steam sensors show what game is being played
 sensor.gamesdonequick:

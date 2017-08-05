@@ -5,7 +5,7 @@ cctv:
       data_template:
         entity_id: >
           {% if is_state("input_select.tv_receiver", "Living Room") %} media_player.lounge
-          {% elif is_state("input_select.tv_receiver", "Simon's Room") %} media_player.simons_room
+          {% elif is_state("input_select.tv_receiver", "Simon's Room") %} media_player.simontv
           {% elif is_state("input_select.tv_receiver", "All") %} media_player.all_chromecast
           {% endif %}
         media_content_id: >

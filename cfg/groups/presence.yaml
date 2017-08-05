@@ -9,6 +9,7 @@ presence:
 computers:
   name: Computers
   entities:
+    - sensor.external_ip
     - binary_sensor.pc_matt
     - binary_sensor.pc_simon
     - binary_sensor.pc_simonmac

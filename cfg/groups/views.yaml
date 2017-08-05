@@ -4,7 +4,6 @@ default_view:
   entities:
     - sensor.dark_sky_summary
     - sun.sun
-    - sensor.external_ip
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.dark_sky_temperature

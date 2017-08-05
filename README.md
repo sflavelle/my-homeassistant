@@ -18,10 +18,11 @@ The configuration also makes use of these programs or custom components:
 - [HA History Stats](https://github.com/bokub/ha-history-stats)
 
 # Things I would like to do next:
-- [ ] Security cameras / "dog cam"
-- [x] Figure out weather radar "camera"
-- [ ] Look at this Z-Wave thing?
-- [ ] Study heater switch
+- [ ] Get bandwidth usage from router (hopefully)
+- [ ] Automations based on extended high bandwidth usage
+- [ ] Check if my brother is playing LoL, notify accordingly
+- [ ] Either a "rooms" view for all rooms, or a different view for each bedroom
+- [ ] Get Xiaomi devices (Temp/Humidity sensors, Wireless Buttons at least) for context-sensitive automations
 
 # Contact
-The best way to get in contact with me regarding this configuration (for praise or suggestions, especially the latter) is to [tweet me](http://www.twitter.com/Lucadergon) or create an issue or PR here on Github. Thank you for reading through this readme and enjoy the rest of your day!
+The best way to get in contact with me regarding this configuration (for praise or suggestions, especially the latter) is to [tweet me](http://www.twitter.com/Lucadergon) or create an issue or PR here on Github.

@@ -4,83 +4,16 @@
 # Hide from Homebridge etc
 switch.docker_*:
   homebridge_hidden: true
+switch.forever_*:
+  homebridge_hidden: true
 
 # Badge groups
 group.simonsdevicebadges:
   state_card_mode: badges
 
-light.simon:
-  show_last_changed: true
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    pin: true
-  friendly_name: Simon's Bedroom Light
-  group:
-    group.simon_view:
-      friendly_name: Light
-switch.simons_heater:
-  show_last_changed: true
-  icon: mdi:radiator
-  extra_badge:
-    attribute: current_power_w
-    unit: W
-  group:
-    group.simon_view:
-      friendly_name: Heater
-scene.goodnight_simon:
-  group:
-    group.simon_view:
-      friendly_name: Prepare For Bed
-  icon: mdi:hotel
-sensor.simon__mice_clicked:
-  icon: mdi:mouse
-  group:
-    group.simon_view:
-      friendly_name: Buttons Clicked
-sensor.simon__keys_pressed:
-  icon: mdi:keyboard
-  group:
-    group.simon_view:
-      friendly_name: Keys Pressed
 script.cctv:
   icon: mdi:play
   friendly_name: Start Playing
-device_tracker.simonsiphone:
-  friendly_names:
-    group.default_view: Simon
-script.morningbriefing_simon:
-  icon: mdi:phone-in-talk
-input_boolean.centrelink_reported_simon:
-  icon: mdi:bank
-  group:
-    group.simon_view:
-      friendly_name: Reported to Centrelink?
-sensor.sleep_simon:
-  icon: mdi:sleep
-  friendly_names:
-    group.simonstats: Last Sleep
-switch.wake_simons_pc:
-  confirm_controls_show_lock: true
-  group:
-    group.simon_view:
-      friendly_name: PC Power
-sensor.simon__video_editing:
-  group:
-    group.simon_view:
-      friendly_name: Video Editing?
-  icon: mdi:video
-
-automation.automatically_wake_up_simon_with_the_briefing:
-  icon: mdi:alarm
-automation.prepare_room_for_bedtime:
-  icon: mdi:sleep
-automation.simon_home_turn_bedroom_light_on_after_dark:
-  icon: mdi:lightbulb
-automation.simon_home_wake_up_with_bedroom_lights:
-  icon: mdi:weather-sunset-up
-automation.switch_on_the_heater_in_the_morning:
-  icon: mdi:weather-sunset-up
 
 sensor.nexus6p_battery:
   icon: mdi:battery
@@ -92,12 +25,6 @@ group.all_devices:
   hidden: false
 
 # Fancy Ping Icons
-binary_sensor.pc_simonmac:
-  icon: mdi:apple
-  show_last_changed: true
-binary_sensor.pc_simon:
-  icon: mdi:desktop-tower
-  show_last_changed: true
 binary_sensor.pc_matt:
   icon: mdi:desktop-tower
   show_last_changed: true
@@ -159,3 +86,121 @@ sensor.glances_running:
   friendly_name: Running Processes
 sensor.glances_swap_free:
   friendly_name: Swap Free
+
+# Simon-specific customs
+media_player.simontv:
+  group:
+    group.simon_view:
+      friendly_name: TV
+media_player.simons_speaker:
+  group:
+    group.simon_view:
+      friendly_name: Chromecast Speaker
+
+input_boolean.centrelink_reported_simon:
+  icon: mdi:bank
+  group:
+    group.simon_view:
+      friendly_name: Reported to Centrelink?
+
+sensor.sleep_simon:
+  icon: mdi:sleep
+  friendly_names:
+    group.simonstats: Last Sleep
+
+switch.wake_simons_pc:
+  confirm_controls_show_lock: true
+  group:
+    group.simon_view:
+      friendly_name: PC Power
+
+sensor.simon__video_editing:
+  group:
+    group.simon_view:
+      friendly_name: Video Editing?
+  icon: mdi:video
+
+sensor.simons_iphone_battery_level:
+  group:
+    group.simon_view:
+      friendly_name: iPhone Battery Level
+
+sensor.simon_flavelles_ipad_battery_level:
+  group:
+    group.simon_view:
+      friendly_name: iPad Battery Level
+
+sensor.simon_watchbattery:
+  group:
+    group.simon_view:
+      friendly_name: Apple Watch Battery Level
+
+binary_sensor.pc_simon:
+  icon: mdi:desktop-tower
+  show_last_changed: true
+  group:
+    group.simon_view:
+      friendly_name: Windows PC
+binary_sensor.pc_simonmac:
+  icon: mdi:apple
+  show_last_changed: true
+  group:
+    group.simon_view:
+      friendly_name: Mac Mini
+
+light.simon:
+  show_last_changed: true
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    pin: true
+  friendly_name: Simon's Bedroom Light
+  group:
+    group.simon_view:
+      friendly_name: Light
+
+switch.simons_heater:
+  show_last_changed: true
+  icon: mdi:radiator
+  extra_badge:
+    attribute: current_power_w
+    unit: W
+  group:
+    group.simon_view:
+      friendly_name: Heater
+  homebridge_switch_type: outlet
+
+scene.goodnight_simon:
+  group:
+    group.simon_view:
+      friendly_name: Prepare For Bed
+  icon: mdi:hotel
+
+sensor.simon__mice_clicked:
+  icon: mdi:mouse
+  group:
+    group.simon_view:
+      friendly_name: Buttons Clicked
+
+sensor.simon__keys_pressed:
+  icon: mdi:keyboard
+  group:
+    group.simon_view:
+      friendly_name: Keys Pressed
+
+device_tracker.simonsiphone:
+  friendly_names:
+    group.default_view: Simon
+
+script.morningbriefing_simon:
+  icon: mdi:phone-in-talk
+automation.automatically_wake_up_simon_with_the_briefing:
+  icon: mdi:alarm
+automation.prepare_room_for_bedtime:
+  icon: mdi:sleep
+automation.simon_home_turn_bedroom_light_on_after_dark:
+  icon: mdi:lightbulb
+automation.simon_home_wake_up_with_bedroom_lights:
+  icon: mdi:weather-sunset-up
+automation.switch_on_the_heater_in_the_morning:
+  icon: mdi:weather-sunset-up

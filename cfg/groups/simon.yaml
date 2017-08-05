@@ -17,6 +17,7 @@ simonsdevices:
     - sensor.nexus6p_wifi
     - sensor.nexus6p_silent
     - binary_sensor.pc_simonmac
+    - switch.mac_display
     - binary_sensor.pc_simon
     - switch.wake_simons_pc
     - binary_sensor.3ds_simon

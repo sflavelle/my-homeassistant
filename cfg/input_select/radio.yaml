@@ -6,20 +6,10 @@ audiostream:
   options:
     - ABC News Radio
     - ABC Radio Melbourne
-    - Hit 91.9 FM Bendigo
-    - Soundscape - Forest Nightfall (59m)
-    - Soundscape - Forest Raindrops (56m)
-    - Soundscape - Mountain Stream (57m)
-    - Soundscape - Monastery Garden (58m)
-    - Soundscape - Rainforest (58m)
-    - Soundscape - Rainstorm 1 (2h4m)
     - Soundscape - Thunderstorm 1 (1h)
-    - Soundscape - Wet Ambience 1 (2h5m)
   icon: mdi:radio-tower
 audio_receiver:
   name: 'Select Output:'
   options:
     - Simon's Room
-    - Lounge Room
-  # initial: All
   icon: mdi:speaker

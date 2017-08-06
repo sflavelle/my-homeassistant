@@ -49,11 +49,11 @@ simon_view:
     - sensor.speedtest_upload
     - sensor.steam_76561197986199864
     - sensor.mikkauren
-    - group.simon
     - group.simonsdevices
     - group.simonsbedroom
     - group.simonsmedia
     - group.simonsauto
+    - group.simonscripts
     - group.simonstats
 
 servers:

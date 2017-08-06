@@ -87,15 +87,23 @@ sensor.glances_running:
 sensor.glances_swap_free:
   friendly_name: Swap Free
 
+media_player.playstation_4:
+  homebridge_media_player_switch: on_off
+
 # Simon-specific customs
 media_player.simontv:
   group:
     group.simon_view:
       friendly_name: TV
+media_player.simontv_2:
+  group:
+    group.simon_view:
+      friendly_name: Plex (Apple TV)
 media_player.simons_speaker:
   group:
     group.simon_view:
       friendly_name: Chromecast Speaker
+  homebridge_media_player_switch: play_pause
 
 input_boolean.centrelink_reported_simon:
   icon: mdi:bank

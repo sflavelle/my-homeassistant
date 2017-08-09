@@ -90,6 +90,10 @@ camera:
     name: Rain Radar
     limit_refetch_to_url_change: true
 
+wemo:
+  static:
+    - 192.168.0.100
+    - 192.168.0.101
 
 # Various Location Tracking
 

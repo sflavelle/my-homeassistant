@@ -2,5 +2,5 @@ ComputerOn:
   speech:
     text: It's booting now. Enjoy your gaming.
   action:
-    - service: homeassistant.turn_on
-      entity_id: switch.wake_simons_pc
+    service: switch.turn_on
+    entity_id: switch.wake_simons_pc

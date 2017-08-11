@@ -1,0 +1,17 @@
+BedroomLightOnOff:
+  speech:
+    text: >
+      {{ [
+      "I'll get right on that.",
+      "I'm on it.",
+      "Next time I'll tell them you're using up the internet.",
+      "Sure thing."
+      ] | random }}
+  action:
+    service_template: >
+      {%- if OnOff == "on" -%}
+        light.turn_on
+      {%- else -%}
+        light.turn_off
+      {%- endif -%}
+    entity_id: light.simon

@@ -34,6 +34,8 @@ http:
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret url
+  ssl_certificate: /Users/simonsays/fullchain.pem
+  ssl_key: /Users/simonsays/privkey.pem
 
 recorder:
   purge_days: 7

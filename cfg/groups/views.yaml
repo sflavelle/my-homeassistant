@@ -12,6 +12,18 @@ default_view:
     - group.presence
     - group.computers
     - group.weather
+    - media_player.lounge_speaker
+    - device_tracker.simonsiphone
+    - binary_sensor.workday_sensor
+    - group.simonsdevices
+    - group.simonsbedroom
+    - group.simonsmedia
+    - group.simonsauto
+    - group.simonscripts
+    - group.simonstats
+    - group.radioplayer
+    - group.cctv
+    - group.tedbeet
 
 weather_view:
   name: Weather
@@ -26,51 +38,3 @@ weather_view:
     - sensor.dark_sky_daily_low_temperature
     - group.weather
     - camera.rain_radar
-
-gaming_view:
-  name: Gaming
-  icon: mdi:gamepad-variant
-  view: yes
-  entities:
-    - group.consoles
-    - group.steamaccounts
-    - group.xboxaccounts
-    - group.twitch
-    - media_player.playstation_4
-
-simon_view:
-  name: Simon
-  view: yes
-  entities:
-    - device_tracker.simonsiphone
-    - binary_sensor.workday_sensor
-    - sensor.pocketcasts_unlistened_episodes
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.steam_76561197986199864
-    - sensor.mikkauren
-    - group.simonsdevices
-    - group.simonsbedroom
-    - group.simonsmedia
-    - group.simonsauto
-    - group.simonscripts
-    - group.simonstats
-
-servers:
-  name: Servers
-  view: yes
-  icon: mdi:server-network
-  entities:
-    - group.serverstats
-    - group.radioplayer
-    - group.cctv
-
-settings:
-  name: Settings
-  icon: mdi:settings
-  view: yes
-  entities:
-    - group.tedbeet
-    - group.ha_server
-    - group.all_devices
-    - group.auto_testing

@@ -107,12 +107,6 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
-  - platform: netgear
-    host: 192.168.0.1
-    username: !secret router_user
-    password: !secret router_pass
-    interval_seconds: 30
-    consider_home: 300
 
 media_player: !include_dir_merge_list cfg/media
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
@@ -153,13 +147,6 @@ scene:
 input_select: !include_dir_merge_named cfg/input_select/
 
 script: !include_dir_merge_named cfg/scripts/
-
-media_extractor:
-  default_query: best
-  customize:
-    media_player.simons_speaker:
-      video: bestaudio
-      audio: bestaudio
 
 wake_on_lan:
 

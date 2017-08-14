@@ -24,33 +24,6 @@ group.all_devices:
   friendly_name: All Devices
   hidden: false
 
-# Fancy Ping Icons
-binary_sensor.pc_matt:
-  icon: mdi:desktop-tower
-  show_last_changed: true
-binary_sensor.pc_beth:
-  icon: mdi:desktop-tower
-  show_last_changed: true
-binary_sensor.pc_jono:
-  icon: mdi:desktop-tower
-  show_last_changed: true
-binary_sensor.pc_izzy:
-  icon: mdi:desktop-tower
-  show_last_changed: true
-binary_sensor.laptop_mum:
-  icon: mdi:laptop-windows
-  show_last_changed: true
-binary_sensor.console_wiiu:
-  icon: mdi:wiiu
-binary_sensor.ps4:
-  icon: mdi:playstation
-binary_sensor.xb1:
-  icon: mdi:xbox
-binary_sensor.3ds_simon:
-  group:
-    group.simon_view:
-      friendly_name: Nintendo 3DS
-
 # Custom DarkSky Names
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High
@@ -71,25 +44,6 @@ sensor.dark_sky_precip_probability:
 sensor.dark_sky_temperature:
   friendly_name: Current Temp
 
-# Custom Glances Names (for Simon-Windows)
-sensor.glances_cpu_load:
-  friendly_name: CPU Load
-sensor.glances_disk_free:
-  friendly_name: Disk Free C:\ (System)
-sensor.glances_disk_free_d:
-  friendly_name: Disk Free D:\ (Data)
-sensor.glances_disk_free_e:
-  friendly_name: Disk Free E:\ (Recording)
-sensor.glances_ram_free:
-  friendly_name: RAM Free
-sensor.glances_running:
-  friendly_name: Running Processes
-sensor.glances_swap_free:
-  friendly_name: Swap Free
-
-media_player.playstation_4:
-  homebridge_media_player_switch: on_off
-
 # Simon-specific customs
 media_player.simontv:
   group:
@@ -105,28 +59,11 @@ media_player.simons_speaker:
       friendly_name: Chromecast Speaker
   homebridge_media_player_switch: play_pause
 
-input_boolean.centrelink_reported_simon:
-  icon: mdi:bank
-  group:
-    group.simon_view:
-      friendly_name: Reported to Centrelink?
-
-sensor.sleep_simon:
-  icon: mdi:sleep
-  friendly_names:
-    group.simonstats: Last Sleep
-
 switch.wake_simons_pc:
   confirm_controls_show_lock: true
   group:
     group.simon_view:
       friendly_name: PC Power
-
-sensor.simon__video_editing:
-  group:
-    group.simon_view:
-      friendly_name: Video Editing?
-  icon: mdi:video
 
 sensor.simons_iphone_battery_level:
   group:

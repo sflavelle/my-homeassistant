@@ -1,4 +1,0 @@
-- platform: mqtt
-  state_topic: "/eventghost/simon/videoediting"
-  name: "Simon - Video Editing"
-  

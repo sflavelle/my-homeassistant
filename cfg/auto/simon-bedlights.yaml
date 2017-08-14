@@ -2,19 +2,22 @@
   trigger:
     platform: sun
     event: sunset
-    offset: "01:00:00"
+    offset: "-00:20:00"
   action:
-    - service: homeassistant.turn_on
+    - service: light.turn_on
       entity_id: light.simon
+      data:
+        transition: 1800 # 30 minutes
+        brightness_pct: 100
     - service: notify.discord
       data:
-        message: "Your lights were turned on automatically, because it's now one hour after sunset."
+        message: "Your lights are fading in, because the sun is now setting."
         target: 314277320552611840
 
 - alias: "Prepare room for bedtime"
   trigger:
     platform: time
-    at: '20:00:00'
+    at: '21:00:00'
   action:
     - service: homeassistant.turn_on
       entity_id: scene.goodnight_simon
@@ -23,10 +26,37 @@
         message: "Your room is preparing for when you head to bed, because it's now 8PM."
         target: 314277320552611840
 
-- alias: "Simon home? Lights on on workday mornings"
+- alias: "Simon home? Lights on on workday mornings (Wednesday and Friday)"
   trigger:
     platform: time
     at: '07:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - wed
+          - fri
+      - condition: state
+        entity_id: 'binary_sensor.workday_sensor'
+        state: 'on'
+  action: # Turn light on low for a while before brightening the room
+    - service: light.turn_on
+      entity_id: light.simon
+      data:
+        brightness_pct: 5
+    - delay: 00:20 # 20 minutes
+    - service: light.turn_on
+      entity_id: light.simon
+      data:
+        transition: 1800 # 30 minutes
+        brightness_pct: 100
+
+- alias: "Simon home? Lights on on workday mornings (Monday)"
+  trigger:
+    platform: time
+    at: '06:00:00'
   condition:
     condition: and
     conditions:

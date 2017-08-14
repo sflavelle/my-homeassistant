@@ -9,9 +9,16 @@ BedroomLightOnOff:
       ] | random }}
   action:
     service_template: >
-      {%- if OnOff == "on" -%}
-        light.turn_on
-      {%- else -%}
+      {%- if OnOff == "off" -%}
         light.turn_off
+      {%- else -%}
+        light.turn_on
       {%- endif -%}
     entity_id: light.simon
+    data_template:
+      brightness_pct: >
+        {%- if LightBrightness is defined -%}
+          {{LightBrightness}}
+        {%- else -%}
+          50
+        {%- endif -%}

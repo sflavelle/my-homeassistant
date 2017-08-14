@@ -1,6 +1,11 @@
 SpeedtestGet:
   speech:
+    type: plaintext
     text: >
-      Last time I checked, your download speeds were sitting at
-      {{ states('sensor.speedtest_download') }} megabits per second.
-      You can also upload at about {{ states('sensor.speedtest_upload') }} megabits per second.
+      {%- if BandwidthDirection == download -%}
+      Your download speeds were sitting at {{ states('sensor.speedtest_download') }} megabits per second.
+      {%- elif BandwidthDirection == upload -%}
+      You can upload at about {{ states('sensor.speedtest_upload') }} megabits per second.
+      {%- else -%}
+      You have {{ states('sensor.speedtest_download') }}Mbps down and {{ states('sensor.speedtest_upload') }}Mbps up.
+      {%- endif -%}

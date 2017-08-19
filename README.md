@@ -2,6 +2,8 @@
 
 This is my personal configuration for a server running on my Mac Mini. I am fairly new to "smart home" accessories and "home automation" so expect this to grow as I acquire more gadgets for a home I am renting in, lol.
 
+**This isn't being updated for a while. I'm not in a situation where I can afford the network cost of running this configuration with these devices.**
+
 # Devices
 This config currently uses the following devices (Australian URLs):
 

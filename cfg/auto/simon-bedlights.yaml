@@ -19,8 +19,13 @@
     platform: time
     at: '21:00:00'
   action:
-    - service: homeassistant.turn_on
-      entity_id: scene.goodnight_simon
+    - service: light.turn_on
+      entity_id: light.simon
+      data:
+        transition: 120 # 2 minutes
+        brightness_pct: 1
+    - service: switch.turn_on
+      entity_id: switch.simons_heater
     - service: notify.discord
       data:
         message: "Your room is preparing for when you head to bed, because it's now 8PM."

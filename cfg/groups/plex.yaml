@@ -1,0 +1,10 @@
+mediaserver:
+  name: Media Server
+  entities:
+    - switch.transmission
+    - switch.docker_sonarr
+    - weblink.sonarr
+    - switch.docker_cardigann
+    - weblink.cardigann
+    - switch.docker_jackett
+    - weblink.jackett

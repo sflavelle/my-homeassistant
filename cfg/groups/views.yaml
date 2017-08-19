@@ -24,6 +24,7 @@ default_view:
     - group.radioplayer
     - group.cctv
     - group.tedbeet
+    - group.mediaserver
 
 weather_view:
   name: Weather

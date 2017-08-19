@@ -127,22 +127,15 @@ weblink:
       url: http://192.168.0.1/
     - name: Home Assistant
       url: https://home-assistant.io
+    - name: Sonarr
+      url: http://192.168.0.60:8909
+    - name: Cardigann
+      url: http://192.168.0.60:5060
+    - name: Jackett
+      url: http://192.168.0.60:5117
 
 shell_command:
   livestream: livestreamer --twitch-oauth-token gn4dfwud6on2x446oith2pon3sso5g {{url}} 720p --player-passthrough hls -p castnow -a '"{filename}" --device "{{device}}" --exit'
-
-scene:
-  - name: Goodnight Simon
-    entities:
-      switch.simons_heater: on
-      light.simon:
-        state: on
-        brightness: 1
-  - name: Simon's Things Off
-    entities:
-      switch.simons_heater: off
-      light.simon: off
-      switch.mac_display: off
 
 input_select: !include_dir_merge_named cfg/input_select/
 

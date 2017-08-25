@@ -15,16 +15,12 @@ default_view:
     - media_player.lounge_speaker
     - device_tracker.simonsiphone
     - binary_sensor.workday_sensor
-    - group.simonsdevices
     - group.simonsbedroom
     - group.simonsmedia
     - group.simonsauto
     - group.simonscripts
     - group.simonstats
-    - group.radioplayer
-    - group.cctv
     - group.tedbeet
-    - group.mediaserver
 
 weather_view:
   name: Weather

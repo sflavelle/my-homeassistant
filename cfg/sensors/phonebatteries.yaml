@@ -1,15 +1,15 @@
 - platform: template
   sensors:
-    simon_iphonebattery:
-      friendly_name: Simon's iPhone Battery
+    batt_iphone:
+      friendly_name: iPhone Battery
       unit_of_measurement: "%"
       value_template: >-
-            {%- if states.device_tracker.simonsiphone.attributes.battery %}
-                {{ states.device_tracker.simonsiphone.attributes.battery|round }}
+            {%- if states.device_tracker.lilyflavellesiphone.attributes.battery %}
+                {{ states.device_tracker.lilyflavellesiphone.attributes.battery|round }}
             {% else %}
                 ???
             {%- endif %}
-    simon_watchbattery:
+    batt_watch:
       value_template: >-
             {%- if states.device_tracker.simonsapple_watch.attributes.battery %}
                 {{ states.device_tracker.simonsapple_watch.attributes.battery|round }}
@@ -18,7 +18,7 @@
             {%- endif %}
       friendly_name: Simon's Apple Watch Battery
       unit_of_measurement: "%"
-    simon_ipadbattery:
+    batt_ipad:
       value_template: >-
             {%- if states.device_tracker.simonflavellesipad.attributes.battery %}
                 {{ states.device_tracker.simonflavellesipad.attributes.battery|round }}

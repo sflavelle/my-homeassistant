@@ -1,4 +1,0 @@
-- platform: plex
-  username: !secret plex_user
-  password: !secret plex_password
-  server: 'Simon Says'

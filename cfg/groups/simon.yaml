@@ -1,41 +1,23 @@
-simonscripts:
-  name: Scripts
-  entities:
-    - script.morningbriefing_simon
-    - scene.goodnight_simon
-    - scene.simons_things_off
 simonsdevices:
   name: Simon's Devices
   entities:
-    - sensor.simons_iphone_battery_level
-    - sensor.simon_flavelles_ipad_battery_level
-    - sensor.simon_watchbattery
-    - sensor.nexus6p_battery
-    - sensor.nexus6p_memfree
-    - sensor.nexus6p_wifi
-    - sensor.nexus6p_silent
-    - binary_sensor.pc_simonmac
+    - sensor.batt_iphone
+    - sensor.batt_ipad
+    - sensor.batt_watch
     - switch.mac_display
-    - binary_sensor.pc_simon
     - switch.wake_simons_pc
-    - binary_sensor.3ds_simon
 simonsbedroom:
   name: Simon's Bedroom
   entities:
         - light.simon
-        - switch.simons_heater
+        - switch.heater
         - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
         - automation.only_run_the_heater_for_two_hours
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.simons_speaker
-    - media_player.simons_home
-    - media_player.simons_room
-    - media_player.simontv
-    - media_player.simontv_2
     - media_player.simons_chromecast
-    - media_player.spotify
+    - media_player.the_leeches_room
 simonsauto:
   name: Automations
   entities:

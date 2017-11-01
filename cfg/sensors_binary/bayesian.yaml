@@ -1,0 +1,21 @@
+- name: 'in_bed'
+  platform: 'bayesian'
+  prior: 0.25
+  probability_threshold: 0.95
+  observations:
+    - entity_id: 'switch.mac_display'
+      prob_given_true: 0.5
+      platform: 'state'
+      to_state: 'off'
+    - entity_id: 'light.simon'
+      prob_given_true: 0.5
+      platform: 'state'
+      to_state: 'off'
+    - entity_id: 'sun.sun'
+      prob_given_true: 0.7
+      platform: 'state'
+      to_state: 'below_horizon'
+    - entity_id: 'switch.mac_display'
+      prob_given_true: 0.6
+      platform: 'state'
+      to_state: 'off'

@@ -2,3 +2,11 @@
   monitored_conditions:
     - download
     - upload
+  hour:
+    - 0
+    - 6
+    - 9
+    - 12
+    - 15
+    - 18
+    - 21

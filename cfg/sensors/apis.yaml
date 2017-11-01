@@ -1,3 +1,5 @@
+# Whatpulse - Mouse/Keyboard usage tracking
+
 - platform: rest
   resource: http://api.whatpulse.org/user.php?format=json&user=neurario
   value_template: '{{ value_json.Keys }}'
@@ -8,6 +10,9 @@
   value_template: '{{ value_json.Clicks }}'
   name: Simon - Mice Clicked
   unit_of_measurement: Clicks
+
+# Simple way of getting an external IP address
+  
 - platform: rest
   resource: http://ip.jsontest.com
   name: External IP

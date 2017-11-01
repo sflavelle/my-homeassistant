@@ -1,0 +1,7 @@
+- platform: command_line
+  switches:
+    mac_display:
+      command_on: caffeinate -u -t 2
+      command_off: pmset displaysleepnow
+      command_state: ioreg -n IODisplayWrangler | grep -i IOPowerManagement | perl -pe 's/^.*DevicePowerState\"=([0-9]+).*$/\1/' | grep 4
+      friendly_name: Mac Mini Display

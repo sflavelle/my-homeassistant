@@ -16,18 +16,14 @@ homeassistant:
   time_zone: !secret tz
   customize_glob: !include customize.yaml
 
-customizer:
-  panel: true
-  hide_customui_attributes: false
-  hide_attributes:
-    - node_id
-    - value_index
-
 # Enables the frontend
 frontend:
 
 # Enables configuration UI
 config:
+
+# Enables Map UI
+map:
 
 http:
   # Uncomment this to add a password (recommended!)
@@ -36,7 +32,6 @@ http:
   base_url: !secret url
 
 recorder:
-  purge_days: 7
   exclude:
     domains:
       - automation
@@ -79,20 +74,19 @@ tts:
 ifttt:
   key: !secret ifttt_key
 
-google:
-  client_id: !secret google_id
-  client_secret: !secret google_secret
+duckdns:
+  domain: !secret ddns_domain
+  access_token: !secret ddns_token
 
 ios:
-
-mqtt:
-  broker: 127.0.0.1
 
 camera:
   - platform: generic
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
     name: Rain Radar
     limit_refetch_to_url_change: true
+
+# Smart Devices
 
 wemo:
   static:
@@ -119,27 +113,6 @@ notify:
 group: !include_dir_merge_named cfg/groups/
 automation: !include_dir_merge_list cfg/auto/
 
-weblink:
-  entities:
-    - name: Router
-      url: http://192.168.0.1/
-    - name: Home Assistant
-      url: https://home-assistant.io
-    - name: Sonarr
-      url: http://192.168.0.60:8909
-    - name: Cardigann
-      url: http://192.168.0.60:5060
-    - name: Jackett
-      url: http://192.168.0.60:5117
-
-shell_command:
-  livestream: livestreamer --twitch-oauth-token gn4dfwud6on2x446oith2pon3sso5g {{url}} 720p --player-passthrough hls -p castnow -a '"{filename}" --device "{{device}}" --exit'
-
 input_select: !include_dir_merge_named cfg/input_select/
 
 script: !include_dir_merge_named cfg/scripts/
-
-wake_on_lan:
-
-apiai:
-intent_script: !include_dir_merge_named cfg/intents

@@ -2,36 +2,23 @@ default_view:
   view: yes
   name: Home
   entities:
-    - sensor.dark_sky_summary
+    - sensor.bom_bendigo_weather
     - sun.sun
+    - device_tracker.simonsiphone
+    - binary_sensor.in_bed
     - sensor.speedtest_download
     - sensor.speedtest_upload
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
-    - group.presence
-    - group.computers
-    - group.weather
-    - media_player.lounge_speaker
-    - device_tracker.simonsiphone
-    - binary_sensor.workday_sensor
     - group.simonsbedroom
+    - group.simonsdevices
     - group.simonsmedia
     - group.simonsauto
-    - group.simonscripts
     - group.simonstats
-    - group.tedbeet
 
 weather_view:
   name: Weather
   icon: mdi:weather-sunny
   view: yes
   entities:
-    - sensor.dark_sky_precip_probability
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
+    - sensor.bom_bendigo_weather
     - group.weather
     - camera.rain_radar

@@ -1,0 +1,8 @@
+gh_youtubeplayer:
+  alias: Play YouTube Audio to Google Home
+  sequence:
+    - service: media_extractor.play_media
+      data_template:
+        entity_id: "media_player.the_leeches_room"
+        media_content_id: "{{ states('input_text.gh_youtube_url') }}"
+        media_content_type: "audio/mp4"

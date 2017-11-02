@@ -3,12 +3,12 @@
 - platform: rest
   resource: http://api.whatpulse.org/user.php?format=json&user=neurario
   value_template: '{{ value_json.Keys }}'
-  name: Simon - Keys Pressed
+  name: Whatpulse - Keys Pressed
   unit_of_measurement: Keys
 - platform: rest
   resource: http://api.whatpulse.org/user.php?format=json&user=neurario
   value_template: '{{ value_json.Clicks }}'
-  name: Simon - Mice Clicked
+  name: Whatpulse - Mice Clicked
   unit_of_measurement: Clicks
 
 # Simple way of getting an external IP address

@@ -6,3 +6,5 @@ switch.docker_*:
   homebridge_hidden: true
 switch.forever_*:
   homebridge_hidden: true
+light.simon:
+  friendly_name: Bedroom Light

@@ -1,5 +1,5 @@
 simonsdevices:
-  name: Simon's Devices
+  name: Devices
   entities:
     - sensor.batt_iphone
     - sensor.batt_ipad
@@ -7,7 +7,7 @@ simonsdevices:
     - switch.mac_display
     - switch.wake_simons_pc
 simonsbedroom:
-  name: Simon's Bedroom
+  name: Bedroom
   entities:
         - light.simon
         - switch.heater
@@ -30,6 +30,5 @@ simonsauto:
 simonstats:
   name: Statistics
   entities:
-    - sensor.simon__video_editing
-    - sensor.simon__mice_clicked
-    - sensor.simon__keys_pressed
+    - sensor.whatpulse__mice_clicked
+    - sensor.whatpulse__keys_pressed

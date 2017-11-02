@@ -1,9 +1,14 @@
+"*.*":
+    custom_ui_state_card: state-card-custom-ui
+
 switch.docker_*:
   homebridge_hidden: true
 switch.forever_*:
   homebridge_hidden: true
 light.simon:
   friendly_name: Bedroom Light
+  state_card_mode: break-slider
+  stretch_slider: true
 media_player.simons_chromecast:
   friendly_name: Chromecast
 media_player.the_leeches_room:
@@ -12,7 +17,13 @@ sensor.batt_watch:
   icon: mdi:watch
 switch.heater:
   icon: mdi:radiator
+  extra_data_template: >
+    if (attributes.current_power_w < 0.5) return 'Idle'; else if (state === 'off') return null; else return 'Active';
 sensor.batt_ipad:
   icon: mdi:tablet-ipad
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
+input_text.gh_youtube_url:
+  group:
+    group.gh_youtubeplayer:
+      friendly_name: "URL:"

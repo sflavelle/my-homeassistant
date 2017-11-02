@@ -19,6 +19,9 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+customizer:
+  custom_ui: hosted
+
 # Enables configuration UI
 config:
 

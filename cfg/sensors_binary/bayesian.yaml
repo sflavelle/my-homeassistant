@@ -1,3 +1,5 @@
+# Complex testing: Turn on if asleep
+
 - name: 'Asleep'
   platform: 'bayesian'
   prior: 0.25
@@ -5,16 +7,23 @@
   observations:
     - entity_id: 'switch.mac_display'
       prob_given_true: 0.8 # Probability I'm asleep if the display is off
-      prob_given_false: 0.6 # Probability I'm NOT asleep if the display is off
+      prob_given_false: 0.4 # Probability I'm NOT asleep if the display is off
       platform: 'state'
       to_state: 'off'
     - entity_id: 'light.simon'
       prob_given_true: 0.9
-      prob_given_false: 0.7
+      prob_given_false: 0.5
       platform: 'state'
       to_state: 'off'
     - entity_id: 'sun.sun'
       prob_given_true: 0.8
-      prob_given_false: 0.4
+      prob_given_false: 0.3
       platform: 'state'
       to_state: 'below_horizon'
+    - entity_id: 'media_player.simons_chromecast'
+      platform: 'state'
+      to_state: 'off'
+      prob_given_true: 1
+      prob_given_false: 0.7
+
+# Simpler occupancy

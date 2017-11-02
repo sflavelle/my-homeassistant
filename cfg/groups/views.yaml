@@ -5,7 +5,7 @@ default_view:
     - sensor.bom_bendigo_weather
     - sun.sun
     - device_tracker.simonsiphone
-    - binary_sensor.in_bed
+    - binary_sensor.asleep
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - group.simonsbedroom

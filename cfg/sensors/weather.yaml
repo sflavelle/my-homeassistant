@@ -2,14 +2,9 @@
   station: IDV60801.94855
   name: Bendigo
   monitored_conditions:
-    - apparent_t
     - cloud
-    - delta_t
     - gust_kmh
     - air_temp
     - rain_trace
     - rel_hum
-    - vis_km
-    - weather
-    - wind_dir
     - wind_spd_kmh

@@ -1,4 +1,4 @@
 - platform: wake_on_lan
-  name: Wake Simon's PC
+  name: Gaming PC
   host: 192.168.0.61
   mac_address: "D0-50-99-2E-D3-19"

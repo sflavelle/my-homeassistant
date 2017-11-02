@@ -1,10 +1,18 @@
-# "*.*":
-#  custom_ui_state_card: custom-ui
-
-# Hide from Homebridge etc
 switch.docker_*:
   homebridge_hidden: true
 switch.forever_*:
   homebridge_hidden: true
 light.simon:
   friendly_name: Bedroom Light
+media_player.simons_chromecast:
+  friendly_name: Chromecast
+media_player.the_leeches_room:
+  friendly_name: Google Home
+sensor.batt_watch:
+  icon: mdi:watch
+switch.heater:
+  icon: mdi:radiator
+sensor.batt_ipad:
+  icon: mdi:tablet-ipad
+sensor.batt_iphone:
+  icon: mdi:cellphone-iphone

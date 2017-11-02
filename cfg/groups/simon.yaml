@@ -5,7 +5,7 @@ simonsdevices:
     - sensor.batt_ipad
     - sensor.batt_watch
     - switch.mac_display
-    - switch.wake_simons_pc
+    - switch.gaming_pc
 simonsbedroom:
   name: Bedroom
   entities:

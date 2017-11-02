@@ -2,7 +2,6 @@ default_view:
   view: yes
   name: Home
   entities:
-    - sensor.bom_bendigo_weather
     - sun.sun
     - device_tracker.simonsiphone
     - binary_sensor.asleep
@@ -18,7 +17,6 @@ weather_view:
   icon: mdi:weather-sunny
   view: yes
   entities:
-    - sensor.bom_bendigo_weather
     - group.weather
     - camera.rain_radar
     - group.auto_weather

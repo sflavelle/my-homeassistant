@@ -14,6 +14,8 @@
         message: "Your heater was switched off at {{ now() }}."
     - service: homeassistant.turn_off
       entity_id: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
+
+
 - alias: "ONLY run the heater for two hours"
   initial_state: 'off'
   trigger:
@@ -28,14 +30,63 @@
     - service: notify.ios_simons_iphone
       data_template:
         message: "Your heater was switched off at {{ now() }}."
+
+# Temperature Regulation
+
 - alias: "Switch on the heater in the morning"
+  initial_state: 'off'
   trigger:
     platform: time
-    at: '06:45:00'
+    at: '05:45:00'
   condition:
-    condition: state
-    entity_id: device_tracker.simonsiphone
-    state: 'home'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        state: 'home'
+      - condition: numeric_state
+        entity_id: sensor.bom_bendigo_air_temp_c # At least until in-room sensors
+        below: 12
   action:
     service: homeassistant.turn_on
-    entity_id: switch.simons_heater
+    entity_id: switch.heater
+
+- alias: "Heater on when weather's cold"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bom_bendigo_air_temp_c
+    below: 10
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        state: 'home'
+      - condition: state
+        entity_id: switch.heater
+        state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.heater
+    - service: notify.discord
+      data_template:
+        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}}, so the heater was switched on."
+        target: 375206372574363660
+
+- alias: "Heater off when weather's warming"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bom_bendigo_air_temp_c
+    above: 18
+  condition:
+    condition: state
+    entity_id: switch.heater
+    state: 'on'
+    # No extra conditions, it should always turn off
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.heater
+    - service: notify.discord
+      data_template:
+        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}}, so the heater was switched off."
+        target: 375206372574363660

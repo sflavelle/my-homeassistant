@@ -1,0 +1,5 @@
+auto_weather:
+  name: Weather Automations
+  entities:
+    - automation.heater_on_when_weathers_cold
+    - automation.heater_off_when_weathers_warming

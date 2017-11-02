@@ -1,0 +1,6 @@
+- alias: "Trigger YouTube Audio Player automatically"
+  trigger:
+    platform: state
+    entity_id: input_text.gh_youtube_url
+  action:
+    service: script.gh_youtubeplayer

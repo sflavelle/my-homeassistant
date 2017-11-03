@@ -28,5 +28,5 @@
       entity_id: switch.simons_heater
     - service: notify.discord
       data:
-        message: "Your room is preparing for when you head to bed, because it's now 8PM."
+        message: "Your room is preparing for when you head to bed, because it's now 9PM."
         target: 375206372574363660

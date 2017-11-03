@@ -3,4 +3,8 @@
     active_hours:
       friendly_name: "House is Active?"
       value_template: >-
-        {{ now().hour >= 8 and now().hour <= 22 }}
+        {% if now().isoweekday() >= 6 %}
+          {{ now().hour >= 11 and now().hour <= 22 }}
+        {% else %}
+          {{ now().hour >= 8 and now().hour <= 22 }}
+        {% endif %}

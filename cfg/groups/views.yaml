@@ -29,3 +29,11 @@ auto_view:
   entities:
     - group.auto_weather
     - group.simonsauto
+
+dev_view:
+  name: Development Sensors
+  icon: mdi:wrench
+  view: yes
+  entities:
+    - binary_sensor.active_hours
+    - binary_sensor.asleep

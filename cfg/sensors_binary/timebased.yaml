@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    active_hours:
+      friendly_name: "House is Active?"
+      value_template: >-
+        {{ now().hour >= 8 and now().hour <= 22 }}

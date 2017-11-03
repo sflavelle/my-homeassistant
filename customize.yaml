@@ -15,14 +15,20 @@ media_player.the_leeches_room:
   friendly_name: Google Home
 sensor.batt_watch:
   icon: mdi:watch
+  extra_data_template: >
+    if (entities['device_tracker.simonsapple_watch'].attributes.battery_status === 'Charging') return 'Battery Charging';
 switch.heater:
   icon: mdi:radiator
   extra_data_template: >
     if (attributes.current_power_w < 0.5) return 'Idle'; else if (state === 'off') return null; else return 'Active';
 sensor.batt_ipad:
   icon: mdi:tablet-ipad
+  extra_data_template: >
+    if (entities['device_tracker.simonflavellesipad'].attributes.battery_status === 'Charging') return 'Battery Charging';
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
+  extra_data_template: >
+    if (entities['device_tracker.lilyflavellesiphone'].attributes.battery_status === 'Charging') return 'Battery Charging';
 input_text.gh_youtube_url:
   group:
     group.gh_youtubeplayer:

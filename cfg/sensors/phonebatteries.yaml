@@ -1,7 +1,7 @@
 - platform: template
   sensors:
     batt_iphone:
-      friendly_name: iPhone Battery
+      friendly_name: iPhone
       unit_of_measurement: "%"
       value_template: >-
             {%- if states.device_tracker.lilyflavellesiphone.attributes.battery %}
@@ -16,7 +16,7 @@
             {% else %}
                 ???
             {%- endif %}
-      friendly_name: Apple Watch Battery
+      friendly_name: Apple Watch
       unit_of_measurement: "%"
     batt_ipad:
       value_template: >-
@@ -25,5 +25,5 @@
             {% else %}
                 ???
             {%- endif %}
-      friendly_name: iPad Battery
+      friendly_name: iPad
       unit_of_measurement: "%"

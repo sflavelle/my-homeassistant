@@ -2,3 +2,4 @@ gh_youtubeplayer:
   name: YouTube Audio Player
   entities:
     - input_text.gh_youtube_url
+    - script.gh_youtubeplayer

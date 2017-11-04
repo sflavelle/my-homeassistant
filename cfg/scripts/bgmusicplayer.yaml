@@ -1,0 +1,37 @@
+# http://tane.us/ac/nl.html for any HASS-accessible speaker
+# I DID NOT make the tane.us AC:NL music portal
+bgmusic_player:
+  alias: Background Music Player
+  sequence:
+    - service: media_extractor.play_media
+      data_template:
+        entity_id: "media_player.the_leeches_room"
+        media_content_id: >
+          {% if is_state("input_select.bgmusic_theme", "Animal Crossing") %}
+            {% if now().hour >= 0 %} https://www.youtube.com/watch?v=A_00O4KWBxY
+            {% elif now().hour >= 1 %} https://www.youtube.com/watch?v=uX2NxSN49Tg
+            {% elif now().hour >= 2 %} https://www.youtube.com/watch?v=LAioanQMG_A
+            {% elif now().hour >= 3 %} https://www.youtube.com/watch?v=_pCBzrFnTlw
+            {% elif now().hour >= 4 %} https://www.youtube.com/watch?v=eSfQrWXD94A
+            {% elif now().hour >= 5 %} https://www.youtube.com/watch?v=zQLvrhUXwtE
+            {% elif now().hour >= 6 %} https://www.youtube.com/watch?v=mWa-tiP3a_o
+            {% elif now().hour >= 7 %} https://www.youtube.com/watch?v=-CtfRww-2YM
+            {% elif now().hour >= 8 %} https://www.youtube.com/watch?v=OHxpIqpAjz0
+            {% elif now().hour >= 9 %} https://www.youtube.com/watch?v=T9ieUkNOEf4
+            {% elif now().hour >= 10 %} https://www.youtube.com/watch?v=25wXOGbmWOc
+            {% elif now().hour >= 11 %} https://www.youtube.com/watch?v=TPFZhtkP7M0
+            {% elif now().hour >= 12 %} https://www.youtube.com/watch?v=vZVS2FtVWHA
+            {% elif now().hour >= 13 %} https://www.youtube.com/watch?v=G3rtW1G2Ixg
+            {% elif now().hour >= 14 %} https://www.youtube.com/watch?v=LiXoQXCFhF8
+            {% elif now().hour >= 15 %} https://www.youtube.com/watch?v=CM58GBw4JkE
+            {% elif now().hour >= 16 %} https://www.youtube.com/watch?v=wqaKOCbeXmY
+            {% elif now().hour >= 17 %} https://www.youtube.com/watch?v=HXG9zU2Lb6g
+            {% elif now().hour >= 18 %} https://www.youtube.com/watch?v=iLSwc8wgJeo
+            {% elif now().hour >= 19 %} https://www.youtube.com/watch?v=rmtKHo7GB64
+            {% elif now().hour >= 20 %} https://www.youtube.com/watch?v=DhrsQO9Pkbs
+            {% elif now().hour >= 21 %} https://www.youtube.com/watch?v=Fl4M-a3eBnw
+            {% elif now().hour >= 22 %} https://www.youtube.com/watch?v=tEWFq1_NVSg
+            {% elif now().hour >= 23 %} https://www.youtube.com/watch?v=ytHqYVbuLt4
+            {% endif %}
+          {% endif %}
+        media_content_type: "audio/mp4"

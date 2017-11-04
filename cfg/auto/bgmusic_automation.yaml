@@ -1,0 +1,22 @@
+- alias: Hourly BG Music
+  trigger:
+    platform: time
+    minutes: 0
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        state: 'home'
+      - condition: state
+        entity_id: binary_sensor.asleep
+        state: 'off'
+      - condition: state
+        entity_id: binary_sensor.active_hours
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.auto_bgmusic
+        state: 'on'
+  action:
+    service: script.bgmusic_player

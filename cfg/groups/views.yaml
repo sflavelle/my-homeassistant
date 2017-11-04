@@ -29,6 +29,7 @@ auto_view:
   entities:
     - group.auto_weather
     - group.simonsauto
+    - group.auto_bgmusic
 
 dev_view:
   name: Development Sensors

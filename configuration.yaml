@@ -116,16 +116,22 @@ notify:
 
 group: !include_dir_merge_named cfg/groups/
 automation: !include_dir_merge_list cfg/auto/
+script: !include_dir_merge_named cfg/scripts/
+
+# Custom Inputs
 
 input_select: !include_dir_merge_named cfg/input_select/
 input_text:
   gh_youtube_url:
     name: Input YouTube URL
     initial: 'https://www.youtube.com/watch?v=xxxxxXXXXXx'
-
 input_boolean:
   auto_bgmusic:
     name: Enable
     initial: off
 
-script: !include_dir_merge_named cfg/scripts/
+# Various Hubs
+
+apple_tv:
+  - host: 192.168.0.62
+    login_id: 00000000-6075-0234-de72-4422edd64499

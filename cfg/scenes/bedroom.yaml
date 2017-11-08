@@ -1,0 +1,7 @@
+- name: Sleep / Night Light
+  entities:
+    light.simons_bedroom:
+      state: on
+      rgb_color: [30, 0, 0]
+      brightness: 10
+    switch.mac_display: off

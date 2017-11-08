@@ -5,7 +5,7 @@ switch.docker_*:
   homebridge_hidden: true
 switch.forever_*:
   homebridge_hidden: true
-light.simon:
+light.simon*:
   friendly_name: Bedroom Light
   state_card_mode: break-slider
   stretch_slider: true

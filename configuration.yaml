@@ -88,6 +88,9 @@ camera:
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
     name: Rain Radar
     limit_refetch_to_url_change: true
+  - platform: local_file
+    file_path: /Users/lily/Webcam.jpg
+    name: Bedroom
 
 # Smart Devices
 
@@ -95,6 +98,9 @@ wemo:
   static:
     - 192.168.0.100
     - 192.168.0.101
+
+light:
+  - platform: lifx
 
 # Various Location Tracking
 
@@ -109,6 +115,8 @@ binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 sensor: !include_dir_merge_list cfg/sensors/
 switch: !include_dir_merge_list cfg/switches/
 
+scene: !include_dir_merge_list cfg/scenes/
+
 notify:
   - name: discord
     platform: discord
@@ -120,15 +128,9 @@ script: !include_dir_merge_named cfg/scripts/
 
 # Custom Inputs
 
-input_select: !include_dir_merge_named cfg/input_select/
-input_text:
-  gh_youtube_url:
-    name: Input YouTube URL
-    initial: 'https://www.youtube.com/watch?v=xxxxxXXXXXx'
-input_boolean:
-  auto_bgmusic:
-    name: Enable
-    initial: off
+input_select: !include_dir_merge_named cfg/input/select/
+input_text: !include_dir_merge_named cfg/input/text/
+input_boolean: !include_dir_merge_named cfg/input/boolean/
 
 # Various Hubs
 

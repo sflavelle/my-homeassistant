@@ -10,7 +10,7 @@ default_view:
     - group.simonsbedroom
     - group.simonsdevices
     - group.simonsmedia
-    - group.simonstats
+    # - group.simonstats
     - group.gh_youtubeplayer
 
 weather_view:

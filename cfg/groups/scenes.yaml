@@ -1,0 +1,4 @@
+scenes_bedroom:
+  name: Bedroom Scenes
+  entities:
+    - scene.sleep__night_light

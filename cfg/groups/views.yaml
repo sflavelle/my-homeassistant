@@ -12,6 +12,7 @@ default_view:
     - group.simonsmedia
     # - group.simonstats
     - group.gh_youtubeplayer
+    - group.scenes_bedroom
 
 weather_view:
   name: Weather

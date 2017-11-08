@@ -14,7 +14,8 @@ This config currently uses the following devices (Australian URLs):
 - 2 x [Google Chromecast Audio](https://store.google.com/product/chromecast_audio)
 
 # Things I would like to do next:
-- [ ] Measure bandwidth usage
+- [x] Measure bandwidth usage
+- [ ] Show it on the display (Trialling PeakHour 4 and monitoring my Mac with SNMP)
 - [ ] Get Xiaomi devices (Temp/Humidity sensors, Wireless Buttons at least) for context-sensitive automations
 - [ ] Automate devices based on temperature (make sure heater doesn't turn on when too warm etc)
 - [ ] Experiment with Bayesian Binary Sensors to capture/predict things (like sleep)

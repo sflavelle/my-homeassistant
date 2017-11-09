@@ -1,0 +1,13 @@
+- alias: "Turn things off when I leave"
+  trigger:
+    platform: state
+    entity_id: device_tracker.lilyflavellesiphone
+    from: 'home'
+    to: 'not_home'
+    for:
+      minutes: 5
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.simonsbedroom
+    - service: homeassistant.turn_off
+      entity_id: switch.mac_display

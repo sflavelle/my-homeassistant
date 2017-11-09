@@ -1,0 +1,7 @@
+- platform: workday # Simon
+  country: AU
+  province: VIC
+  workdays:
+    - mon
+    - wed
+    - fri

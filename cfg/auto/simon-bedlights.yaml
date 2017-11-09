@@ -8,8 +8,30 @@
       entity_id: light.simons_bedroom
       data:
         transition: 1800 # 30 minutes
-        brightness_pct: 100
+        brightness_pct: 60
     - service: notify.discord
       data:
         message: "Your lights are fading in, because the sun is now setting."
         target: 375206372574363660
+
+- alias: "Lights On Early For Work"
+  trigger:
+    platform: time
+    at: '06:00:00'
+  condition:
+    condition: state
+    entity_id: device_tracker.lilyflavellesiphone
+    state: 'home'
+  action:
+    - service: light.turn_on
+      entity_id: light.simons_bedroom
+      data:
+        rgb_color: [30, 0, 0]
+        brightness: 10
+    - delay: 00:01:00
+    - service: light.turn_on
+      entity_id: light.simons_bedroom
+      data:
+        transition: 1800
+        brightness_pct: 50
+        color_temp: 325

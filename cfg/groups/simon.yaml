@@ -29,6 +29,7 @@ simonsauto:
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.switch_on_the_heater_in_the_morning
     - automation.only_run_the_heater_for_two_hours
+    - automation.lights_on_early_for_work
 simonstats:
   name: Statistics
   entities:

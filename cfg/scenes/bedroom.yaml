@@ -5,3 +5,10 @@
       rgb_color: [30, 0, 0]
       brightness: 10
     switch.mac_display: off
+
+- name: Daylight Cool Lighting
+  entities:
+    light.simons_bedroom:
+      state: on
+      brightness: 151
+      color_temp: 153

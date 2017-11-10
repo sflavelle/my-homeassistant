@@ -13,6 +13,7 @@ simonsbedroom:
     - light.simon # Wemo
     - light.simons_bedroom # LIFX
     - switch.heater
+    - switch.fan
 simonsmedia:
   name: Now Playing
   entities:
@@ -24,11 +25,10 @@ simonsauto:
   entities:
     - automation.turn_off_the_heater_two_hours_after_this_is_switched_on
     - automation.only_run_the_heater_for_two_hours
+    - automation.switch_on_the_heater_in_the_morning
     - automation.prepare_room_for_bedtime
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
-    - automation.switch_on_the_heater_in_the_morning
-    - automation.only_run_the_heater_for_two_hours
     - automation.lights_on_early_for_work
 simonstats:
   name: Statistics

@@ -21,6 +21,8 @@ switch.heater:
   icon: mdi:radiator
   extra_data_template: >
     if (attributes.current_power_w < 0.5) return 'Idle'; else if (state === 'off') return null; else return 'Active';
+switch.fan:
+  icon: mdi:fan
 sensor.batt_ipad:
   icon: mdi:tablet-ipad
   extra_data_template: >
@@ -33,3 +35,26 @@ input_text.gh_youtube_url:
   group:
     group.gh_youtubeplayer:
       friendly_name: "URL:"
+
+# Scenes Custom Icons
+scene.sleep__night_light:
+  icon: mdi:weather-night
+scene.daylight_cool_lighting:
+  icon: mdi:white-balance-sunny
+
+# Automation Custom Icons
+
+automation.turn_off_the_heater_two_hours_after_this_is_switched_on:
+  icon: mdi:radiator
+automation.only_run_the_heater_for_two_hours:
+  icon: mdi:radiator
+automation.prepare_room_for_bedtime:
+  icon: mdi:weather-night
+automation.simon_home_turn_bedroom_light_on_after_dark:
+  icon: mdi:weather-sunset
+automation.simon_home_wake_up_with_bedroom_lights:
+  icon: mdi:weather-sunset
+automation.switch_on_the_heater_in_the_morning:
+  icon: mdi:weather-sunset
+automation.lights_on_early_for_work:
+  icon: mdi:lightbulb-on

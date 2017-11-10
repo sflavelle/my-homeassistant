@@ -3,6 +3,8 @@ default_view:
   name: Home
   entities:
     - sun.sun
+    - sensor.bom_bendigo_air_temp_c
+    
     - device_tracker.simonsiphone
     - binary_sensor.asleep
     - sensor.speedtest_download

@@ -1,0 +1,45 @@
+- alias: "Fan on when weather's warming"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bom_bendigo_air_temp_c
+    above: 25
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        state: 'home'
+      - condition: state
+        entity_id: switch.fan
+        state: 'off'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.fan
+    - service: notify.discord
+      data_template:
+        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}}, so the fan was switched on."
+        target: 375206372574363660
+
+- alias: "Fan on when it's warm at night"
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        state: 'home'
+      - condition: state
+        entity_id: switch.fan
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.bom_bendigo_air_temp_c
+        above: 20
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.fan
+    - service: notify.discord
+      data_template:
+        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}} and the sun is setting, so the fan was switched on."
+        target: 375206372574363660

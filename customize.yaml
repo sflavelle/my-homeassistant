@@ -58,3 +58,7 @@ automation.switch_on_the_heater_in_the_morning:
   icon: mdi:weather-sunset
 automation.lights_on_early_for_work:
   icon: mdi:lightbulb-on
+automation.fan_on_when_its_warm_at_night:
+  icon: mdi:weather-night
+automation.fan_on_when_weathers_warming:
+  icon: mdi:white-balance-sunny

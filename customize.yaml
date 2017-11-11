@@ -62,3 +62,7 @@ automation.fan_on_when_its_warm_at_night:
   icon: mdi:weather-night
 automation.fan_on_when_weathers_warming:
   icon: mdi:white-balance-sunny
+
+# Give weird entities proper names
+media_player.unnamed_device:
+  friendly_name: Lounge Room TV (Plex)

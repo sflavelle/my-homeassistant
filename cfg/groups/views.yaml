@@ -3,10 +3,7 @@ default_view:
   name: Home
   entities:
     - sun.sun
-    # - sensor.bom_bendigo_air_temp_c
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_temperature
+    - sensor.bom_bendigo_air_temp_c
     - device_tracker.lilyflavellesiphone
     - sensor.speedtest_download
     - sensor.speedtest_upload
@@ -41,12 +38,10 @@ weather_view:
   icon: mdi:weather-sunny
   view: yes
   entities:
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_precip_probability
+    - sensor.bom_bendigo_air_temp_c
+    - sensor.bom_bendigo_cloud
+    - sensor.bom_bendigo_rain_today
+    - sensor.bom_bendigo_wind_direction
     - group.weather
     - camera.rain_radar
     - group.auto_weather

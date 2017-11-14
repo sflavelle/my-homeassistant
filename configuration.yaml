@@ -161,8 +161,10 @@ history_graph:
   tempgraph:
     name: Recent Temperatures
     entities:
-      - sensor.dark_sky_temperature
-      - sensor.dark_sky_summary
+    - sensor.bom_bendigo_air_temp_c
+    - sensor.bom_bendigo_rain_today
+    - sensor.bom_bendigo_relative_humidity
+    - sensor.bom_bendigo_wind_speed_kmh
     hours_to_show: 72
     refresh: 3600
   netgraph:

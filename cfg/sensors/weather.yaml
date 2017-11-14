@@ -1,10 +1,13 @@
-- platform: bom
-  station: IDV60801.94855
-  name: Bendigo
+- platform: darksky
+  api_key: !secret darksky
+  update_inverval: 00:30:00
   monitored_conditions:
-    - cloud
-    - gust_kmh
-    - air_temp
-    - rain_trace
-    - rel_hum
-    - wind_spd_kmh
+    - hourly_summary
+    - daily_summary
+    - temperature_max
+    - temperature_min
+    - temperature
+    - summary
+    - precip_intensity
+    - precip_probability
+    - precip_intensity_max

@@ -66,3 +66,23 @@ automation.fan_on_when_weathers_warming:
 # Give weird entities proper names
 media_player.unnamed_device:
   friendly_name: Lounge Room TV (Plex)
+
+# Renaming Service Sensors
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: Today's High
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: Tonight's Low
+sensor.dark_sky_temperature:
+  friendly_name: Current Temp
+sensor.dark_sky_daily_max_precip_intensity:
+  friendly_name: Predicted Max Precipitation
+sensor.dark_sky_precip_intensity:
+  friendly_name: Precip Intensity
+sensor.dark_sky_precip_probability:
+  friendly_name: Precip Probability
+sensor.dark_sky_summary:
+  friendly_name: Right Now
+sensor.dark_sky_hourly_summary:
+  friendly_name: Today's Weather
+sensor.dark_sky_daily_summary:
+  friendly_name: This Week's Weather

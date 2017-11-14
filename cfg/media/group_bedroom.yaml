@@ -1,0 +1,5 @@
+- platform: universal
+  name: Bedroom TV
+  children:
+    - media_player.simons_chromecast
+    - media_player.apple_tv

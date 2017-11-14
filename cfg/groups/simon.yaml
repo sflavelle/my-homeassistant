@@ -9,7 +9,7 @@ simonsdevices:
 simonsbedroom:
   name: Bedroom
   entities:
-    - camera.bedroom
+    # - camera.bedroom
     - light.simon # Wemo
     - light.simons_bedroom # LIFX
     - switch.heater
@@ -17,9 +17,8 @@ simonsbedroom:
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.simons_chromecast
+    - media_player.bedroom_tv
     - media_player.the_leeches_room
-    - media_player.apple_tv
 simonsauto:
   name: Bedroom Automations
   entities:

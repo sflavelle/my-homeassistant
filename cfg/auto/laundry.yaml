@@ -7,6 +7,18 @@
     service: timer.start
     entity_id: timer.laundry_line
 
+- alias: "Update laundry status when timer is complete"
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.laundry_line
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.status_laundry
+      option: 'Complete / Manual Check'
+
 - alias: "Notify when laundry is complete or needs checking"
   trigger:
     - platform: state

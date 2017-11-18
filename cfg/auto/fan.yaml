@@ -43,3 +43,15 @@
       data_template:
         message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}} and the sun is setting, so the fan was switched on."
         target: 375206372574363660
+
+- alias: "Fan off overnight"
+  trigger:
+    platform: time
+    at: '03:00:00'
+  condition:
+    condition: state
+    entity_id: switch.fan
+    state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.fan

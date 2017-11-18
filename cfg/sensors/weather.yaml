@@ -1,6 +1,6 @@
 - platform: darksky
   api_key: !secret darksky
-  update_inverval: 00:30:00
+  update_inverval: 00:05:00
   monitored_conditions:
     - hourly_summary
     - daily_summary

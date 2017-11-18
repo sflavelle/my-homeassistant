@@ -1,0 +1,4 @@
+- platform: worldclock
+  time_zone: America/Chicago # Phil
+- platform: worldclock
+  time_zone: Europe/London # Serrio

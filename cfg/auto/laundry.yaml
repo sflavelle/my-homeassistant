@@ -1,0 +1,44 @@
+- alias: "Start timer when laundry is hung out"
+  trigger:
+    platform: state
+    entity_id: input_select.status_laundry
+    to: 'Hung Out'
+  action:
+    service: timer.start
+    entity_id: timer.laundry_line
+
+- alias: "Notify when laundry is complete or needs checking"
+  trigger:
+    - platform: state
+      entity_id: input_select.status_laundry
+      from: 'Hung Out'
+      to: 'Complete / Manual Check'
+    - platform: state
+      entity_id: input_select.status_laundry
+      from: 'In Dryer'
+      to: 'Complete / Manual Check'
+  action:
+    - service: notify.discord
+      data:
+        message: "Your laundry may have finished processing. Please collect your clothes if dry."
+        target: 381242798260879362
+
+- alias: "Notify when laundry still in washer for too long"
+  trigger:
+    - platform: state
+      entity_id: input_select.status_laundry
+      from: 'Being Washed'
+      to: 'Washed, Ready For Hanging Out'
+      for:
+        hours: 1
+    - platform: state
+      entity_id: input_select.status_laundry
+      from: 'Being Washed'
+      to: 'Washed, Ready For Dryer'
+      for:
+        hours: 1
+  action:
+    - service: notify.discord
+      data:
+        message: "Your clothes might still be in the washing machine! Please move them so they may dry."
+        target: 381242798260879362

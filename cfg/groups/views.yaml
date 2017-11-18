@@ -24,6 +24,13 @@ lounge_view:
   entities:
     - media_player.unnamed_device
 
+house_view:
+  view: yes
+  name: Just House Things
+  icon: mdi:home-variant
+  entities:
+    - group.laundry
+
 weather_view:
   name: Weather
   icon: mdi:weather-sunny

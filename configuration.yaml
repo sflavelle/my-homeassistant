@@ -132,6 +132,12 @@ input_select: !include_dir_merge_named cfg/input/select/
 input_text: !include_dir_merge_named cfg/input/text/
 input_boolean: !include_dir_merge_named cfg/input/boolean/
 
+timer:
+  laundry_line:
+    duration: '08:00:00'
+  laundry_dryer:
+    duration: '01:30:00'
+
 # Various Hubs
 
 apple_tv:

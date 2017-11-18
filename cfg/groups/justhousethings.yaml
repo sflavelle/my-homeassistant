@@ -1,0 +1,4 @@
+laundry:
+  name: Laundry Tasks
+  entities:
+    - input_select.status_laundry

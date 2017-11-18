@@ -1,0 +1,13 @@
+status_laundry:
+  name: Laundry
+  icon: mdi:tshirt-crew
+  initial: Ready To Be Washed
+  options:
+    - Ready To Be Washed
+    - Being Washed
+    - Washed, Ready For Hanging Out
+    - Washed, Ready For Dryer
+    - In Dryer
+    - Hung Out
+    - Hung Out, Raining
+    - Complete / Manual Check

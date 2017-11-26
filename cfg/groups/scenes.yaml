@@ -3,3 +3,4 @@ scenes_bedroom:
   entities:
     - scene.sleep__night_light
     - scene.daylight_cool_lighting
+    - scene.evening_warm_lighting

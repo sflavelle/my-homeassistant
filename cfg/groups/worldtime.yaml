@@ -1,0 +1,5 @@
+worldtime:
+  name: Time Around The World
+  entities:
+    - sensor.worldclock_sensor
+    - sensor.worldclock_sensor_2

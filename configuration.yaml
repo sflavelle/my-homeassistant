@@ -91,6 +91,9 @@ camera:
   - platform: local_file
     file_path: /Users/lily/Webcam.jpg
     name: Bedroom
+  - platform: generic
+    name: World Time
+    still_image_url: https://imgs.xkcd.com/comics/now.png
 
 # Smart Devices
 

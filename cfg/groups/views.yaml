@@ -17,6 +17,8 @@ default_view:
     # - group.simonstats
     - group.gh_youtubeplayer
     - group.scenes_bedroom
+    - camera.world_time
+    - group.worldtime
 
 lounge_view:
   view: yes
@@ -62,3 +64,4 @@ dev_view:
   entities:
     - binary_sensor.active_hours
     - binary_sensor.asleep
+    - configurator.icloud_neurario

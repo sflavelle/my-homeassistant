@@ -17,7 +17,7 @@ simonsbedroom:
 simonsmedia:
   name: Now Playing
   entities:
-    - media_player.bedroom_tv
+    - media_player.simons_chromecast
     - media_player.the_leeches_room
 simonsauto:
   name: Bedroom Automations

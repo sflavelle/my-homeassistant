@@ -25,6 +25,7 @@ lounge_view:
   name: Lounge
   entities:
     - media_player.unnamed_device
+    - media_player.apple_tv
 
 house_view:
   view: yes

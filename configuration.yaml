@@ -138,9 +138,3 @@ timer:
     duration: '08:00:00'
   laundry_dryer:
     duration: '01:30:00'
-
-# Various Hubs
-
-apple_tv:
-  - host: 192.168.0.62
-    login_id: 00000000-6075-0234-de72-4422edd64499

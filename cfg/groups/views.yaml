@@ -7,7 +7,7 @@ default_view:
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_temperature
-    - device_tracker.simonsiphone
+    - device_tracker.lilyflavellesiphone
     - binary_sensor.asleep
     - sensor.speedtest_download
     - sensor.speedtest_upload
@@ -19,6 +19,7 @@ default_view:
     - group.scenes_bedroom
     - camera.world_time
     - group.worldtime
+    - group.discord
 
 lounge_view:
   view: yes

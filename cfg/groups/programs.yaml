@@ -1,0 +1,5 @@
+discord:
+  name: Discord Applications
+  entities:
+    - switch.discord_neubott
+    - switch.discord_bucket

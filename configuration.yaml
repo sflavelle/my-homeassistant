@@ -151,6 +151,10 @@ history_graph:
     hours_to_show: 168
     refresh: 3600
 
+device_sun_light_trigger:
+  light_group: light.simons_bedroom
+  device_group: group.tracked_devices
+
 timer:
   laundry_line:
     duration: '08:00:00'

@@ -11,3 +11,7 @@ auto_bgmusic:
     - input_boolean.auto_bgmusic
     - input_select.bgmusic_theme
     - script.bgmusic_player
+
+tracked_devices:
+  entities:
+    - device_tracker.lilyflavellesiphone

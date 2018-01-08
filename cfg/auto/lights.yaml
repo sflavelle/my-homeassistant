@@ -1,19 +1,3 @@
-- alias: "Simon home? Turn bedroom light on after dark"
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:20:00"
-  action:
-    - service: light.turn_on
-      entity_id: light.simons_bedroom
-      data:
-        transition: 1800 # 30 minutes
-        brightness_pct: 60
-    - service: notify.discord
-      data:
-        message: "Your lights are fading in, because the sun is now setting."
-        target: 375206372574363660
-
 - alias: "Lights On Early For Work"
   trigger:
     platform: time

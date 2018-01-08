@@ -8,18 +8,18 @@ default_view:
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_temperature
     - device_tracker.lilyflavellesiphone
-    - binary_sensor.asleep
     - sensor.speedtest_download
     - sensor.speedtest_upload
+    - updater.updater
     - group.simonsbedroom
     - group.simonsdevices
     - group.simonsmedia
     # - group.simonstats
-    - group.gh_youtubeplayer
     - group.scenes_bedroom
     - camera.world_time
     - group.worldtime
     - group.discord
+    - history_graph.network_speeds
 
 lounge_view:
   view: yes
@@ -34,6 +34,7 @@ house_view:
   icon: mdi:home-variant
   entities:
     - group.laundry
+    - media_player.beths_room__speaker
 
 weather_view:
   name: Weather
@@ -58,6 +59,7 @@ auto_view:
     - group.auto_weather
     - group.simonsauto
     - group.auto_bgmusic
+    - group.gh_youtubeplayer
 
 dev_view:
   name: Development Sensors

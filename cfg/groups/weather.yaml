@@ -9,6 +9,7 @@ weather:
     # - sensor.bom_bendigo_wind_direction
     # - sensor.bom_bendigo_wind_gust_kmh
     # - sensor.bom_bendigo_wind_speed_kmh
+    - history_graph.recent_temperatures
     - sensor.dark_sky_summary
     - sensor.dark_sky_hourly_summary
     - sensor.dark_sky_daily_summary

@@ -136,6 +136,21 @@ input_select: !include_dir_merge_named cfg/input/select/
 input_text: !include_dir_merge_named cfg/input/text/
 input_boolean: !include_dir_merge_named cfg/input/boolean/
 
+history_graph:
+  tempgraph:
+    name: Recent Temperatures
+    entities:
+      - sensor.dark_sky_temperature
+    hours_to_show: 72
+    refresh: 3600
+  netgraph:
+    name: Network Speeds
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+    hours_to_show: 168
+    refresh: 3600
+
 timer:
   laundry_line:
     duration: '08:00:00'

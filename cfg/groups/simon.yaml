@@ -12,6 +12,7 @@ simonsbedroom:
     # - camera.bedroom
     - light.simon # Wemo
     - light.simons_bedroom # LIFX
+    - switch.fluxed_lighting
     - switch.heater
     - switch.fan
 simonsmedia:

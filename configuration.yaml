@@ -152,7 +152,7 @@ history_graph:
     refresh: 3600
 
 device_sun_light_trigger:
-  light_group: light.simons_bedroom
+  light_group: group.simons_lights
   device_group: group.tracked_devices
 
 timer:

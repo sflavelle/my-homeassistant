@@ -15,3 +15,7 @@ auto_bgmusic:
 tracked_devices:
   entities:
     - device_tracker.lilyflavellesiphone
+simons_lights:
+  entities:
+    - light.simons_bedroom
+    - light.simon

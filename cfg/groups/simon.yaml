@@ -1,9 +1,7 @@
 simonsdevices:
   name: Devices
   entities:
-    - sensor.batt_iphone
-    - sensor.batt_ipad
-    - sensor.batt_watch
+    - history_graph.device_batteries
     - switch.mac_display
     - switch.gaming_pc
 simonsbedroom:

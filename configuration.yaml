@@ -149,6 +149,7 @@ history_graph:
     name: Recent Temperatures
     entities:
       - sensor.dark_sky_temperature
+      - sensor.dark_sky_summary
     hours_to_show: 72
     refresh: 3600
   netgraph:

@@ -22,6 +22,11 @@ frontend:
 
 customizer:
   custom_ui: local
+  columns: 
+    - 500
+    - 800
+    - 1100 
+    - 1400
 
 # Enables configuration UI
 config:

@@ -159,7 +159,7 @@ history_graph:
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
-    hours_to_show: 168
+    hours_to_show: 72
     refresh: 3600
 
 device_sun_light_trigger:

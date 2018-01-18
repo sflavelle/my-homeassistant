@@ -1,4 +1,6 @@
 - platform: worldclock
+  name: Chicago Time
   time_zone: America/Chicago # Phil
 - platform: worldclock
+  name: London Time
   time_zone: Europe/London # Serrio

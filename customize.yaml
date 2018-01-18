@@ -87,7 +87,3 @@ sensor.dark_sky_hourly_summary:
 sensor.dark_sky_daily_summary:
   friendly_name: This Week's Weather
 
-sensor.worldclock_sensor:
-  friendly_name: London (Serrio)
-sensor.worldclock_sensor_2:
-  friendly_name: Chicago (Phil)

@@ -161,14 +161,6 @@ history_graph:
       - sensor.speedtest_upload
     hours_to_show: 168
     refresh: 3600
-  devicebatteries:
-    name: Device Batteries
-    entities:
-      - sensor.batt_iphone
-      - sensor.batt_ipad
-      - sensor.batt_watch
-    hours_to_show: 48
-    refresh: 180
 
 device_sun_light_trigger:
   light_group: group.simons_lights

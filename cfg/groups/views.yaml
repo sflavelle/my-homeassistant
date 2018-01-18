@@ -2,7 +2,6 @@ default_view:
   view: yes
   name: Home
   entities:
-    # Sensors
     - sun.sun
     # - sensor.bom_bendigo_air_temp_c
     - sensor.dark_sky_daily_high_temperature
@@ -11,10 +10,6 @@ default_view:
     - device_tracker.lilyflavellesiphone
     - sensor.speedtest_download
     - sensor.speedtest_upload
-    - sensor.batt_iphone
-    - sensor.batt_ipad
-    - sensor.batt_watch
-    # Groups
     - updater.updater
     - group.simonsbedroom
     - group.simonsdevices

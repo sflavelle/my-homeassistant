@@ -21,7 +21,7 @@ frontend:
   javascript_version: latest
 
 customizer:
-  custom_ui: hosted
+  custom_ui: local
 
 # Enables configuration UI
 config:
@@ -92,9 +92,6 @@ camera:
   - platform: local_file
     file_path: /Users/lily/Webcam.jpg
     name: Bedroom
-  - platform: generic
-    name: World Time
-    still_image_url: https://imgs.xkcd.com/comics/now.png
 
 # Smart Devices
 

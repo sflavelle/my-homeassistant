@@ -7,15 +7,17 @@ There are various configurations available to look at based on different living 
 # Devices
 This config currently uses the following devices (Australian URLs):
 
-- [LIFX+ A19 Wi-Fi LED Light with Night Vision](https://www.lifx.com.au/products/lifx-plus)
-- 1 x [WeMo Insight Switch](http://www.belkin.com/au/F7C029-Belkin/p/P-F7C029)
-- 1 x [Apple TV 4th Generation](https://www.apple.com/au/shop/buy-tv/apple-tv)
-- 2 x [Google Chromecast 1st Generation](https://store.google.com/config/chromecast_2015?hl=en-AU)
-- 2 x [Google Chromecast Audio](https://store.google.com/product/chromecast_audio)
+- 1 x LIFX+ A19 Wi-Fi LED Light with Night Vision
+- 1 x WeMo Insight Switch
+- 1 x Apple TV 4th Generation
+- 2 x Google Chromecast 1st Generation
+- 2 x Google Chromecast Audio
+- 1 x Google Home
+
 
 # Things I would like to do next:
 - [x] Measure bandwidth usage
-- [ ] Show it on the display (Trialling PeakHour 4 and monitoring my Mac with SNMP)
+- [ ] Show it on the frontend
 - [ ] Get Xiaomi devices (Temp/Humidity sensors, Wireless Buttons at least) for context-sensitive automations
 - [ ] Automate devices based on temperature (make sure heater doesn't turn on when too warm etc)
 - [ ] Experiment with Bayesian Binary Sensors to capture/predict things (like sleep)

@@ -123,10 +123,21 @@ switch: !include_dir_merge_list cfg/switches/
 
 scene: !include_dir_merge_list cfg/scenes/
 
+# Notification Platforms
+
 notify:
   - name: discord
     platform: discord
     token: !secret discord_token
+  - name: telegrambot
+    platform: telegram
+    chat_id: !secret tgram_simon
+
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegram
+    allowed_chat_ids:
+      - !secret tgram_simon
 
 group: !include_dir_merge_named cfg/groups/
 automation: !include_dir_merge_list cfg/auto/

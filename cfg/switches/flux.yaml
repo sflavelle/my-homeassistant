@@ -1,4 +1,0 @@
-- platform: flux
-  name: Fluxed Lighting
-  lights:
-    - light.simons_bedroom

@@ -8,19 +8,28 @@ default_view:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - updater.updater
-    - group.simonsbedroom
-    - group.simonsdevices
-    - group.simonsmedia
-    # - group.simonstats
-    - group.scenes_bedroom
-    - camera.world_time
     - group.worldtime
     - group.discord
     - history_graph.network_speeds
 
+simon_view:
+  view: yes
+  name: Simon
+  entities:
+    - device_tracker.lilyflavellesiphone
+    - sensor.batt_iphone
+    - sensor.batt_ipad
+    - sensor.batt_watch
+    - group.simonsbedroom
+    - group.simonsdevices
+    - group.simonsmedia
+    - group.simonstats
+    - group.scenes_bedroom
+
 lounge_view:
   view: yes
   name: Lounge
+  icon: mdi:television-classic
   entities:
     - media_player.unnamed_device
     - media_player.apple_tv

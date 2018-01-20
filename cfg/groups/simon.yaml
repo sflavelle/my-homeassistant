@@ -12,6 +12,7 @@ simonsdevices:
 simonsbedroom:
   name: Bedroom
   entities:
+    - input_select.simon_presence
     # - camera.bedroom
     - light.simon # Wemo
     - light.simons_bedroom # LIFX

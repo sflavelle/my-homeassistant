@@ -4,7 +4,6 @@ default_view:
   entities:
     - sun.sun
     - sensor.bom_bendigo_air_temp_c
-    - device_tracker.lilyflavellesiphone
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - updater.updater

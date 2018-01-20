@@ -39,6 +39,8 @@ http:
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret url
+  ssl_certificate: !secret sslcert
+  ssl_key: !secret sslkey
 
 recorder:
   exclude:

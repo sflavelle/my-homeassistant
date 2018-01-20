@@ -28,6 +28,7 @@ lounge_view:
   entities:
     - media_player.unnamed_device
     - media_player.apple_tv
+    - media_player.playstation_4
 
 house_view:
   view: yes

@@ -1,0 +1,6 @@
+simon_presence:
+  options:
+    - At Home
+    - In Bed
+    - At Work
+    - Away

@@ -1,0 +1,68 @@
+- alias: "Update presence to away"
+  trigger:
+    platform: state
+    entity_id: device_tracker.lilyflavellesiphone
+    to: 'not_home'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.simon_presence
+      option: "Away"
+
+- alias: "Update presence to At Work"
+  trigger:
+    platform: state
+    entity_id: device_tracker.lilyflavellesiphone
+    to: "Simon's Work"
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.simon_presence
+      option: "At Work"
+
+- alias: "Update presence to At Home"
+  trigger:
+    platform: state
+    entity_id: device_tracker.lilyflavellesiphone
+    to: 'home'
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.simon_presence
+      option: "At Home"
+
+- alias: "Update presence to In Bed"
+  trigger:
+    platform: state
+    entity_id: sensor.batt_iphone_charging
+    to: Charging
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        condition: 'home'
+      - condition: sun
+        after: sunset
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.simon_presence
+      option: "In Bed"
+
+- alias: "Update presence when getting out of bed"
+  trigger:
+    platform: state
+    entity_id: sensor.batt_iphone_charging
+    to: NotCharging
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.simon_presence
+        condition: 'In Bed'
+      - condition: state
+        entity_id: device_tracker.lilyflavellesiphone
+        condition: 'home'
+      - condition: time
+        after: '03:00:00' # Just in case
+  action:
+    - service: input_select.select_option
+      entity_id: input_select.simon_presence
+      option: "Home"

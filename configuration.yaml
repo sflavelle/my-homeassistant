@@ -16,6 +16,14 @@ homeassistant:
   time_zone: !secret tz
   customize_glob: !include customize.yaml
 
+# Location zoning
+
+zone:
+  - name: Simon's Work
+    latitude: !secret loc_boris_lat
+    longitude: !secret loc_boris_lon
+    
+
 # Enables the frontend
 frontend:
   javascript_version: latest

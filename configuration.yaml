@@ -129,6 +129,11 @@ google_assistant:
         - Mac
         - Mac display
 
+mqtt:
+  broker: !secret mqttbroker
+  username: !secret mqttuser
+  password: !secret mqttpassword
+
 # Component/Entity Configuration
 
 camera:

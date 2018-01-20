@@ -94,7 +94,7 @@ ios:
 # Google Assistant
 
 google_assistant:
-  project_id: neu-s-home-assistant
+  project_id: homeassistneu
   client_id: !secret ga_client
   access_token: !secret ga_access
   agent_user_id: simonsayslps@gmail.com

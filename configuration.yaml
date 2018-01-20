@@ -91,6 +91,32 @@ duckdns:
 
 ios:
 
+# Google Assistant
+
+google_assistant:
+  project_id: neu-s-home-assistant
+  client_id: !secret ga_client
+  access_token: !secret ga_access
+  agent_user_id: simonsayslps@gmail.com
+  api_key: !secret ga_api
+  exposed_domains:
+    - switch
+    - light
+  entity_config:
+    light.simons_bedroom:
+      expose: false # Already exposed by LIFX
+    switch.discord_neubott:
+      name: Neubott
+      aliases:
+        - Neutopia bot
+    switch.discord_bucket:
+      name: Bucket
+      aliases:
+        - Bucket bot
+        - General Chat bot
+
+# Component/Entity Configuration
+
 camera:
   - platform: generic
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00

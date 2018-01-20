@@ -103,15 +103,15 @@ google_assistant:
     - switch
     - light
   entity_config:
-    light.simons_bedroom:
-      expose: false # Already exposed by LIFX
     switch.discord_neubott:
       name: Neubott
       aliases:
+        - Neubott
         - Neutopia bot
     switch.discord_bucket:
       name: Bucket
       aliases:
+        - Bucket
         - Bucket bot
         - General Chat bot
 

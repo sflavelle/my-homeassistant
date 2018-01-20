@@ -19,8 +19,7 @@ This config currently uses the following devices (Australian URLs):
 - [x] Measure bandwidth usage
 - [ ] Show it on the frontend
 - [ ] Get Xiaomi devices (Temp/Humidity sensors, Wireless Buttons at least) for context-sensitive automations
-- [ ] Automate devices based on temperature (make sure heater doesn't turn on when too warm etc)
-- [ ] Experiment with Bayesian Binary Sensors to capture/predict things (like sleep)
+- [x] Automate devices based on temperature (make sure heater doesn't turn on when too warm etc)
 
 # Contact
 The best way to get in contact with me regarding this configuration is to create an issue or PR here on Github.

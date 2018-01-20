@@ -24,6 +24,7 @@ simonsmedia:
   entities:
     - media_player.simons_chromecast
     - media_player.the_leeches_room
+    - media_player.simon_ambience
 simonsauto:
   name: Bedroom Automations
   entities:

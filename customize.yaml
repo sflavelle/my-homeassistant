@@ -13,6 +13,8 @@ media_player.simons_chromecast:
   friendly_name: Chromecast
 media_player.the_leeches_room:
   friendly_name: Google Home
+media_player.simon_ambience:
+  friendly_name: Simon's Bedroom Speaker Group
 sensor.batt_watch:
   icon: mdi:watch
 switch.heater:

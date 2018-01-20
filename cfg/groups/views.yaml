@@ -16,10 +16,6 @@ simon_view:
   view: yes
   name: Simon
   entities:
-    - device_tracker.lilyflavellesiphone
-    - sensor.batt_iphone
-    - sensor.batt_ipad
-    - sensor.batt_watch
     - group.simonsbedroom
     - group.simonsdevices
     - group.simonsmedia

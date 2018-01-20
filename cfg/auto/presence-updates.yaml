@@ -5,8 +5,9 @@
     to: 'not_home'
   action:
     - service: input_select.select_option
-      entity_id: input_select.simon_presence
-      option: "Away"
+      data:
+        entity_id: input_select.simon_presence
+        option: "Away"
 
 - alias: "Update presence to At Work"
   trigger:
@@ -15,8 +16,9 @@
     to: "Simon's Work"
   action:
     - service: input_select.select_option
-      entity_id: input_select.simon_presence
-      option: "At Work"
+      data:
+        entity_id: input_select.simon_presence
+        option: "At Work"
 
 - alias: "Update presence to At Home"
   trigger:
@@ -25,8 +27,9 @@
     to: 'home'
   action:
     - service: input_select.select_option
-      entity_id: input_select.simon_presence
-      option: "At Home"
+      data:
+        entity_id: input_select.simon_presence
+        option: "At Home"
 
 - alias: "Update presence to In Bed"
   trigger:
@@ -38,13 +41,14 @@
     conditions:
       - condition: state
         entity_id: device_tracker.lilyflavellesiphone
-        condition: 'home'
+        state: 'home'
       - condition: sun
         after: sunset
   action:
     - service: input_select.select_option
-      entity_id: input_select.simon_presence
-      option: "In Bed"
+      data:
+        entity_id: input_select.simon_presence
+        option: "In Bed"
 
 - alias: "Update presence when getting out of bed"
   trigger:
@@ -56,13 +60,14 @@
     conditions:
       - condition: state
         entity_id: input_select.simon_presence
-        condition: 'In Bed'
+        state: 'In Bed'
       - condition: state
         entity_id: device_tracker.lilyflavellesiphone
-        condition: 'home'
+        state: 'home'
       - condition: time
         after: '03:00:00' # Just in case
   action:
     - service: input_select.select_option
-      entity_id: input_select.simon_presence
-      option: "Home"
+      data:
+        entity_id: input_select.simon_presence
+        option: "Home"

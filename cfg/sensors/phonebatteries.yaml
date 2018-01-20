@@ -43,7 +43,7 @@
             {%- endif %}
       friendly_name: iPad
       unit_of_measurement: "%"
-    batt_ipad:
+    batt_ipad_charging:
       value_template: >-
             {%- if states.device_tracker.simonflavellesipad.attributes.battery_status %}
                 {{ states.device_tracker.simonflavellesipad.attributes.battery_status }}

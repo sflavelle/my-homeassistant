@@ -53,8 +53,10 @@
 - alias: "Update presence when getting out of bed"
   trigger:
     platform: state
-    entity_id: sensor.batt_iphone_charging
-    to: NotCharging
+    entity_id: switch.mac_display
+    to: 'on'
+    for:
+      minutes: 2
   condition:
     condition: and
     conditions:

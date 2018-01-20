@@ -122,6 +122,12 @@ google_assistant:
         - Bucket
         - Bucket bot
         - General Chat bot
+    switch.mac_display:
+      name: Mac Mini
+      aliases:
+        - Mac Mini
+        - Mac
+        - Mac display
 
 # Component/Entity Configuration
 

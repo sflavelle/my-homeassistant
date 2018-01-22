@@ -30,10 +30,10 @@
       from: 'In Dryer'
       to: 'Complete / Manual Check'
   action:
-    - service: notify.discord
+    - service: notify.lily_flavelles_iphone
       data:
+        title: Laundry
         message: "Your laundry may have finished processing. Please collect your clothes if dry."
-        target: 381242798260879362
 
 - alias: "Notify when laundry still in washer for too long"
   trigger:
@@ -50,7 +50,7 @@
       for:
         hours: 1
   action:
-    - service: notify.discord
+    - service: notify.lily_flavelles_iphone
       data:
+        title: Laundry
         message: "Your clothes might still be in the washing machine! Please move them so they may dry."
-        target: 381242798260879362

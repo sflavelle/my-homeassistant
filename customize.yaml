@@ -17,6 +17,7 @@ media_player.simon_ambience:
   friendly_name: Simon's Bedroom Speaker Group
 sensor.batt_watch:
   icon: mdi:watch
+  state_card_mode: badges
 switch.heater:
   icon: mdi:radiator
   extra_data_template: >
@@ -25,12 +26,11 @@ switch.fan:
   icon: mdi:fan
 sensor.batt_ipad:
   icon: mdi:tablet-ipad
+  state_card_mode: badges
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
+  state_card_mode: badges
 input_text.gh_youtube_url:
-  group:
-    group.gh_youtubeplayer:
-      custom_ui_state_card: state-card-nameless
 
 # Scenes Custom Icons
 scene.sleep__night_light:

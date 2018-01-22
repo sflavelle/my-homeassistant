@@ -2,10 +2,10 @@ simonsdevices:
   name: Devices
   entities:
     - sensor.batt_iphone
-    - sensor.batt_iphone_charging
     - sensor.batt_ipad
-    - sensor.batt_ipad_charging
     - sensor.batt_watch
+    - sensor.batt_iphone_charging
+    - sensor.batt_ipad_charging
     - sensor.batt_watch_charging
     - switch.mac_display
     - switch.gaming_pc

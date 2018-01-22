@@ -15,6 +15,8 @@ media_player.the_leeches_room:
   friendly_name: Google Home
 media_player.simon_ambience:
   friendly_name: Simon's Bedroom Speaker Group
+  templates:
+    hidden: if (state === 'off') return 'true'; else return 'false';
 sensor.batt_watch:
   icon: mdi:watch
   state_card_mode: badges
@@ -31,6 +33,7 @@ sensor.batt_iphone:
   icon: mdi:cellphone-iphone
   state_card_mode: badges
 input_text.gh_youtube_url:
+  friendly_name: "URL:"
 
 # Scenes Custom Icons
 scene.sleep__night_light:
@@ -82,4 +85,3 @@ sensor.dark_sky_hourly_summary:
   friendly_name: Today's Weather
 sensor.dark_sky_daily_summary:
   friendly_name: This Week's Weather
-

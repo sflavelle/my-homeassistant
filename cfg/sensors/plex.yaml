@@ -1,0 +1,5 @@
+- platform: tautulli
+      token: '61684797b393490e88969c600607d8d3'
+      monitored_conditions:
+        - stream_count
+        - total_bandwidth

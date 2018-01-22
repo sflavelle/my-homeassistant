@@ -30,7 +30,7 @@ sensor.batt_iphone:
 input_text.gh_youtube_url:
   group:
     group.gh_youtubeplayer:
-      friendly_name: "URL:"
+      custom_ui_state_card: state-card-nameless
 
 # Scenes Custom Icons
 scene.sleep__night_light:

@@ -136,6 +136,7 @@ google_assistant:
 
 mqtt:
   broker: !secret mqttbroker
+  port: 19356
   username: !secret mqttuser
   password: !secret mqttpassword
 

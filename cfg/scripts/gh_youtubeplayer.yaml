@@ -3,6 +3,10 @@ gh_youtubeplayer:
   sequence:
     - service: media_extractor.play_media
       data_template:
-        entity_id: "media_player.the_leeches_room"
+        entity_id: >
+          {% if is_state("input_select.ytplayer_devices", "Simon's Google Home") %} media_player.the_leeches_room
+          {% elif is_state("input_select.ytplayer_devices", "Beth's Google Home") %} media_player.beths_room__speaker
+          {% elif is_state("input_select.ytplayer_devices", "Apple TV") %} media_player.apple_tv
+          {% endif %}
         media_content_id: "{{ states('input_text.gh_youtube_url') }}"
         media_content_type: "audio/mp4"

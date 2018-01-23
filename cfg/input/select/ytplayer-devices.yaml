@@ -1,0 +1,6 @@
+ytplayer_devices:
+  name: Play to...
+  options:
+    - Simon's Google Home
+    - Beth's Google Home
+    - Apple TV

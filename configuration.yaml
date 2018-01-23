@@ -27,6 +27,10 @@ zone:
 # Enables the frontend
 frontend:
   javascript_version: latest
+  extra_html_url:
+    - /local/custom_ui/state-card-mini-media-player.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-mini-media-player_es5.html
 
 customizer:
   custom_ui: local

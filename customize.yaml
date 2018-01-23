@@ -32,8 +32,17 @@ sensor.batt_ipad:
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
   state_card_mode: badges
+
+ # YouTube Audio Script 
 input_text.gh_youtube_url:
   friendly_name: "URL:"
+input_text.ytplayer_devices:
+  friendly_name: "Play To:"
+script.gh_youtubeplayer:
+  friendly_name: Play YouTube Audio to Selected Device
+  group:
+    gh_youtubeplayer:
+      friendly_name: Start Playing
 
 # Scenes Custom Icons
 scene.sleep__night_light:
@@ -85,3 +94,10 @@ sensor.dark_sky_hourly_summary:
   friendly_name: Today's Weather
 sensor.dark_sky_daily_summary:
   friendly_name: This Week's Weather
+
+# Fake Mini Media Players
+input_text.remote_simon_gh:
+  icon: mdi:cast
+  custom_ui_state_card: state-card-mini-media-player
+  config:
+    player: media_player.the_leeches_room

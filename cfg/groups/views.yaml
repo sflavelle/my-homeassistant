@@ -20,6 +20,7 @@ simon_view:
     - group.simonsmedia
     - group.simonstats
     - group.scenes_bedroom
+    - group.laundry
 
 lounge_view:
   view: yes
@@ -29,14 +30,6 @@ lounge_view:
     - media_player.unnamed_device
     - media_player.apple_tv
     - media_player.playstation_4
-
-house_view:
-  view: yes
-  name: Just House Things
-  icon: mdi:home-variant
-  entities:
-    - group.laundry
-    - media_player.beths_room__speaker
 
 weather_view:
   name: Weather

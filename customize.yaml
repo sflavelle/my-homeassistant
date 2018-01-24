@@ -111,8 +111,3 @@ input_text.remote_simon_gh:
   custom_ui_state_card: state-card-mini-media-player
   config:
     player: media_player.the_leeches_room
-input_text.remote_beth_gh:
-  icon: mdi:cast
-  custom_ui_state_card: state-card-mini-media-player
-  config:
-    player: media_player.beths_room__speaker

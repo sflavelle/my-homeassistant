@@ -98,12 +98,16 @@ sensor.bom_bendigo_air_temp_c:
   friendly_name: Air Temperature
 sensor.bom_bendigo_cloud:
   friendly_name: Cloud Cover
+  icon: mdi:weather-cloudy
 sensor.bom_bendigo_rain_today:
   friendly_name: Rain since 9am
+  icon: mdi:weather-rainy
 sensor.bom_bendigo_relative_humidity:
   friendly_name: Relative Humidity
+  icon: mdi:water-percent
 sensor.bom_bendigo_wind_speed_kmh:
   friendly_name: Wind Speed
+  icon: mdi:weather-windy
 
 # Fake Mini Media Players
 input_text.remote_simon_gh:

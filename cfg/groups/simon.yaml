@@ -19,12 +19,12 @@ simonsbedroom:
     - switch.fluxed_lighting
     - switch.heater
     - switch.fan
-    - input_text.remote_simon_gh
+    #- input_text.remote_simon_gh
 simonsmedia:
   name: Now Playing
   entities:
     - media_player.simons_chromecast
-    # - media_player.the_leeches_room
+    - media_player.the_leeches_room
     - media_player.simon_ambience
     - media_player.simons_speaker
 simonsauto:

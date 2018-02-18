@@ -33,7 +33,7 @@ frontend:
     - /local/custom_ui/state-card-mini-media-player_es5.html
 
 customizer:
-  custom_ui: local
+  custom_ui: hosted
   columns: 
     - 500
     - 800
@@ -76,6 +76,8 @@ history:
   exclude:
     domains:
       - group
+      - input_text
+      - input_boolean
     entities:
       - sensor.chicago_time
       - sensor.london_time
@@ -204,7 +206,7 @@ script: !include_dir_merge_named cfg/scripts/
 
 input_select: !include_dir_merge_named cfg/input/select/
 input_text: !include_dir_merge_named cfg/input/text/
-input_boolean: !include_dir_merge_named cfg/input/boolean/
+# input_boolean: !include_dir_merge_named cfg/input/boolean/
 
 # Various Hubs
 

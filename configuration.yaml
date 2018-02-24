@@ -133,12 +133,21 @@ google_assistant:
         - Bucket
         - Bucket bot
         - General Chat bot
-    switch.mac_display:
+    switch.display_debian:
       name: Mac Mini
       aliases:
         - Mac Mini
         - Mac
         - Mac display
+        - server display
+
+cloud:
+  alexa:
+    filter:
+      exclude_domains:
+        - group
+        - automation
+        - sensor
 
 mqtt:
   # broker: !secret mqttbroker
@@ -153,9 +162,6 @@ camera:
     still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
     name: Rain Radar
     limit_refetch_to_url_change: true
-  - platform: local_file
-    file_path: /Users/lily/Webcam.jpg
-    name: Bedroom
 
 # Smart Devices
 
@@ -205,9 +211,7 @@ script: !include_dir_merge_named cfg/scripts/
 
 # Custom Inputs
 
-input_select: !include_dir_merge_named cfg/input/select/
-input_text: !include_dir_merge_named cfg/input/text/
-# input_boolean: !include_dir_merge_named cfg/input/boolean/
+input_select: !include_dir_merge_named cfg/input_select/
 
 # Various Hubs
 
@@ -225,19 +229,15 @@ history_graph:
     - sensor.bom_bendigo_rain_today
     - sensor.bom_bendigo_relative_humidity
     - sensor.bom_bendigo_wind_speed_kmh
-    hours_to_show: 72
+    hours_to_show: 144
     refresh: 3600
   netgraph:
     name: Network Speeds
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
-    hours_to_show: 72
+    hours_to_show: 144
     refresh: 3600
-
-device_sun_light_trigger:
-  light_group: group.simons_lights
-  device_group: group.tracked_devices
 
 timer:
   laundry_line:
@@ -245,11 +245,3 @@ timer:
   laundry_dryer:
     duration: '01:30:00'
 
-# Testing Cloud
-cloud:
-  alexa:
-    filter:
-      exclude_domains:
-        - group
-        - automation
-        - sensor

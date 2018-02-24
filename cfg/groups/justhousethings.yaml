@@ -2,3 +2,5 @@ laundry:
   name: Laundry Tasks
   entities:
     - input_select.status_laundry
+    - timer.laundry_dryer
+    - timer.laundry_line

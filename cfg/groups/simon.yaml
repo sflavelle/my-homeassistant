@@ -1,25 +1,19 @@
 simonsdevices:
   name: Devices
   entities:
+    - sensor.batt_nexus
     - sensor.batt_iphone
     - sensor.batt_ipad
     - sensor.batt_watch
-    - sensor.batt_iphone_charging
-    - sensor.batt_ipad_charging
-    - sensor.batt_watch_charging
-    - switch.mac_display
+    - switch.display_debian
     - switch.gaming_pc
 simonsbedroom:
   name: Bedroom
   entities:
     - input_select.simon_presence
-    # - camera.bedroom
-    - light.simon # Wemo
-    - light.simons_bedroom # LIFX
-    - switch.fluxed_lighting
+    - light.simon # LIFX
     - switch.heater
     - switch.fan
-    #- input_text.remote_simon_gh
 simonsmedia:
   name: Now Playing
   entities:
@@ -38,8 +32,3 @@ simonsauto:
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.lights_on_early_for_work
-simonstats:
-  name: Statistics
-  entities:
-    - sensor.whatpulse__mice_clicked
-    - sensor.whatpulse__keys_pressed

@@ -1,19 +1,20 @@
 - platform: template
   sensors:
+    batt_nexus:
+      friendly_name: Nexus 6P
+      unit_of_measurement: "%"
+      value_template: >-
+            {%- if states.device_tracker.nexus6p.attributes.battery %}
+                {{ states.device_tracker.nexus6p.attributes.battery|round }}
+            {% else %}
+                ???
+            {%- endif %}
     batt_iphone:
       friendly_name: iPhone
       unit_of_measurement: "%"
       value_template: >-
             {%- if states.device_tracker.lilyflavellesiphone.attributes.battery %}
                 {{ states.device_tracker.lilyflavellesiphone.attributes.battery|round }}
-            {% else %}
-                ???
-            {%- endif %}
-    batt_iphone_charging:
-        friendly_name: iPhone Battery
-        value_template: >-
-            {%- if states.device_tracker.lilyflavellesiphone.attributes.battery_status %}
-                {{ states.device_tracker.lilyflavellesiphone.attributes.battery_status }}
             {% else %}
                 ???
             {%- endif %}
@@ -26,14 +27,6 @@
             {%- endif %}
       friendly_name: Apple Watch
       unit_of_measurement: "%"
-    batt_watch_charging:
-      value_template: >-
-            {%- if states.device_tracker.simonsapple_watch.attributes.battery_status %}
-                {{ states.device_tracker.simonsapple_watch.attributes.battery_status }}
-            {% else %}
-                ???
-            {%- endif %}
-      friendly_name: Apple Watch Battery
     batt_ipad:
       value_template: >-
             {%- if states.device_tracker.simonflavellesipad.attributes.battery %}
@@ -43,11 +36,3 @@
             {%- endif %}
       friendly_name: iPad
       unit_of_measurement: "%"
-    batt_ipad_charging:
-      value_template: >-
-            {%- if states.device_tracker.simonflavellesipad.attributes.battery_status %}
-                {{ states.device_tracker.simonflavellesipad.attributes.battery_status }}
-            {% else %}
-                ???
-            {%- endif %}
-      friendly_name: iPad Battery

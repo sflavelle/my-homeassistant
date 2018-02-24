@@ -141,10 +141,10 @@ google_assistant:
         - Mac display
 
 mqtt:
-  broker: !secret mqttbroker
-  port: 19356
-  username: !secret mqttuser
-  password: !secret mqttpassword
+  # broker: !secret mqttbroker
+  # port: 19356
+  # username: !secret mqttuser
+  # password: !secret mqttpassword
 
 # Component/Entity Configuration
 
@@ -173,6 +173,7 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
+  - platform: gpslogger
 
 media_player: !include_dir_merge_list cfg/media
 media_extractor: # Enable media_extractor service
@@ -243,3 +244,12 @@ timer:
     duration: '08:00:00'
   laundry_dryer:
     duration: '01:30:00'
+
+# Testing Cloud
+cloud:
+  alexa:
+    filter:
+      exclude_domains:
+        - group
+        - automation
+        - sensor

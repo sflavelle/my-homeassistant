@@ -1,0 +1,24 @@
+media_player.apple_tv:
+  platform: apple_tv
+  unique_id: 35e71678e3b4bce878d181648c15cbd1787e000acb0c61d1fb8c1032e93faed9
+remote.apple_tv:
+  platform: apple_tv
+  unique_id: 35e71678e3b4bce878d181648c15cbd1787e000acb0c61d1fb8c1032e93faed9
+sensor.hey_there_charlie_battery_level:
+  platform: ios
+  unique_id: level_lily_flavelles_iphone
+sensor.hey_there_charlie_battery_state:
+  platform: ios
+  unique_id: state_lily_flavelles_iphone
+switch.fan:
+  platform: wemo
+  unique_id: 221605K1100829
+switch.heater:
+  platform: wemo
+  unique_id: 221608K1201026
+light.simon:
+  platform: lifx
+  unique_id: d0:73:d5:22:cd:0e
+media_player.plex_web_chrome:
+  platform: plex
+  unique_id: a5e9egrc1mj9rll1wd3cmzor

@@ -1,20 +1,20 @@
 - name: Sleep / Night Light
   entities:
-    light.simons_bedroom:
+    light.simon:
       state: on
       rgb_color: [30, 0, 0]
       brightness: 40
 
 - name: Daylight Cool Lighting
   entities:
-    light.simons_bedroom:
+    light.simon:
       state: on
       brightness: 151
       color_temp: 153
 
 - name: Evening Warm Lighting
   entities:
-    light.simons_bedroom:
+    light.simon:
       state: on
       brightness: 83
       color_temp: 323

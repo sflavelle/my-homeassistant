@@ -1,7 +1,7 @@
 - alias: "Update presence to away"
   trigger:
     platform: state
-    entity_id: device_tracker.lily_flavelles_iphone
+    entity_id: device_tracker.nexus6p
     to: 'not_home'
   action:
     - service: input_select.select_option
@@ -12,7 +12,7 @@
 - alias: "Update presence to At Work"
   trigger:
     platform: state
-    entity_id: device_tracker.lily_flavelles_iphone
+    entity_id: device_tracker.nexus6p
     to: "Simon's Work"
   action:
     - service: input_select.select_option
@@ -23,7 +23,7 @@
 - alias: "Update presence to At Home"
   trigger:
     platform: state
-    entity_id: device_tracker.lily_flavelles_iphone
+    entity_id: device_tracker.nexus6p
     to: 'home'
   action:
     - service: input_select.select_option
@@ -40,7 +40,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.lily_flavelles_iphone
+        entity_id: device_tracker.nexus6p
         state: 'home'
       - condition: sun
         after: sunset
@@ -64,7 +64,7 @@
         entity_id: input_select.simon_presence
         state: 'In Bed'
       - condition: state
-        entity_id: device_tracker.lily_flavelles_iphone
+        entity_id: device_tracker.nexus6p
         state: 'home'
       - condition: time
         after: '03:00:00' # Just in case

@@ -32,17 +32,21 @@ sensor.batt_ipad:
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
   state_card_mode: badges
+sensor.batt_nexus:
+  state_card_mode: badges
+timer.laundry_dryer:
+  state_card_mode: badges
+  friendly_name: Laundry Timer (Dryer)
+timer.laundry_line:
+  state_card_mode: badges
+  friendly_name: Laundry Timer (Clothes Line)
 
- # YouTube Audio Script 
-input_text.gh_youtube_url:
-  friendly_name: "URL:"
-input_text.ytplayer_devices:
-  friendly_name: "Play To:"
-script.gh_youtubeplayer:
-  friendly_name: Play YouTube Audio to Selected Device
-  group:
-    gh_youtubeplayer:
-      friendly_name: Start Playing
+# Hide Automations from Home Screen
+automation.*:
+  hide_in_default_view: true
+
+sensor.hey_there_charlie_battery*:
+  hidden: true
 
 # Scenes Custom Icons
 scene.sleep__night_light:
@@ -70,10 +74,6 @@ automation.fan_on_when_its_warm_at_night:
   icon: mdi:weather-night
 automation.fan_on_when_weathers_warming:
   icon: mdi:white-balance-sunny
-
-# Give weird entities proper names
-media_player.unnamed_device:
-  friendly_name: Lounge Room TV (Plex)
 
 # Renaming Service Sensors
 sensor.dark_sky_daily_high_temperature:
@@ -109,9 +109,5 @@ sensor.bom_bendigo_wind_speed_kmh:
   friendly_name: Wind Speed
   icon: mdi:weather-windy
 
-# Fake Mini Media Players
-input_text.remote_simon_gh:
-  icon: mdi:cast
-  custom_ui_state_card: state-card-mini-media-player
-  config:
-    player: media_player.the_leeches_room
+media_player.plex_simon_web:
+  friendly_name: Simon's Plex Client

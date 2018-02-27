@@ -1,0 +1,8 @@
+- platform: universal
+  name: Plex - Simon
+  children:
+    - media_player.plex_simon_linuxweb
+    - media_player.plex_simon_windowsweb
+    - media_player.plex_simon_windowsclient
+
+- platform: plex

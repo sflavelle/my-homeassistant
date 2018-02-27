@@ -14,13 +14,6 @@ simonsbedroom:
     - light.simon # LIFX
     - switch.heater
     - switch.fan
-simonsmedia:
-  name: Now Playing
-  entities:
-    - media_player.simons_chromecast
-    - media_player.the_leeches_room
-    - media_player.simon_ambience
-    - media_player.simons_speaker
 simonsauto:
   name: Bedroom Automations
   entities:

@@ -19,6 +19,15 @@ switch.heater:
 light.simon:
   platform: lifx
   unique_id: d0:73:d5:22:cd:0e
-media_player.plex_simon_web:
+media_player.plex_simon_linuxweb:
   platform: plex
   unique_id: a5e9egrc1mj9rll1wd3cmzor
+media_player.plex_living_room:
+  platform: plex
+  unique_id: 1300CB19-8426-4D66-BDBD-7FC08EBDC9DB
+media_player.plex_simon_windowsweb:
+  platform: plex
+  unique_id: luajpwaewn9bi8pcsbxgpyli
+media_player.plex_simon_windowsclient:
+  platform: plex
+  unique_id: cc6ac87e-296c-41a3-aee7-70e835d58b9f

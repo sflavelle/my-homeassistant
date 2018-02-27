@@ -13,8 +13,8 @@
       friendly_name: iPhone
       unit_of_measurement: "%"
       value_template: >-
-            {%- if states.device_tracker.lilyflavellesiphone.attributes.battery %}
-                {{ states.device_tracker.lilyflavellesiphone.attributes.battery|round }}
+            {%- if states.device_tracker.heytherecharlie.attributes.battery %}
+                {{ states.device_tracker.heytherecharlie.attributes.battery|round }}
             {% else %}
                 ???
             {%- endif %}

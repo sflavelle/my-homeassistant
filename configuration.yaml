@@ -110,7 +110,7 @@ duckdns:
 
 ios:
 
-# Google Assistant
+# Home Control Services
 
 google_assistant:
   project_id: homeassistneu
@@ -149,6 +149,9 @@ cloud:
         - automation
         - sensor
 
+homekit:
+  pincode: '420-69-420'
+
 mqtt:
   # broker: !secret mqttbroker
   # port: 19356
@@ -181,7 +184,7 @@ device_tracker:
     password: !secret icloud_pass
   - platform: gpslogger
 
-media_player: !include_dir_merge_list cfg/media
+media_player: !include_dir_merge_list cfg/media/
 media_extractor: # Enable media_extractor service
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 sensor: !include_dir_merge_list cfg/sensors/
@@ -229,7 +232,7 @@ history_graph:
     - sensor.bom_bendigo_rain_today
     - sensor.bom_bendigo_relative_humidity
     hours_to_show: 144
-    refresh: 3600
+    refresh: 1800
   netgraph:
     name: Network Speeds
     entities:

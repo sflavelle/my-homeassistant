@@ -228,7 +228,6 @@ history_graph:
     - sensor.bom_bendigo_air_temp_c
     - sensor.bom_bendigo_rain_today
     - sensor.bom_bendigo_relative_humidity
-    - sensor.bom_bendigo_wind_speed_kmh
     hours_to_show: 144
     refresh: 3600
   netgraph:

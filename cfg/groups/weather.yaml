@@ -1,12 +1,14 @@
 weather:
   name: Weather Summary
   entities:
-    - weather.bom_bendigo
     - sensor.bom_bendigo_air_temp_c
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_uv_index
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
     - sensor.bom_bendigo_cloud
+    - sensor.dark_sky_nearest_storm_distance
     - sensor.bom_bendigo_rain_today
     - sensor.bom_bendigo_relative_humidity
-    - sensor.bom_bendigo_wind_direction
-    - sensor.bom_bendigo_wind_gust_kmh
-    - sensor.bom_bendigo_wind_speed_kmh
     - history_graph.recent_temperatures

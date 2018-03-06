@@ -149,8 +149,8 @@ cloud:
         - automation
         - sensor
 
-homekit:
-  pincode: '420-69-420'
+# homekit:
+#   pincode: '420-69-420'
 
 mqtt:
   # broker: !secret mqttbroker
@@ -229,8 +229,6 @@ history_graph:
     name: Recent Temperatures
     entities:
     - sensor.bom_bendigo_air_temp_c
-    - sensor.bom_bendigo_rain_today
-    - sensor.bom_bendigo_relative_humidity
     hours_to_show: 144
     refresh: 1800
   netgraph:

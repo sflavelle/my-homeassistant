@@ -7,3 +7,16 @@
     - rain_trace
     - rel_hum
     - wind_spd_kmh
+
+- platform: darksky # For summaries
+  api_key: !secret darksky
+  monitored_conditions:
+    - nearest_storm_distance
+    - summary
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - uv_index
+    - temperature
+    - temperature_max
+    - temperature_min

@@ -37,3 +37,9 @@ media_player.google_home_simon:
 media_player.chromecast_simon:
   platform: cast
   unique_id: 5494f13e-4f37-1c91-07e3-71eabac954e0
+media_player.boon:
+  platform: plex
+  unique_id: 6v501cjzjmjm51pph8zyxk1e
+media_player.iphone_simon:
+  platform: plex
+  unique_id: 2F473E06-E417-4E23-A121-76BD79751E5B

@@ -137,11 +137,6 @@ duckdns:
 
 ios:
 
-panel_iframe:
-  router:
-    title: 'Router'
-    url: 'http://192.168.0.1'
-
 # Home Control Services
 
 google_assistant:

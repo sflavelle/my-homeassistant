@@ -1,0 +1,51 @@
+# Sorted by room
+
+# Lounge #
+
+- platform: ping
+  host: 192.168.0.62 # Apple TV - HDMI2
+  name: Apple TV
+  scan_interval: 120 # Usually always connected
+
+- platform: ping
+  host: 192.168.0.91 # PS4 - HDMI1
+  name: Playstation 4
+
+
+ # Kitchen #
+ 
+ # Hallways #
+
+ # Simon's Room #
+
+- platform: ping
+  host: 192.168.0.11 # Amazon Echo Dot
+  name: Amazon Echo
+
+# Beth's Room #
+
+- platform: ping
+  host: 192.168.0.17 # Phone
+  name: Beth's Phone
+
+- platform: ping
+  host: 192.168.0.12 # Computer
+  name: Beth's PC
+
+# Izzy's Room #
+
+- platform: ping
+  host: 192.168.0.19 # Phone
+  name: Izzy's Phone
+
+# John's Room #
+
+- platform: ping
+  host: 192.168.0.10 # Phone
+  name: John's Phone
+
+# Mum and Dad #
+
+- platform: ping
+  host: 192.168.0.2 # Dad's PC
+  name: Dad's PC

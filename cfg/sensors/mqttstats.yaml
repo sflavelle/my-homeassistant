@@ -1,0 +1,3 @@
+- platform: mqtt
+  state_topic: "nodered/youtube/subs"
+  name: "YouTube Subscribers"

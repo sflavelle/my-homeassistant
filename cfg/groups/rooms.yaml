@@ -1,19 +1,18 @@
-simonsdevices:
-  name: Devices
+simonsbedroom:
+  name: Bedroom
   entities:
     - sensor.batt_nexus
     - sensor.batt_iphone
     - sensor.batt_ipad
     - sensor.batt_watch
-    - switch.display_debian
-    - switch.gaming_pc
-simonsbedroom:
-  name: Bedroom
-  entities:
     - input_select.simon_presence
-    - light.simon # LIFX
+    - light.simon
     - switch.heater
     - switch.fan
+    - binary_sensor.amazon_echo
+    - switch.display_debian
+    - switch.gaming_pc
+    - input_text.miniplayer_simons_room
 simonsauto:
   name: Bedroom Automations
   entities:
@@ -25,3 +24,9 @@ simonsauto:
     - automation.simon_home_turn_bedroom_light_on_after_dark
     - automation.simon_home_wake_up_with_bedroom_lights
     - automation.lights_on_early_for_work
+
+loungeroom:
+  name: Lounge
+  entities:
+    - binary_sensor.apple_tv
+    - binary_sensor.playstation_4

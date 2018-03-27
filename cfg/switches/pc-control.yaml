@@ -1,7 +1,4 @@
-- platform: command_line
-  switches:
-    display_debian:
-      friendly_name: Server Display
-      command_on: "/usr/bin/curl -X GET http://192.168.0.60:53535/on"
-      command_off: "/usr/bin/curl -X GET http://192.168.0.60:53535/off"
-      command_state: "xset q | grep 'Monitor is On'"
+- platform: wake_on_lan
+  mac_address: 'D0:50:99:2E:D3:19'
+  name: Gaming PC
+  

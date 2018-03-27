@@ -4,3 +4,6 @@
 - platform: worldclock
   name: London Time
   time_zone: Europe/London # Serrio
+- platform: worldclock
+  name: California Time
+  time_zone: America/Los_Angeles # Ash

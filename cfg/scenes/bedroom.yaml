@@ -9,8 +9,8 @@
   entities:
     light.simon:
       state: on
-      brightness: 151
-      color_temp: 153
+      brightness: 204
+      color_temp: 250
 
 - name: Evening Warm Lighting
   entities:

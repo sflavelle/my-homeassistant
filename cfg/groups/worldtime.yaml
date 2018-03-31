@@ -1,6 +1,0 @@
-worldtime:
-  name: Time Around The World
-  entities:
-    - sensor.chicago_time
-    - sensor.london_time
-    - sensor.california_time

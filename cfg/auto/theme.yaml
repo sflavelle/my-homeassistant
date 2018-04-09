@@ -1,0 +1,17 @@
+- alias: "Dark Theme at sunset"
+  trigger:
+      platform: sun
+      event: sunset
+  action:
+    service: frontend.set_theme
+    data:
+      name: dark_theme
+
+- alias: "Normal theme at sunrise"
+  trigger:
+      platform: sun
+      event: sunrise
+  action:
+    service: frontend.set_theme
+    data:
+      name: default

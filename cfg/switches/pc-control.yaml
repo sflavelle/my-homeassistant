@@ -1,4 +1,6 @@
 - platform: wake_on_lan
   mac_address: 'D0:50:99:2E:D3:19'
+  host: 192.168.0.61
   name: Gaming PC
-  
+  turn_off:
+    service: shell_command.shutdown_windows

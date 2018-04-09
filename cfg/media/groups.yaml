@@ -1,10 +1,9 @@
 - platform: universal
   name: Simon's Room
   children:
-    - media_player.plex_simon_linuxweb
-    - media_player.plex_simon_windowsweb
-    - media_player.plex_simon_windowsclient
+    - media_player.plex_simon_windows
     - media_player.chromecast_simon
     - media_player.google_home_simon
+    - media_player.plex_simon_firefox
 
 - platform: plex

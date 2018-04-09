@@ -1,0 +1,165 @@
+[
+    {
+        "id": "5efa1433.d9dbd4",
+        "type": "inject",
+        "z": "29ebad7d.454c9a",
+        "name": "Every hour",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "x": 120,
+        "y": 38,
+        "wires": [
+            [
+                "5f7a918d.33a9b"
+            ]
+        ]
+    },
+    {
+        "id": "5f7a918d.33a9b",
+        "type": "YouTube Channels",
+        "z": "29ebad7d.454c9a",
+        "config": "",
+        "part": "statistics",
+        "categoryId": "",
+        "forUsername": "SimonSaysLPs",
+        "channelIds": "",
+        "managedByMe": "",
+        "mine": "",
+        "mySubscribers": "",
+        "maxResults": 5,
+        "onBehalfOfContentOwner": "",
+        "pageToken": "",
+        "name": "Get my channel stats",
+        "x": 357,
+        "y": 43,
+        "wires": [
+            [
+                "3ab9e45e.ae534c"
+            ]
+        ]
+    },
+    {
+        "id": "3ab9e45e.ae534c",
+        "type": "function",
+        "z": "29ebad7d.454c9a",
+        "name": "Split the stats",
+        "func": "var views = { payload: msg.payload.items[0].statistics.viewCount };\nvar subs = { payload: msg.payload.items[0].statistics.subscriberCount };\nvar videos = { payload: msg.payload.items[0].statistics.videoCount };\n\nreturn [ views, subs, videos ];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 595,
+        "y": 53,
+        "wires": [
+            [
+                "3c51af2f.b41eb8"
+            ],
+            [
+                "ebf48921.d9c72"
+            ],
+            [
+                "2551752f.f42cda"
+            ]
+        ]
+    },
+    {
+        "id": "bc7306ea.5b0788",
+        "type": "hass-post",
+        "z": "29ebad7d.454c9a",
+        "endpoint": "218724c0.2fb92c",
+        "entityid": "sensor.youtube_views",
+        "name": "Post Views",
+        "x": 832,
+        "y": 84,
+        "wires": []
+    },
+    {
+        "id": "a867810b.18ba8",
+        "type": "hass-post",
+        "z": "29ebad7d.454c9a",
+        "endpoint": "218724c0.2fb92c",
+        "entityid": "sensor.youtube_subs",
+        "name": "Post Subscribers",
+        "x": 835,
+        "y": 151,
+        "wires": []
+    },
+    {
+        "id": "b96c3146.9fd118",
+        "type": "hass-post",
+        "z": "29ebad7d.454c9a",
+        "endpoint": "218724c0.2fb92c",
+        "entityid": "sensor.youtube_videos",
+        "name": "Post Videos",
+        "x": 833,
+        "y": 214,
+        "wires": []
+    },
+    {
+        "id": "3c51af2f.b41eb8",
+        "type": "template",
+        "z": "29ebad7d.454c9a",
+        "name": "Format as JSON",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{ \n    \"state\": \"{{payload}}\",\n    \"name\": \"YouTube Views\",\n    \"attributes\": {\n        \"unit_of_measurement\": \"views\"\n    }\n    \n}",
+        "output": "json",
+        "x": 822,
+        "y": 52,
+        "wires": [
+            [
+                "bc7306ea.5b0788"
+            ]
+        ]
+    },
+    {
+        "id": "ebf48921.d9c72",
+        "type": "template",
+        "z": "29ebad7d.454c9a",
+        "name": "Format as JSON",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{ \n    \"state\": \"{{payload}}\",\n    \"name\": \"YouTube Subscribers\",\n    \"attributes\": {\n        \"unit_of_measurement\": \"subs\"\n    }\n    \n}",
+        "output": "json",
+        "x": 826,
+        "y": 117,
+        "wires": [
+            [
+                "a867810b.18ba8"
+            ]
+        ]
+    },
+    {
+        "id": "2551752f.f42cda",
+        "type": "template",
+        "z": "29ebad7d.454c9a",
+        "name": "Format as JSON",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{ \n    \"state\": \"{{payload}}\",\n    \"name\": \"YouTube Uploads\",\n    \"attributes\": {\n        \"unit_of_measurement\": \"videos\"\n    }\n    \n}",
+        "output": "json",
+        "x": 825,
+        "y": 183,
+        "wires": [
+            [
+                "b96c3146.9fd118"
+            ]
+        ]
+    },
+    {
+        "id": "218724c0.2fb92c",
+        "type": "hass-config",
+        "z": "",
+        "host": "<<omitted>>",
+        "port": "8123"
+    }
+]

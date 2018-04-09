@@ -41,3 +41,9 @@ laundry:
     - timer.laundry_dryer
     - timer.laundry_line
 
+videostats:
+  name: Video Stats
+  entities:
+    - sensor.youtube_videos
+    - sensor.youtube_subs
+    - sensor.youtube_views

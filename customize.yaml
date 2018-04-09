@@ -29,10 +29,6 @@ timer.laundry_line:
   state_card_mode: badges
   friendly_name: Laundry Timer (Clothes Line)
 
-# Hide Automations from Home Screen
-automation.*:
-  hide_in_default_view: true
-
 sensor.iphone_battery*:
   hidden: true
 
@@ -130,3 +126,19 @@ media_player.google_home_simon:
   hidden: true # Used in media_player group
 media_player.chromecast_simon:
   hidden: true # Used in media_player group
+media_player.plex_simon_firefox:
+  hidden: true
+
+# Hiding things that are in their own view
+
+group.view_simon:
+  hide_in_default_view: true
+group.view_rooms:
+  hide_in_default_view: true
+group.view_video:
+  hide_in_default_view: true
+group.view_weather:
+  hide_in_default_view: true
+
+remote.*:
+  hidden: true

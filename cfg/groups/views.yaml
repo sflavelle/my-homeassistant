@@ -1,0 +1,49 @@
+view_simon:
+  name: Simon
+  view: yes
+  entities:
+    - device_tracker.heytherecharlie
+    - device_tracker.nexus6p
+    - device_tracker.simonflavellesipad
+    - device_tracker.simonsapple_watch
+    - sensor.commute_time
+    - group.simonsbedroom
+    - group.simonsauto
+    - media_player.google_home_simon
+    - media_player.chromecast_simon
+    - media_player.simons_room
+    - group.scenes_bedroom
+    - group.videostats
+    - sensor.bucket_quotes
+
+view_rooms:
+  name: Other Rooms
+  view: yes
+  entities:
+    - media_player.apple_tv
+    - group.loungeroom
+    - group.laundry
+
+view_video:
+  name: TV
+  view: yes
+  entities:
+    - media_player.chromecast_simon
+    - media_player.apple_tv
+
+view_weather:
+  name: Weather
+  view: yes
+  entities:
+    - group.weather
+    - group.auto_weather
+    - camera.rain_radar
+    - history_graph.recent_temperatures
+
+view_nerdthings:
+  name: Nerd Things
+  view: yes
+  entities:
+    - group.videostats
+    - sensor.bucket_quotes
+    - history_graph.network_speeds

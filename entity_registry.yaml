@@ -26,6 +26,22 @@ light.simon:
   name:
   platform: lifx
   unique_id: d0:73:d5:22:cd:0e
+media_player.plex_simon_linuxweb:
+  name:
+  platform: plex
+  unique_id: a5e9egrc1mj9rll1wd3cmzor
+media_player.plex_living_room:
+  name:
+  platform: plex
+  unique_id: 1300CB19-8426-4D66-BDBD-7FC08EBDC9DB
+media_player.plex_simon_windowsweb:
+  name:
+  platform: plex
+  unique_id: luajpwaewn9bi8pcsbxgpyli
+media_player.plex_simon_windowsclient:
+  name:
+  platform: plex
+  unique_id: cc6ac87e-296c-41a3-aee7-70e835d58b9f
 media_player.google_home_simon:
   name:
   platform: cast
@@ -38,12 +54,19 @@ media_player.boon:
   name:
   platform: plex
   unique_id: 6v501cjzjmjm51pph8zyxk1e
-media_player.plex_iphone_simon:
-  name: Simon's Plex App
+media_player.iphone_simon:
+  name:
   platform: plex
   unique_id: 2F473E06-E417-4E23-A121-76BD79751E5B
-
 media_player.plex_simon_firefox:
-  name: Simon's Web App (Firefox)
+  name: Plex - Simon (Firefox)
   platform: plex
   unique_id: 9thoawbchmw4v0bpxbkyqdwg
+media_player.cc_audio_simon:
+  name: Simon's Room Cast
+  platform: cast
+  unique_id: b89ce6ff-827f-4603-a4ee-a610e8698858
+media_player.plex_simon_windows:
+  name: Plex - Simon (Windows 10)
+  platform: plex
+  unique_id: 2f48a0f9-ba01-4b84-8683-fbcd5ccc2cb5

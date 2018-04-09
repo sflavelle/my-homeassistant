@@ -1,0 +1,190 @@
+[
+    {
+        "id": "c49bbcc9.ea1ac",
+        "type": "function",
+        "z": "74160860.44a5f8",
+        "name": "Get # of quotes",
+        "func": "var quotes = flow.get('quotes');\n\nreturn { payload: quotes };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 790,
+        "y": 140.5,
+        "wires": [
+            [
+                "16914ef4.3ebc99"
+            ]
+        ]
+    },
+    {
+        "id": "203edf2a.df7ff",
+        "type": "watch",
+        "z": "74160860.44a5f8",
+        "name": "Watch quote file",
+        "files": "/opt/docker-cfg/bucket/Red-DiscordBot/data/serverquotes/quotes.json",
+        "recursive": "",
+        "x": 117,
+        "y": 28.5,
+        "wires": [
+            [
+                "a3f49cf8.809598"
+            ]
+        ]
+    },
+    {
+        "id": "a3f49cf8.809598",
+        "type": "trigger",
+        "z": "74160860.44a5f8",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "250",
+        "extend": true,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "name": "wait for file editing",
+        "x": 124,
+        "y": 68.5,
+        "wires": [
+            [
+                "8661caac.28a22"
+            ]
+        ]
+    },
+    {
+        "id": "46b98858.71387",
+        "type": "inject",
+        "z": "74160860.44a5f8",
+        "name": "Force run",
+        "topic": "",
+        "payload": "/opt/docker-cfg/bucket/Red-DiscordBot/data/serverquotes/quotes.json",
+        "payloadType": "str",
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130.36669921875,
+        "y": 108.5,
+        "wires": [
+            [
+                "8661caac.28a22"
+            ]
+        ]
+    },
+    {
+        "id": "16914ef4.3ebc99",
+        "type": "template",
+        "z": "74160860.44a5f8",
+        "name": "Format as JSON",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{ \n    \"state\": \"{{payload}}\",\n    \"name\": \"Bucket Quotes\",\n    \"attributes\": {\n        \"unit_of_measurement\": \"quotes\"\n    }\n    \n}",
+        "output": "json",
+        "x": 810,
+        "y": 180.5,
+        "wires": [
+            [
+                "af5c55ed.3c1e98"
+            ]
+        ]
+    },
+    {
+        "id": "af5c55ed.3c1e98",
+        "type": "hass-post",
+        "z": "74160860.44a5f8",
+        "endpoint": "218724c0.2fb92c",
+        "entityid": "sensor.bucket_quotes",
+        "name": "Post to HASS",
+        "x": 828,
+        "y": 222.5,
+        "wires": []
+    },
+    {
+        "id": "907fc347.b67a18",
+        "type": "comment",
+        "z": "74160860.44a5f8",
+        "name": "Process quote file when new quote",
+        "info": "",
+        "x": 398,
+        "y": 177,
+        "wires": []
+    },
+    {
+        "id": "8661caac.28a22",
+        "type": "file in",
+        "z": "74160860.44a5f8",
+        "name": "Read the file",
+        "filename": "/opt/docker-cfg/bucket/Red-DiscordBot/data/serverquotes/quotes.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 318,
+        "y": 38,
+        "wires": [
+            [
+                "4494837b.7eaa14"
+            ]
+        ]
+    },
+    {
+        "id": "4494837b.7eaa14",
+        "type": "json",
+        "z": "74160860.44a5f8",
+        "name": "Convert to JSON object",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 539,
+        "y": 39,
+        "wires": [
+            [
+                "b410fd21.30df6"
+            ]
+        ]
+    },
+    {
+        "id": "b410fd21.30df6",
+        "type": "function",
+        "z": "74160860.44a5f8",
+        "name": "Get the last quote entry, and total quotes",
+        "func": "var length = msg.payload[\"124680630075260928\"].length-1\nvar quotes = msg.payload[\"124680630075260928\"].length\nvar lastquote = msg.payload[\"124680630075260928\"][length]\n\nflow.set('lastquote',lastquote);\nflow.set('quotes',quotes);\n\nreturn { payload: lastquote };",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 548,
+        "y": 86,
+        "wires": [
+            [
+                "c49bbcc9.ea1ac",
+                "2e38932f.99fefc",
+                "2e8f374a.d0855"
+            ]
+        ]
+    },
+    {
+        "id": "2e38932f.99fefc",
+        "type": "template",
+        "z": "74160860.44a5f8",
+        "name": "Format quote like Bucket",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "\"{{payload.text}}\"\n—{{payload.author_name}} (quote #{{flow.quotes}})",
+        "output": "str",
+        "x": 506,
+        "y": 137,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "218724c0.2fb92c",
+        "type": "hass-config",
+        "z": "",
+        "host": "<<omitted>>",
+        "port": "8123"
+    }
+]

@@ -49,9 +49,14 @@
     platform: time
     at: '03:00:00'
   condition:
-    condition: state
-    entity_id: switch.fan
-    state: 'on'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.fan
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.bom_bendigo_air_temp_c
+        below: 18
   action:
     - service: homeassistant.turn_off
       entity_id: switch.fan

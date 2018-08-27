@@ -1,0 +1,5 @@
+lounge_room:
+  name: Lounge Room
+  entities:
+    - device_tracker.nintendo_wii_u
+    - device_tracker.ps4

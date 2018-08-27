@@ -21,7 +21,7 @@ view_rooms:
   view: yes
   entities:
     - media_player.apple_tv
-    - group.loungeroom
+    - group.lounge_room
     - group.laundry
 
 view_video:
@@ -45,5 +45,8 @@ view_nerdthings:
   view: yes
   entities:
     - group.videostats
-    - sensor.bucket_quotes
+    - group.bucket_main
+    - group.bucket_factoids
+    - group.bucket_images
     - history_graph.network_speeds
+    - group.plexlibrarysize

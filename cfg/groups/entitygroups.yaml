@@ -47,3 +47,13 @@ videostats:
     - sensor.youtube_videos
     - sensor.youtube_subs
     - sensor.youtube_views
+
+plexlibrarysize:
+  name: Plex Library Sizes
+  entities:
+    - sensor.home_movies
+    - sensor.internet_video
+    - sensor.lets_play
+    - sensor.movies
+    - sensor.music
+    - sensor.tv_shows

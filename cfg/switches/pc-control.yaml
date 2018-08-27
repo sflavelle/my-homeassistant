@@ -3,4 +3,6 @@
   host: 192.168.0.61
   name: Gaming PC
   turn_off:
-    service: shell_command.shutdown_windows
+    service: ifttt.trigger
+    data:
+      event: shutdown_windows

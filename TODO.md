@@ -5,6 +5,7 @@
 - [x] Automate devices based on temperature (make sure heater doesn't turn on when too warm etc)
 - [ ] HASS-based alarm, rework morning briefing
 - [ ] Sleep scene, should trigger ambient noise to sleep to
+- [ ] VR Active scene... for reasons
 
 ## Hardware
 

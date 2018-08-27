@@ -1,0 +1,27 @@
+- platform: command_line
+  switches:
+    docker_bucket:
+      command_on: docker start bucket
+      command_off: docker stop bucket
+      command_state: docker ps | grep bucket
+      friendly_name: Bucket (Docker)
+    docker_neubott:
+      command_on: docker start neubott
+      command_off: docker stop neubott
+      command_state: docker ps | grep neubott
+      friendly_name: Neubott (Docker)
+    docker_tgbridge:
+      command_on: docker start telegram_bridge
+      command_off: docker stop telegram_bridge
+      command_state: docker ps | grep telegram_bridge
+      friendly_name: Telegram Bridge
+    forever_nodered:
+      command_on: forever start $(which node-red)
+      command_off: forever stop $(which node-red)
+      command_state: forever list | grep node-red
+      friendly_name: NodeRED
+    docker_icecast:
+      command_on: docker start icecast
+      command_off: docker stop icecast
+      command_state: docker ps | grep icecast
+      friendly_name: Icecast

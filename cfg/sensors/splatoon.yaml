@@ -1,0 +1,65 @@
+# Critical Stats
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2
+  select: "#w4 > div:nth-of-type(1) > .user-number"
+  name: "Splatoon 2 - Battles Fought"
+  unit_of_measurement: "battles"
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2?filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
+  select: ".battles-summary > div:nth-of-type(3) .user-number"
+  name: "Splatoon 2 - Win Percentage (Last 50 Battles)"
+  value_template: '{{ (value | replace ("%","") | float) }}'
+  unit_of_measurement: "%"
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2
+  select: ".battles-summary > div:nth-of-type(4) .user-number"
+  name: "Splatoon 2 - Win Percentage (Last 24H)"
+  value_template: '{{ (value | replace ("%","") | float) }}'
+  unit_of_measurement: "%"
+
+# Battle Specifics
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2?_lang_=en-US&filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
+  select: '.battles-summary a[data-disp*="Kills"] > .auto-tooltip' 
+  name: "Splatoon 2 - Splat Average"
+  value_template: '{{ float(value) }}'
+  unit_of_measurement: "splats"
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2?_lang_=en-US&filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
+  select: '.battles-summary a[data-disp*="Deaths"] > .auto-tooltip'
+  name: "Splatoon 2 - Splatted Average"
+  value_template: '{{ float(value) }}'
+  unit_of_measurement: "splats"
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2
+  select: "#w5 > div:nth-of-type(8) > .user-number"
+  name: "Splatoon 2 - Turf Ink Average"
+  value_template: '{{ float(value) }}'
+  unit_of_measurement: "p"
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2?_lang_=en-US
+  select: "#w5 > div:nth-of-type(7) > .user-number > span"
+  attribute: title
+  value_template: '{{ (value | replace ("p","") | replace (",","")) }}'
+  name: "Splatoon 2 - Total Turf Inked"
+  unit_of_measurement: "p"
+# Ranked
+- platform: scrape
+  scan_interval: 180
+  resource: https://stat.ink/@Neurario/spl2
+  select: "#w6 > div:nth-of-type(2) > .user-number"
+  name: "Splatoon 2 - Ranked Battle Win Percentage"
+  value_template: '{{ (value | replace ("%","") | float) }}'
+  unit_of_measurement: "%"
+
+# Battle Feed (hopefully)
+- platform: feedparser
+  name: Splatoon 2 Log
+  feed_url: "https://stat.ink/@Neurario.2.en-US.rss"

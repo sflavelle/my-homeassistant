@@ -1,34 +1,16 @@
-"*.*":
-    custom_ui_state_card: state-card-custom-ui
-
-switch.docker_*:
-  homebridge_hidden: true
-switch.forever_*:
-  homebridge_hidden: true
 light.simon*:
   friendly_name: Bedroom Light
-  state_card_mode: break-slider
-  stretch_slider: true
+script.wakeup_lights:
+  friendly_name: Fade In Lights
+  icon: mdi:weather-sunset-up
 
 # Sensor badges in cards
 sensor.batt_watch:
   icon: mdi:watch
-  state_card_mode: badges
 sensor.batt_ipad:
   icon: mdi:tablet-ipad
-  state_card_mode: badges
 sensor.batt_iphone:
   icon: mdi:cellphone-iphone
-  state_card_mode: badges
-sensor.batt_nexus:
-  state_card_mode: badges
-timer.laundry_dryer:
-  state_card_mode: badges
-  friendly_name: Laundry Timer (Dryer)
-timer.laundry_line:
-  state_card_mode: badges
-  friendly_name: Laundry Timer (Clothes Line)
-
 sensor.iphone_battery*:
   hidden: true
 
@@ -37,13 +19,19 @@ scene.sleep__night_light:
   icon: mdi:weather-night
 scene.daylight_cool_lighting:
   icon: mdi:white-balance-sunny
+scene.evening_warm_lighting:
+  icon: mdi:weather-sunset
 
 # Automation Custom Icons
 
 automation.turn_off_the_heater_two_hours_after_this_is_switched_on:
-  icon: mdi:radiator
+  icon: mdi:clock-start
 automation.only_run_the_heater_for_two_hours:
-  icon: mdi:radiator
+  icon: mdi:clock-end
+automation.turn_off_the_fan_two_hours_after_this_is_switched_on:
+  icon: mdi:clock-start
+automation.only_run_the_fan_for_two_hours:
+  icon: mdi:clock-end
 automation.prepare_room_for_bedtime:
   icon: mdi:weather-night
 automation.simon_home_turn_bedroom_light_on_after_dark:
@@ -62,13 +50,10 @@ automation.fan_on_when_weathers_warming:
 # Renaming Service Sensors
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High
-  state_card_mode: badges
 sensor.dark_sky_daily_low_temperature:
   friendly_name: Tonight's Low
-  state_card_mode: badges
 sensor.dark_sky_temperature:
   friendly_name: Current Temp
-  state_card_mode: badges
 sensor.dark_sky_daily_max_precip_intensity:
   friendly_name: Predicted Max Precipitation
 sensor.dark_sky_precip_intensity:
@@ -83,28 +68,21 @@ sensor.dark_sky_daily_summary:
   friendly_name: This Week's Weather
 sensor.bom_bendigo_air_temp_c:
   friendly_name: Air Temperature
-  state_card_mode: badges
 sensor.bom_bendigo_cloud:
   friendly_name: Cloud Cover
   icon: mdi:weather-cloudy
 sensor.bom_bendigo_rain_today:
   friendly_name: Rain since 9am
   icon: mdi:weather-rainy
-  state_card_mode: badges
 sensor.bom_bendigo_relative_humidity:
   friendly_name: Relative Humidity
   icon: mdi:water-percent
-  state_card_mode: badges
 sensor.bom_bendigo_wind_speed_kmh:
   friendly_name: Wind Speed
   icon: mdi:weather-windy
-  state_card_mode: badges
 sensor.dark_sky_uv_index:
-  state_card_mode: badges
   friendly_name: UV Index
-sensor.dark_sky_nearest_storm_distance:
-  state_card_mode: badges
-
+  
 # Giving other entities icons
 
 switch.fan:
@@ -113,21 +91,20 @@ switch.heater:
   icon: mdi:radiator
   extra_data_template: >
     if (attributes.current_power_w < 0.5) return 'Idle'; else if (state === 'off') return null; else return 'Active';
-
-# Hiding sensors
-
-media_player.plex_simon_linuxweb:
-  hidden: true # Used in media_player group
-media_player.plex_simon_windowsweb:
-  hidden: true # Used in media_player group
-media_player.plex_simon_windowsclient:
-  hidden: true # Used in media_player group
-media_player.google_home_simon:
-  hidden: true # Used in media_player group
-media_player.chromecast_simon:
-  hidden: true # Used in media_player group
-media_player.plex_simon_firefox:
-  hidden: true
+switch.gaming_pc:
+  icon: mdi:desktop-tower
+sensor.splatoon_2__battles_fought:
+  icon: mdi:gamepad
+sensor.splatoon_2__win_percentage:
+  icon: mdi:trophy
+sensor.splatoon_2__splat_average:
+  icon: mdi:crosshairs-gps
+sensor.splatoon_2__splatted_average:
+  icon: mdi:crosshairs
+sensor.splatoon_2__turf_ink_average:
+  icon: mdi:cup-water
+sensor.splatoon_2__total_turf_inked:
+  icon: mdi:cup-water
 
 # Hiding things that are in their own view
 
@@ -139,6 +116,15 @@ group.view_video:
   hide_in_default_view: true
 group.view_weather:
   hide_in_default_view: true
+group.view_nerdthings:
+  hide_in_default_view: true
 
 remote.*:
   hidden: true
+
+sensor.chicago_time:
+  friendly_name: Chicago IL
+sensor.london_time:
+  friendly_name: London UK
+sensor.california_time:
+  friendly_name: California

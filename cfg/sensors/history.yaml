@@ -1,0 +1,5 @@
+- platform: statistics
+  entity_id: sensor.speedtest_download
+  name: Average Download Speed
+  max_age:
+    days: 1

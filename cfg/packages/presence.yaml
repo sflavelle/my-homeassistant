@@ -1,0 +1,117 @@
+### AUTOMATIONS - UPDATE PRESENCE ###
+
+automation:
+  - alias: "Update presence to away"
+    trigger:
+      platform: state
+      entity_id: device_tracker.heytherecharlie
+      to: 'not_home'
+      for:
+        minutes: 3
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.simon_presence
+          option: "Away"
+  - alias: "Update presence to At Work"
+    trigger:
+      platform: state
+      entity_id: device_tracker.heytherecharlie
+      to: "Simon's Work"
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.simon_presence
+          option: "At Work"
+  - alias: "Update presence to At Home"
+    trigger:
+      - platform: state
+        entity_id: device_tracker.heytherecharlie
+        to: 'home'
+      - platform: state
+        entity_id: switch.gaming_pc
+        to: 'on'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.simon_presence
+          option: "At Home"
+  - alias: "Update presence to In Bed"
+    trigger:
+      platform: template
+      value_template: "{% if is_state_attr('device_tracker.heytherecharlie', 'battery_status', 'Charging') %} true {% endif %}"
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.heytherecharlie
+          state: 'home'
+        - condition: sun
+          after: sunset
+        - condition: time
+          after: '20:00:00'
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.simon_presence
+          option: "In Bed"
+
+  - alias: "Update presence when getting out of bed"
+    trigger:
+      - platform: state
+        entity_id: switch.mac_display
+        to: 'on'
+        for:
+          minutes: 2
+      - platform: state
+        entity_id: switch.gaming_pc
+        to: 'on'
+      - platform: template
+        value_template: "{% if is_state_attr('device_tracker.heytherecharlie', 'battery_status', 'NotCharging') %} true {% endif %}"
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.simon_presence
+          state: 'In Bed'
+        - condition: state
+          entity_id: device_tracker.heytherecharlie
+          state: 'home'
+        - condition: time
+          after: '03:00:00' # Just in case
+    action:
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.simon_presence
+          option: "Home"
+### AUTOMATIONS - ACT ON PRESENCE ###
+  ########
+  # HOME #
+  ########
+  - alias: "Turn things on when I get home"
+    trigger:
+      platform: state
+      entity_id: input_select.simon_presence
+      from: "Away"
+      to: "Home"
+    action:
+      - service: homeassistant.turn_on
+        entity_id: light.simon
+      - service: homeassistant.turn_on
+        entity_id: switch.mac_display
+      - condition: numeric_state # If it's warm/hot outside, make sure the fan is on
+        entity_id: sensor.bom_bendigo_air_temp_c
+        above: 24
+      - service: homeassistant.turn_on
+        entity_id: switch.fan
+  ########
+  # AWAY #
+  ########
+  - alias: "Turn things off when I leave"
+    trigger:
+      platform: state
+      entity_id: input_select.simon_presence
+      to: "Away"
+    action:
+      - service: homeassistant.turn_off
+        entity_id: group.simonsbedroom

@@ -7,3 +7,7 @@
 - platform: worldclock
   name: California Time
   time_zone: America/Los_Angeles # Ash
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'

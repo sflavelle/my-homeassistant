@@ -1,0 +1,266 @@
+sensor:
+  - platform: mqtt
+    state_topic: "bucket/quotes/count"
+    name: Bucket Quotes
+    unit_of_measurement: "quotes"
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts"
+    name: "Bucket 'Facts'"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/whatdidimiss"
+    name: "What Did General Chat Miss?"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "responses"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/givemeajam"
+    name: "General Chat Jams"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "jams"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/bucketprotips"
+    name: "Bucket 'Protips'"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "tips"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/raocowisms"
+    name: "Raocowisms"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/splatfacts"
+    name: "Splatoon Things"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "squids"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/battleroyale"
+    name: "Battle Royale Memes"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "memes"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+# FACTOIDS
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_ash"
+    name: "Ash Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_brian"
+    name: "Brian Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_bucket"
+    name: "Bucket Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_hinchy"
+    name: "Hinchy Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_htw"
+    name: "Harley Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_kch"
+    name: "Casey Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_neu"
+    name: "Neu Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_quetz"
+    name: "Quetz Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_sam"
+    name: "Sam Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_sc"
+    name: "Spriteclad Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_spicy"
+    name: "Spicy Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_tedh"
+    name: "Ted Facts"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_teriki"
+    name: "Teriki Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_tobi"
+    name: "Tobi Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/facts_vid"
+    name: "Phil Factoids"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "facts"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+# MISC
+  - platform: mqtt
+    state_topic: "bucket/triggers/bunbunbun"
+    name: "Buns"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "buns"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/deerdeerdeer"
+    name: "Deers"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "deers"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+  - platform: mqtt
+    state_topic: "bucket/triggers/bundeerbun"
+    name: "Buns and Deers"
+    value_template: '{{ value_json.length }}'
+    unit_of_measurement: "deerbuns"
+    json_attributes:
+      - name
+      - length
+      - times_triggered
+
+group:
+  bucket_main:
+    name: Bucket's Words of Wisdom
+    entities:
+      - sensor.bucket_facts
+      - sensor.bucket_protips
+      - sensor.bucket_quotes
+      - sensor.general_chat_jams
+      - sensor.raocowisms
+      - sensor.what_did_general_chat_miss
+  bucket_factoids:
+    name: Bucket's Person Factoids
+    entities:
+      - sensor.ash_factoids
+      - sensor.brian_factoids
+      - sensor.bucket_factoids
+      - sensor.casey_factoids
+      - sensor.harley_factoids
+      - sensor.hinchy_factoids
+      - sensor.neu_factoids
+      - sensor.phil_factoids
+      - sensor.quetz_factoids
+      - sensor.spicy_factoids
+      - sensor.spriteclad_factoids
+      - sensor.ted_facts
+      - sensor.teriki_factoids
+      - sensor.tobi_factoids
+  bucket_images:
+    name: Bucket's Image Triggers
+    entities:
+      - sensor.buns
+      - sensor.buns_and_deers
+      - sensor.deers

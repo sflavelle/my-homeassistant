@@ -1,0 +1,14 @@
+# Mac Server
+- platform: systemmonitor
+  resources:
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+    - type: last_boot
+    - type: disk_use_percent
+      arg: /
+    - type: disk_use_percent
+      arg: /mnt/media
+    - type: disk_use_percent
+      arg: /mnt/plexvideo
+# Windows TBD

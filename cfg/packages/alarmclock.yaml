@@ -1,0 +1,61 @@
+input_datetime:  
+  simon_alarmtime:
+    name: Simon's Alarm Time
+    has_date: false
+    has_time: true
+
+input_select:
+  simon_alarmsound:
+    name: Simon's Alarm Sound
+    options:
+      - Nothing
+      - Bill Wurtz (la de da)
+
+input_boolean:
+  work_routines:
+    name: Work Alarm
+    initial: off
+    icon: mdi:clock-outline
+
+automation:
+  - alias: Alarm clock - Simon's Bedroom
+    initial_state: on
+    trigger:
+      platform: template
+      value_template: "{{ states('sensor.time') == (((state_attr('input_datetime.simon_alarmtime' , 'timestamp')) - (15 * 60))|timestamp_custom('%H:%M', false)) }}"
+    condition:
+      - condition: state
+        entity_id: input_select.simon_presence
+        state: 'At Home'
+      - condition: state
+        entity_id: input_boolean.work_routines
+        state: 'on'
+    action:
+      - service: script.bedroom_alarm
+      - service: script.wakeup_lights
+
+script:
+  wakeup_lights:
+    sequence:
+      - service: light.turn_on
+        entity_id: light.simon
+        data:
+          rgb_color: [30, 0, 0]
+          brightness: 10
+      - delay: 00:01:00
+      - service: light.turn_on
+        entity_id: light.simon
+        data:
+          transition: 1200
+          brightness: 83
+          color_temp: 323
+  bedroom_alarm:
+    sequence:
+      - service: media_extractor.play_media
+        data_template:
+          entity_id: media_player.google_home_simon
+          media_content_id: >
+            {% if is_state('input_select.simon_alarmsound', 'Bill Wurtz (la de da)') %} https://www.youtube.com/watch?v=V0HCZ4YGqbw
+            {% else %} https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3
+            {% endif %}
+          media_content_type: "music"

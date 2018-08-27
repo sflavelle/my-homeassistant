@@ -15,22 +15,26 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret tz
   customize_glob: !include customize.yaml
+  packages: !include_dir_named cfg/packages
+  whitelist_external_dirs:
+    - /mnt/plexvideo
+    - /mnt/media
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
 
 # Location zoning
 
 zone:
   - name: Simon's Work
-    latitude: !secret loc_boris_lat
-    longitude: !secret loc_boris_lon
+    latitude: !secret loc_work_lat
+    longitude: !secret loc_work_lon
+    radius: 300
     
 
 # Enables the frontend
 frontend:
   javascript_version: latest
-  extra_html_url:
-    - /local/custom_ui/state-card-mini-media-player.html
-  extra_html_url_es5:
-    - /local/custom_ui/state-card-mini-media-player_es5.html
   themes:
     dark_theme: # Copied from https://community.home-assistant.io/t/another-dark-theme/28595
       # Main Stuff #
@@ -58,14 +62,70 @@ frontend:
       paper-slider-pin-color: "#1ABA92"
       paper-slider-active-color: "#1ABA92"
       paper-slider-secondary-color: "#33F2D8"
-
-customizer:
-  custom_ui: hosted
-  columns: 
-    - 500
-    - 800
-    - 1100 
-    - 1400
+    splat_squidsisters:
+      # Primary Config
+      primary-color: "var(--callie-color)"
+      accent-color: "var(--marie-color)"
+      callie-color: "#df1086" # Callie primary color
+      marie-color: "#24f834" # Marie primary color
+      dark-color: "#272727" # Dark background light stripe
+      darker-color: "#19171a" # Dark background dark stripe
+      heading-font: "Splatoon1, 'Roboto', 'Noto', sans-serif"
+      body-font: "Splatoon2, 'Roboto', 'Noto', sans-serif"
+      # Cards
+      primary-background-color: "var(--darker-color)"
+      paper-card-background-color: "var(--dark-color)"
+      paper-card-header-color: "var(--callie-color)"
+      primary-text-color: "#FFFFFF" # Primary text colour
+      secondary-text-color: "rgba(255, 255, 255, 0.7)" # Secondary text colour
+      disabled-text-color: "rgba(255, 255, 255, 0.5)" # Disabled text colour
+      # Icons
+      state-icon-active-color: "var(--callie-color)"
+      paper-item-icon-color: "#5d2cc4"
+      sidebar-icon-color: "var(--marie-color)"
+      # Other UI
+      paper-listbox-color: "#FFFFFF" 
+      paper-listbox-background-color: "var(--darker-color)"
+      more-info-header-background: "var(--marie-color)"
+      # Other Colors
+      label-badge-green: "#29ee86"
+      label-badge-yellow: "#fceb3f"
+      label-badge-red: "#ff9936"
+      # Font Settings
+      paper-font-headline_-_font-family: "var(--heading-font)"
+      paper-font-body1_-_font-family: "var(--body-font)"
+      paper-font-caption_-_font-family: "var(--body-font)"
+      paper-input-container-shared-input-style_-_font-family: "var(--body-font)"
+    splat_offthehook:
+      # Primary Config
+      primary-color: "var(--pearl-color)"
+      accent-color: "var(--marina-color)"
+      pearl-color: "#fa48ad" # Callie primary color
+      marina-color: "#03e297" # Marie primary color
+      dark-color: "#272727" # Dark background light stripe
+      darker-color: "#19171a" # Dark background dark stripe
+      primary-background-color: "#a7a3b6"
+      paper-card-background-color: "#b8b0b4"
+      heading-font: "Splatoon1, 'Roboto', 'Noto', sans-serif"
+      body-font: "Splatoon2, 'Roboto', 'Noto', sans-serif"
+      # Cards
+      paper-card-header-color: "var(--pearl-color)"
+      # Icons
+      state-icon-active-color: "var(--pearl-color)"
+      paper-item-icon-color: "#5d2cc4"
+      sidebar-icon-color: "var(--marina-color)"
+      # Other UI
+      more-info-header-background: "var(--marina-color)"
+      # Other Colors
+      label-badge-green: "#29ee86"
+      label-badge-yellow: "#fceb3f"
+      label-badge-red: "#ff9936"      
+      # Font Settings
+      paper-font-headline_-_font-family: "var(--heading-font)"
+      paper-font-body1_-_font-family: "var(--body-font)"
+      paper-font-caption_-_font-family: "var(--body-font)"
+      paper-input-container-shared-input-style_-_font-family: "var(--body-font)"
+      
 
 # Enables configuration UI
 config:
@@ -180,12 +240,37 @@ cloud:
         - remote
         - automation
         - sensor
+  google_actions:
+    filter:
+      exclude_domains:
+        - group
+        - remote
+        - automation
+      include_entities:
+        - input_boolean.work_routines
+    entity_config:
+      switch.docker_bucket:
+        name: Bucket Bot
+        aliases:
+          - Bucket
+          - Tedbeet Bot
+          - General Chat Bot
+      switch.docker_neubott:
+        name: Neubott
+        aliases:
+          - Neutopia Bot
+          - My server bot
+      switch.forever_nodered:
+        name: Node RED
+      input_boolean.work_routines:
+        name: Alarm
 
 homekit:
   auto_start: false
   filter:
     exclude_domains:
       - automation
+      - device_tracker
       - remote
       - group
       - timer
@@ -198,21 +283,38 @@ homekit:
       - sensor.dark_sky_daily_high_temperature
       - sensor.dark_sky_daily_low_temperature
       - sensor.dark_sky_temperature
-
+    include_entities:
+      - input_boolean.work_routines
+  entity_config:
+    input_boolean.work_routines:
+      name: Alarm
 
 mqtt:
-  # broker: !secret mqttbroker
-  # port: 19356
-  # username: !secret mqttuser
-  # password: !secret mqttpassword
+  broker: !secret mqttbroker
+  port: 10122
+  username: !secret mqttuser
+  password: !secret mqttpassword
+
+notify:
+  - name: html5
+    platform: html5
+    gcm_api_key: !secret gcm_api
+    gcm_sender_id: !secret gcm_sender
 
 # Component/Entity Configuration
 
 camera:
   - platform: generic
-    still_image_url: http://www.bom.gov.au/radar/IDR023.gif?{{ now().strftime("%Y%m%d%H%M") }}00
-    name: Rain Radar
+    still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=049&brand=wui&num=10&delay=50&type=A0Q&frame=0&scale=0.25&noclutter=0&showstorms=0&mapx=400&mapy=240&centerx=772&centery=20&transx=372&transy=-220&showlabels=1&severe=0&rainsnow=1&lightning=1&smooth=0&rand=25405942&lat=0&lon=0&label=you
+    name: Weather Radar
     limit_refetch_to_url_change: true
+  - platform: push
+    name: Splatoon 2 - Most Recent Battle
+    field: file
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky
 
 wake_on_lan:
 
@@ -232,59 +334,31 @@ device_tracker:
   - platform: icloud
     username: !secret icloud_user
     password: !secret icloud_pass
-  - platform: gpslogger
+  - platform: netgear
+    host: 192.168.0.1
+    password: !secret router_pass
 
 media_player: !include_dir_merge_list cfg/media/
 media_extractor: # Enable media_extractor service
 binary_sensor: !include_dir_merge_list cfg/sensors_binary/
 sensor: !include_dir_merge_list cfg/sensors/
 switch: !include_dir_merge_list cfg/switches/
-
 scene: !include_dir_merge_list cfg/scenes/
-
-# Notification Platforms
-
-notify:
-  - name: discord
-    platform: discord
-    token: !secret discord_token
-
 group: !include_dir_merge_named cfg/groups/
 automation: !include_dir_merge_list cfg/auto/
 script: !include_dir_merge_named cfg/scripts/
 
-# Custom Inputs
-
-input_select: !include_dir_merge_named cfg/input_select/
+input_select:
+  simon_presence:
+    options:
+      - At Home
+      - In Bed
+      - At Work
+      - Away
+    name: Simon
 
 # Various Hubs
 
 apple_tv:
   - host: 192.168.0.62
     login_id: 00000000-6075-0234-de72-4422edd64499
-
-# Components that don't need files
-
-history_graph:
-  tempgraph:
-    name: Recent Temperatures
-    entities:
-    - sensor.bom_bendigo_air_temp_c
-    hours_to_show: 144
-    refresh: 1800
-  netgraph:
-    name: Network Speeds
-    entities:
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
-    hours_to_show: 144
-    refresh: 3600
-
-timer:
-  laundry_line:
-    duration: '08:00:00'
-  laundry_dryer:
-    duration: '01:30:00'
-
-shell_command:
-  shutdown_windows: sshpass -f /config/.windows ssh me@192.168.0.61 "C:\Windows\System32\shutdown.exe /s /t 60"

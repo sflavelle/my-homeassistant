@@ -1,62 +1,32 @@
-- alias: "Fan on when weather's warming"
+- alias: "Turn off the fan two hours after this is switched on"
+  initial_state: 'off'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.bom_bendigo_air_temp_c
-    above: 25
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.lilyflavellesiphone
-        state: 'home'
-      - condition: state
-        entity_id: switch.fan
-        state: 'off'
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.fan
-    - service: notify.discord
-      data_template:
-        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}}, so the fan was switched on."
-        target: 375206372574363660
-
-- alias: "Fan on when it's warm at night"
-  trigger:
-    platform: sun
-    event: sunset
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.lilyflavellesiphone
-        state: 'home'
-      - condition: state
-        entity_id: switch.fan
-        state: 'off'
-      - condition: numeric_state
-        entity_id: sensor.bom_bendigo_air_temp_c
-        above: 20
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.fan
-    - service: notify.discord
-      data_template:
-        message: "The current temperature is {{sensor.bom_bendigo_air_temp_c}} and the sun is setting, so the fan was switched on."
-        target: 375206372574363660
-
-- alias: "Fan off overnight"
-  trigger:
-    platform: time
-    at: '03:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: switch.fan
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.bom_bendigo_air_temp_c
-        below: 18
+    platform: state
+    entity_id: automation.turn_off_the_fan_two_hours_after_this_is_switched_on
+    to: 'on'
+    for:
+      hours: 2
   action:
     - service: homeassistant.turn_off
       entity_id: switch.fan
+    - service: notify.ios_simons_iphone
+      data_template:
+        message: "Your fan was switched off at {{ now() }}."
+    - service: homeassistant.turn_off
+      entity_id: automation.turn_off_the_fan_two_hours_after_this_is_switched_on
+
+
+- alias: "ONLY run the fan for two hours"
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.fan
+    to: 'on'
+    for:
+      hours: 2
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.fan
+    - service: notify.lily_flavelles_iphone
+      data_template:
+        message: "Your fan was switched off at {{ now() }}."

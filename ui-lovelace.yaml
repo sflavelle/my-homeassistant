@@ -14,6 +14,8 @@ resources:
     type: js
   - url: /local/ext-weblink.js?v=0.3.2
     type: js
+  - url: /local/button-card.js
+    type: module
 views:
   - title: Dashboard
     id: home
@@ -134,18 +136,28 @@ views:
               - input_select.simon_presence
               - sensor.commute_time
               - sensor.payslip_date
-          - type: glance
-            column_width: calc(100% / 4)
-            show_name: false
-            show_state: false
-            entities:
-              - entity: light.simon
-                tap_action: toggle
-              - entity: switch.heater
-                tap_action: toggle
-              - entity: switch.fan
-                tap_action: toggle
-              - switch.gaming_pc
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: light.simon
+                action: toggle
+                icon: mdi:lightbulb
+                color: var(--primary-color)
+              - type: custom:button-card
+                entity: switch.heater
+                action: toggle
+                icon: mdi:radiator
+                color: var(--primary-color)
+              - type: custom:button-card
+                entity: switch.fan
+                action: toggle
+                icon: mdi:fan
+                color: var(--primary-color)
+              - type: custom:button-card
+                entity: switch.gaming_pc
+                action: toggle
+                icon: mdi:monitor
+                color: var(--accent-color)
       - type: vertical-stack
         cards:
           - type: glance
@@ -229,81 +241,76 @@ views:
     id: games
     icon: mdi:gamepad-variant
     background: center / cover repeat url("/local/img/spl2-bg-dark.png")
-    panel: true
     cards:
       - type: vertical-stack
         cards:
           - type: picture
             image: https://pbs.twimg.com/media/Dlan8b_VAAAJP-S.jpg:orig
-          - type: horizontal-stack
-            cards:
-              - type: entities
-                title: Splatoon 2
-                entities:
-                  - type: custom:ext-weblink
-                    url: https://stat.ink/@Neurario
-                    entity: sensor.splatoon_2__battles_fought
-                    name: Battles Fought (Recorded)
-                    secondary_info: last-changed
-                    icon: mdi:newspaper
-                  - type: custom:bignumber-card
-                    title: Win Percentage (Last 50 Battles)
-                    entity: sensor.splatoon_2__win_percentage_last_50_battles
-                    scale: 20px
-                    min: 0
-                    max: 100
-                    severity:
-                      - value: 100
-                        style: 'var(--accent-color)'
-                  - type: custom:bignumber-card
-                    title: Win Percentage (Ranked Only)
-                    entity: sensor.splatoon_2__ranked_battle_win_percentage
-                    scale: 20px
-                    min: 0
-                    max: 100
-                    severity:
-                      - value: 100
-                        style: 'var(--accent-color)'
-                  - type: custom:bignumber-card
-                    title: Win Percentage (Last 24 Hours)
-                    entity: sensor.splatoon_2__win_percentage_last_24h
-                    scale: 20px
-                    min: 0
-                    max: 100
-                    severity:
-                      - value: 100
-                        style: 'var(--accent-color)'
-                  - entity: sensor.splatoon_2__splat_average
-                    name: Splat Average per Game (Last 50 Battles)
-                  - entity: sensor.splatoon_2__splatted_average 
-                    name: Splatted Average per Game (Last 50 Battles)
-                  - type: divider
-                  - entity: sensor.splatoon_2__turf_ink_average
-                    name: Turf War - Average Turf Inked
-                  - entity: sensor.splatoon_2__total_turf_inked
-                    name: Turf War - Total Turf Inked
-              - type: vertical-stack
-                cards:
-                  - type: picture-entity
-                    entity: camera.splatoon_2__most_recent_battle
-                    show_state: false
-                  - type: custom:list-card
-                    entity: sensor.splatoon_2_log
-                    row_limit: 10
-                    title: Recent Battles
-                    columns:
-                      - title: Date
-                        field: published
-                      - title: Mode
-                        field: title
-                        regex: "(Turf War|Tower Control|Rainmaker|Clam Blitz|Splat Zones)"
-                      - title: Stage
-                        field: title
-                        regex: "/ (.+?) /"
-                      - title: Result
-                        field: title
-                        add_link: link
-                        regex: "(Lost|Won)"
+          - type: entities
+            title: Splatoon 2
+            entities:
+              - type: custom:ext-weblink
+                url: https://stat.ink/@Neurario
+                entity: sensor.splatoon_2__battles_fought
+                name: Battles Fought (Recorded)
+                secondary_info: last-changed
+                icon: mdi:newspaper
+              - type: custom:bignumber-card
+                title: Win Percentage (Last 50 Battles)
+                entity: sensor.splatoon_2__win_percentage_last_50_battles
+                scale: 20px
+                min: 0
+                max: 100
+                severity:
+                  - value: 100
+                    style: 'var(--accent-color)'
+              - type: custom:bignumber-card
+                title: Win Percentage (Ranked Only)
+                entity: sensor.splatoon_2__ranked_battle_win_percentage
+                scale: 20px
+                min: 0
+                max: 100
+                severity:
+                  - value: 100
+                    style: 'var(--accent-color)'
+              - type: custom:bignumber-card
+                title: Win Percentage (Last 24 Hours)
+                entity: sensor.splatoon_2__win_percentage_last_24h
+                scale: 20px
+                min: 0
+                max: 100
+                severity:
+                  - value: 100
+                    style: 'var(--accent-color)'
+              - entity: sensor.splatoon_2__splat_average
+                name: Splat Average per Game (Last 50 Battles)
+              - entity: sensor.splatoon_2__splatted_average 
+                name: Splatted Average per Game (Last 50 Battles)
+              - type: divider
+              - entity: sensor.splatoon_2__turf_ink_average
+                name: Turf War - Average Turf Inked
+              - entity: sensor.splatoon_2__total_turf_inked
+                name: Turf War - Total Turf Inked
+              - type: picture-entity
+                entity: camera.splatoon_2__most_recent_battle
+                show_state: false
+              - type: custom:list-card
+                entity: sensor.splatoon_2_log
+                row_limit: 10
+                title: Recent Battles
+                columns:
+                  - title: Date
+                    field: published
+                  - title: Mode
+                    field: title
+                    regex: "(Turf War|Tower Control|Rainmaker|Clam Blitz|Splat Zones)"
+                  - title: Stage
+                    field: title
+                    regex: "/ (.+?) /"
+                  - title: Result
+                    field: title
+                    add_link: link
+                    regex: "(Lost|Won)"
 
   - title: Applications / Servers
     id: servers

@@ -10,9 +10,12 @@ This config currently uses the following devices (Australian URLs):
 - 1 x LIFX+ A19 Wi-Fi LED Light with Night Vision
 - 1 x WeMo Insight Switch
 - 1 x Apple TV 4th Generation
+- 2 x Broadlink RM Mini 3 Universal Remote
 - 2 x Google Chromecast 1st Generation
 - 2 x Google Chromecast Audio
 - 1 x Google Home
+- 1 x Google Home Hub
+- 1 x NVIDIA Shield
 
 # Contact
 The best way to get in contact with me regarding this configuration is to create an issue or PR here on Github.

@@ -1,21 +1,33 @@
 title: Home
 resources:
-  - url: /local/tracker-card.js?v=0.1.4
+  - url: /local/card-modder.js
+    type: js
+  - url: /local/tracker-card.js?v=0.1.5
     type: js
   - url: /local/custom-lovelace/bignumber-card/bignumber-card.js?v=0.0.1
     type: js
-  - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=0.1.0
+  - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=0.1.1
     type: js
-  - url: /local/vertical-stack-in-card.js?v=0.0.6
+  - url: /local/vertical-stack-in-card.js?v=0.0.8
     type: js
   - url: /local/custom-lovelace/group-card/group-card.js?v=0.0.2
     type: js
-  - url: /local/list-card.js?v=0.0.6
+  - url: /local/list-card.js?v=0.0.7
     type: js
   - url: /local/ext-weblink.js?v=0.3.2
     type: js
-  - url: /local/button-card.js
+  - url: /local/slider-entity-row.js
+    type: js
+  - url: /local/mini-media-player.js?v=0.8.8
     type: module
+  - url: /local/column-card.js
+    type: js
+  - url: /local/slideshow-card.js
+    type: js
+  - url: /local/time-input-row.js
+    type: js
+  - url: /local/fold-entity-row.js?v=41bf08
+    type: js
 views:
   - title: Dashboard
     id: home
@@ -23,149 +35,200 @@ views:
     badges:
       - sun.sun
     cards:
-      - type: custom:bignumber-card
-        entity: sensor.time
-      - type: entity-filter
+      - id: 25605f2dffa2408288511a2f793dc79d  # Automatically created id
+        type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:bignumber-card
+            entity: sensor.time
+            title: Local Time
+          - type: horizontal-stack
+            cards:
+              - type: custom:bignumber-card
+                entity: sensor.california_time
+                title: CA, USA
+                scale: 20px
+              - type: custom:bignumber-card
+                entity: sensor.london_time
+                title: IL, USA
+                scale: 20px
+              - type: custom:bignumber-card
+                entity: sensor.london_time
+                title: LON, UK
+                scale: 20px
+      - id: ac96b7b002b1492baee2d1f2bcdbf384  # Automatically created id
+        type: entity-filter
         entities:
-          - device_tracker.bethsiphone
-          - entity: device_tracker.heytherecharlie
+          - entity: device_tracker.galaxynote8
+            name: Beth
+          - entity: device_tracker.note9
             name: Simon
           - device_tracker.izzysiphone
           - device_tracker.johnsiphone
           - device_tracker.michelesiphone
+          - entity: device_tracker.androidb2ab773973a092d6
+            name: Matt
         state_filter:
-          - 'home'
-        card: 
+          - home
+        card:
           type: glance
           title: People at home
           show_state: false
-      - type: weather-forecast
+          column_width: calc(100% / 6)
+      - id: 35ca99d4ebb843beb9b2d9be9da2c30a  # Automatically created id
+        type: weather-forecast
         entity: weather.dark_sky
-      - type: vertical-stack
+      - id: 1ef56c93a03f47a098ed399a76a23417  # Automatically created id
+        type: vertical-stack
         cards:
           - type: horizontal-stack
             cards:
-              - type: custom:bignumber-card
-                title: Download
+              - type: sensor
+                graph: line
                 entity: sensor.speedtest_download
-                scale: 20px
-                min: 0
-                max: 20
-              - type: custom:bignumber-card
-                title: Upload
+                name: Download
+                accuracy: 24
+              - type: sensor
+                graph: line
                 entity: sensor.speedtest_upload
-                scale: 20px
-                min: 0
-                max: 2
-          - type: history-graph
-            title: Network Speeds
-            refresh_interval: 3600
-            hours_to_show: 48
-            entities:
-              - sensor.speedtest_download
-              - sensor.average_download_speed_mean
-              - sensor.speedtest_upload
-      - type: glance
-        title: Around The World
-        entities:
-          - sensor.chicago_time
-          - sensor.london_time
-          - sensor.california_time
-  - title: Lounge
-    icon: mdi:sofa
-    id: lounge
-    panel: true
-    cards:
-      - type: vertical-stack
+                name: Upload
+                accuracy: 24
+          - type: sensor
+            graph: line
+            entity: sensor.average_download_speed_mean
+            name: Average Download Speeds
+      - id: 7a8162dd20b547c8ae9914f438112749  # Automatically created id
+        type: horizontal-stack
         cards:
-          - type: media-control
+          - type: sensor
+            graph: line
+            entity: sensor.d6200_kbytesec_received
+            name: Download (Router)
+            accuracy: 24
+          - type: sensor
+            graph: line
+            entity: sensor.d6200_kbytesec_sent
+            name: Upload (Router)
+            accuracy: 24
+      - id: a261176007be4394ac946b297e6843d7  # Automatically created id
+        type: entities
+        title: Lounge Room
+        entities:
+          - type: custom:mini-media-player
+            entity: media_player.shield
+            name: Shield TV (Chromecast)
+            group: true
+          - type: custom:mini-media-player
+            entity: media_player.shield_android_tv
+            name: Shield TV
+            icon: mdi:monitor
+            group: true
+          - type: custom:mini-media-player
             entity: media_player.apple_tv
-          - type: entities
-            title: Other TV Devices
-            show_header_toggle: false
-            entities: 
-              - media_player.playstation_4
-  - title: Simon's Room
+            icon: mdi:apple
+            group: true
+          - type: custom:mini-media-player
+            entity: media_player.playstation_4
+            group: true
+  # - title: Lounge
+  #   icon: mdi:sofa
+  #   id: lounge
+  #   cards:
+  #     - type: entities
+  #       entities:
+  #         - type: custom:mini-media-player
+  #           entity: media_player.shield
+  #           name: Shield TV (Chromecast)
+  #           group: true
+  #         - type: custom:mini-media-player
+  #           entity: media_player.shield_android_tv
+  #           name: Shield TV
+  #           icon: mdi:monitor
+  #           group: true
+  #         - type: custom:mini-media-player
+  #           entity: media_player.apple_tv
+  #           icon: mdi:apple
+  #           group: true
+  #         - type: custom:mini-media-player
+  #           entity: media_player.playstation_4
+  #           group: true
+  - title: Bedroom
     id: simon
     cards:
-      - type: horizontal-stack
+      - id: 379a414b9bab4491b7dffdee6d963112  # Automatically created id
+        type: horizontal-stack
         cards:
-          - type: custom:bignumber-card
-            title: iPhone
-            entity: sensor.batt_iphone
-            scale: 20px
+          # - type: custom:bignumber-card
+          #   title: iPhone
+          #   entity: sensor.batt_iphone
+          #   scale: 20px
+          #   min: 0
+          #   max: 100
+          #   severity:
+          #     - value: 15
+          #       style: 'var(--label-badge-red)'
+          #     - value: 35
+          #       style: 'var(--label-badge-yellow)'
+          #     - value: 100
+          #       style: 'var(--label-badge-green)'
+          - type: gauge
+            title: Phone Battery
+            entity: sensor.batt_nexus
             min: 0
             max: 100
             severity:
-              - value: 15
-                style: 'var(--label-badge-red)'
-              - value: 35
-                style: 'var(--label-badge-yellow)'
-              - value: 100
-                style: 'var(--label-badge-green)'
-          - type: custom:bignumber-card
-            title: iPad
-            entity: sensor.batt_ipad
-            scale: 20px
-            min: 0
-            max: 100
-            severity:
-              - value: 15
-                style: 'var(--label-badge-red)'
-              - value: 35
-                style: 'var(--label-badge-yellow)'
-              - value: 100
-                style: 'var(--label-badge-green)'
-          - type: custom:bignumber-card
-            title: Apple Watch
-            entity: sensor.batt_watch
-            scale: 20px
-            min: 0
-            max: 100
-            severity:
-              - value: 25
-                style: 'var(--label-badge-red)'
-              - value: 50
-                style: 'var(--label-badge-yellow)'
-              - value: 100
-                style: 'var(--label-badge-green)'
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - input_select.simon_presence
-              - sensor.commute_time
-              - sensor.payslip_date
-          - type: horizontal-stack
-            cards:
-              - type: custom:button-card
-                entity: light.simon
-                action: toggle
-                icon: mdi:lightbulb
-                color: var(--primary-color)
-              - type: custom:button-card
-                entity: switch.heater
-                action: toggle
-                icon: mdi:radiator
-                color: var(--primary-color)
-              - type: custom:button-card
-                entity: switch.fan
-                action: toggle
-                icon: mdi:fan
-                color: var(--primary-color)
-              - type: custom:button-card
-                entity: switch.gaming_pc
-                action: toggle
-                icon: mdi:monitor
-                color: var(--accent-color)
-      - type: vertical-stack
-        cards:
-          - type: glance
-            show_name: false
-            show_state: false
-            entities:
-              - entity: light.simon
-                tap_action: more-info
+              red: 15
+              yellow: 35
+              green: 50
+          # - type: gauge
+          #   title: iPad
+          #   entity: sensor.batt_ipad
+          #   min: 0
+          #   max: 100
+          #   severity:
+          #     red: 15
+          #     yellow: 35
+          #     green: 50
+          # - type: custom:bignumber-card
+          #   title: Apple Watch
+          #   entity: sensor.batt_watch
+          #   scale: 20px
+          #   min: 0
+          #   max: 100
+          #   severity:
+          #     - value: 25
+          #       style: 'var(--label-badge-red)'
+          #     - value: 50
+          #       style: 'var(--label-badge-yellow)'
+          #     - value: 100
+          #       style: 'var(--label-badge-green)'
+      - id: 7bf3fed718294bc9b2b6ce9c788b8878  # Automatically created id
+        type: entities
+        entities:
+          - input_select.simon_presence
+          - entity: sensor.commute_time
+            icon: mdi:briefcase
+          - entity: sensor.payslip_date
+            icon: mdi:cash
+          - type: custom:fold-entity-row
+            head:
+              entity: input_boolean.work_routines
+              name: Alarm
+            items:
+              - input_select.simon_alarmsound
+              - type: custom:time-input-row
+                entity: input_datetime.simon_alarmtime
+                name: 'Set Alarm For:'
+              - entity: script.bedroom_alarm
+                name: Test Alarm
+      - id: deb4abf97e3f4550b43d4822fa267450  # Automatically created id
+        type: entities
+        entities:
+          - type: custom:fold-entity-row
+            head:
+              entity: light.simon
+              type: custom:slider-entity-row
+              break_slider: true
+            items:
               - entity: scene.sleep__night_light
                 name: Red
                 tap_action: call-service
@@ -182,79 +245,88 @@ views:
                 name: Fade
                 tap_action: call-service
                 service: script.wakeup_lights
-          - type: glance
-            show_name: false
-            entities:
-              - entity: switch.fan
-                secondary_info: last-changed
-                tap_action: toggle
-              - entity: automation.turn_off_the_fan_two_hours_after_this_is_switched_on
-                name: Timer
-                tap_action: toggle
-              - entity: automation.only_run_the_fan_for_two_hours
-                name: Power Save
-                tap_action: toggle
-          - type: glance
-            show_name: false
-            entities:
-              - entity: switch.heater
-                secondary_info: last-changed
-                tap_action: toggle
+              - entity: scene.bedroom_vr_mode
+                icon: mdi:virtual-reality
+                name: VR Mode (Green)
+                tap_action: call-service
+                service: scene.turn_on
+          - type: custom:fold-entity-row
+            head: switch.heater
+            items:
               - entity: automation.turn_off_the_heater_two_hours_after_this_is_switched_on
                 name: Timer
                 tap_action: toggle
               - entity: automation.only_run_the_heater_for_two_hours
                 name: Power Save
                 tap_action: toggle
-          - type: entities
-            title: Alarm
-            entities:
-              - entity: input_boolean.work_routines
-                name: Set Alarm
-              - input_select.simon_alarmsound
-              - entity: input_datetime.simon_alarmtime
-                name: "Set Alarm For:"
-      - type: media-control
+          - type: custom:fold-entity-row
+            head: switch.simon_towerfan
+            items:
+              - type: call-service
+                name: Speed
+                icon: mdi:speedometer
+                action_name: Adjust
+                service: switch.broadlink_send_packet_192_168_0_64
+                service_data:
+                  packet: JgBsASwMKw0PKCsMLAwQJxAnECcQKA8oKwwQAAEILAwsDA8oKw0rDBAnECcQKA8oDygrDQ8AAQkrDCwMDygrDSsMECcQJxAoDygPKCsNDwABCCwMLAwPKCsMLAwPKBAnECcQKA8oLAsQAAEILAwsDA8oLAssDA8oECcQJxEnECcsCxAAAQgsDCwMDykrDCsNDikPJxAnEScQJywMDwABCCwNKwwPKSsMKw0OKQ8oDycQKBAoKwwPAAEIKw4qDQ8oKw0qDg4pDigPKQ4oECgrDA8AAQkrDioNDygrDSoNDygPKA8pDikOKCwNDgABCSsNKw0OKCsOKg0PKA8pDigPKQ4oLAwPAAEJLAwrDA8pKwwsDA4oECcQKBAnECcsCxAAAQgsDCwLECgsCywMDygPKA8oECcQKCwLDwABCSwMLAsQJywMLAsQKBAnECcQJw8oLAwPAAEILQssDA8oLAssDA8oDygQJxAnECgsCw8ADQUAAAAAAAAAAAAAAAA=
+              - type: call-service
+                name: Oscillation
+                icon: mdi:rotate-3d
+                action_name: Toggle
+                service: switch.broadlink_send_packet_192_168_0_64
+                service_data:
+                  packet: JgCEAw4oDykqDg4oDygPKA8AAQkrDSoODigrDSoODigPKCsNDikPKA8pDgABCCsOKg0OKCsOKg0OKA8oKw4OKA8oDygPAAEKKg0qDg4oKw0qDg4pDikqDQ4oDygQJxAAAQgrDSsNDigrDSsNDikOKSoNDykOKQ4pDgABCCwNKg0PKCsNKg0PKA8oKw0OKQ4pDikOAAEJKw0qDg4pKg0qDg4pDigrDQ8oDygPKA8AAQgrDioNDigrDioNDikOKSoODikOKA8oDwABCCwNKg0PKCsNKg0PKA8oKg4OKQ4pDikOAAEKKg0qDg4oKw0qDg4oDygrDQ4oDykOKBAAAQYtDSoODigrDSoODigPKSoNDygPKA8oDwABCCsOKg0OKCsOKg0OKA8oKw4OKA8oDygPAAEIKw4pDg8oKg4pDQ8pDikpDw0pDygPKA8AAQkqDigPDikpDygPDikPKCkPDSkPKA8oDwABCSkPKA8OKSkPKA8OKQ8oKQ4PKQ4pDikPAAEIKQ8pDg8oKQ8oDw8oDygpDw8oDygPKA8AAQgqDykNDygqDioODigPKCsODigPKQ4pDgABCSoOKg0PKCoOKg0OKQ4pKg4OKA8pDikOAAEJKw0qDQ8oKg4qDQ8nECgqDg4pDigPKQ4AAQkrDSoNDygrDSoNDygPKCoODikOKA8pDgABCioNKg0PKSoNKg0PKA8oKw0OKQ4pDikOAAEJLAssDQ4oLAwrDA8oECcrDA8oECcQJxAAAQgsCywNDigsDCsMDygQJywMDigQJxAnEAABCCwLLAwPKCwLLA0OKBAnLAsPKBAnECcQAAEILAssDA8oLAssDQ4oECcsCw8pDycQJxAAAQgsDCsMDykrDCsNDigQJywMDikPKA8nEAABCCwMKwwPKCwMKw0OKBAnLAwPKA8oDygPAAEJKwwrDQ4pKwwrDQ4pDikrDA8oDygPKA8AAQgrDSsNDigsDCoODikOKCsNDygPKA8oDwABCCsNKw0OKSoNKw0OKA8pKg0PKA8oDygPAAEIKw0qDg4oKw0qDg4pDikqDQ4pDikPKA8AAQgrDSoODigrDSoODigPKCoODigPKA8pDgABCSoOKQ8OKCoOKQ8OKA8oKQ4OKQ8oDygPAAEJKQ4pDw4pKQ8oDw4pDygqDg4oDygPKA8AAQopDioODigrDSoNDygPKCsNDigPKA8oDwANBQAAAAA=
+              - entity: automation.turn_off_the_fan_two_hours_after_this_is_switched_on
+                name: Timer
+                tap_action: toggle
+              - entity: automation.only_run_the_fan_for_two_hours
+                name: Power Save
+                tap_action: toggle
+          - entity: switch.wax_melter
+            icon: mdi:flower
+          - entity: switch.gaming_pc
+            icon: mdi:monitor
+            name: Computer
+      - id: 917edb75f8c3486f8418279aea286330  # Automatically created id
+        type: media-control
+        entity: media_player.simons_room
+      - id: 24c9edd0c38c40cfb74d7541376838f1  # Automatically created id
+        type: media-control
+        entity: media_player.homehub_simon
+      - id: 578c0665df7848e299cec769624e6b72  # Automatically created id
+        type: custom:mini-media-player
         entity: media_player.chromecast_simon
-      - type: entities
-        title: Music Devices
-        show_header_toggle: false
-        entities:
-          - type: media-control
-            entity: media_player.google_home_simon
-          - type: media-control
-            entity: media_player.spotify
-          - media_player.mopidy_icecast
-      - type: history-graph
-        refresh_interval: 300
-        entities:
-          - light.simon
-          - switch.heater
-          - switch.fan
-          - switch.gaming_pc
-          - entity: media_player.google_home_simon
-            name: Google Home
-          - entity: media_player.chromecast_simon
-            name: Chromecast
+        name: Chromecast
+        artwork_border: true
+        power_color: true
+        show_progress: true
+      - id: a2dd847500c646769408e06af405c325  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.google_home_simon
+        artwork: cover
+        power_color: true
+        show_progress: true
+        icon: mdi:google-home
+        max_volume: 50
+      - id: f1846cc6438c43d492a0cc4fe753f6f5  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.spotify
+        artwork: cover
+        hide_power: true
+        hide_volume: true
+        scroll_info: true
+        show_progress: true
 
-  - title: Games
-    id: games
-    icon: mdi:gamepad-variant
+  - title: Splatoon 2
+    id: spl2
     background: center / cover repeat url("/local/img/spl2-bg-dark.png")
+    panel: true
     cards:
-      - type: vertical-stack
+      - id: ea53b928bdd84b5e88caf03be0460476  # Automatically created id
+        type: vertical-stack
         cards:
-          - type: picture
-            image: https://pbs.twimg.com/media/Dlan8b_VAAAJP-S.jpg:orig
-          - type: entities
-            title: Splatoon 2
-            entities:
-              - type: custom:ext-weblink
-                url: https://stat.ink/@Neurario
-                entity: sensor.splatoon_2__battles_fought
-                name: Battles Fought (Recorded)
-                secondary_info: last-changed
-                icon: mdi:newspaper
+          - type: horizontal-stack
+            cards:
               - type: custom:bignumber-card
                 title: Win Percentage (Last 50 Battles)
                 entity: sensor.splatoon_2__win_percentage_last_50_battles
@@ -263,16 +335,16 @@ views:
                 max: 100
                 severity:
                   - value: 100
-                    style: 'var(--accent-color)'
-              - type: custom:bignumber-card
-                title: Win Percentage (Ranked Only)
-                entity: sensor.splatoon_2__ranked_battle_win_percentage
-                scale: 20px
-                min: 0
-                max: 100
-                severity:
-                  - value: 100
-                    style: 'var(--accent-color)'
+                    style: var(--accent-color)
+            # - type: custom:bignumber-card
+            #   title: Win Percentage (All Ranked)
+            #   entity: sensor.splatoon_2__ranked_battle_win_percentage
+            #   scale: 20px
+            #   min: 0
+            #   max: 100
+            #   severity:
+            #     - value: 100
+            #       style: 'var(--accent-color)'
               - type: custom:bignumber-card
                 title: Win Percentage (Last 24 Hours)
                 entity: sensor.splatoon_2__win_percentage_last_24h
@@ -280,44 +352,162 @@ views:
                 min: 0
                 max: 100
                 severity:
+                  - value: 49
+                    style: var(--label-badge-red)
                   - value: 100
-                    style: 'var(--accent-color)'
-              - entity: sensor.splatoon_2__splat_average
-                name: Splat Average per Game (Last 50 Battles)
-              - entity: sensor.splatoon_2__splatted_average 
-                name: Splatted Average per Game (Last 50 Battles)
-              - type: divider
-              - entity: sensor.splatoon_2__turf_ink_average
-                name: Turf War - Average Turf Inked
-              - entity: sensor.splatoon_2__total_turf_inked
-                name: Turf War - Total Turf Inked
-              - type: picture-entity
-                entity: camera.splatoon_2__most_recent_battle
-                show_state: false
-              - type: custom:list-card
-                entity: sensor.splatoon_2_log
-                row_limit: 10
-                title: Recent Battles
-                columns:
-                  - title: Date
-                    field: published
-                  - title: Mode
-                    field: title
-                    regex: "(Turf War|Tower Control|Rainmaker|Clam Blitz|Splat Zones)"
-                  - title: Stage
-                    field: title
-                    regex: "/ (.+?) /"
-                  - title: Result
-                    field: title
-                    add_link: link
-                    regex: "(Lost|Won)"
+                    style: var(--accent-color)
+          - type: custom:column-card
+            cards:
+              - type: custom:slideshow-card
+                flush: true
+                cards:
+                  - type: picture
+                    image: https://pbs.twimg.com/media/Dlan8b_VAAAJP-S.jpg:orig
+                  - type: picture-entity
+                    entity: camera.splatoon_2__most_recent_battle
+                    show_state: false
+                    show_name: false
+              - type: markdown
+                content: >
+                  # TODO
+
+                  - Find icons for entity pictures
+
+                  - splats/splatted as entity pictures / glance
+              - type: entities
+                title: Splatoon 2
+                entities:
+                  - type: custom:ext-weblink
+                    url: https://stat.ink/@Neurario
+                    entity: sensor.splatoon_2__battles_fought
+                    name: Battles Fought (Recorded)
+                    secondary_info: last-changed
+                    icon: mdi:newspaper
+              - type: custom:vertical-stack-in-card
+                cards:
+                  - type: markdown
+                    title: Turf War
+                    content: >
+                      *Ink the most ground!*
+                  - type: entities
+                    entities:
+                      - entity: sensor.splatoon_2__specials_used_average
+                        name: Avg. Specials Used
+                        icon: mdi:smoke-detector
+                  - type: horizontal-stack
+                    cards:
+                      - type: sensor
+                        entity: sensor.splatoon_2__splat_average
+                        name: Avg. Splats
+                        line_color: '#24f834'
+                      - type: sensor
+                        entity: sensor.splatoon_2__splatted_average
+                        name: Avg. Splatted
+                        line_color: var(--label-badge-red)
+                  - type: horizontal-stack
+                    cards:
+                      - type: sensor
+                        entity: sensor.splatoon_2__turf_ink_average
+                        name: Avg. Turf Inked
+                        graph: none
+                      - type: sensor
+                        entity: sensor.splatoon_2__total_turf_inked
+                        name: Total Inkage
+                        graph: none
+                    name: Total Turf Inked
+              - type: custom:vertical-stack-in-card
+                cards:
+                  - type: markdown
+                    title: Salmon Run
+                    content: >
+                      *Appease your masters!*
+                  - type: custom:bignumber-card
+                    entity: sensor.salmon_run__grade
+                    scale: 25px
+                  - type: markdown
+                    content: >
+                      ## Current/Last Schedule Worked
+                  - type: glance
+                    columns: 2
+                    theme: dark_theme
+                    entities:
+                      - entity: sensor.salmon_run__power_eggs_collected_latest_schedule
+                        name: Team Collected
+                      - entity: sensor.salmon_run__golden_eggs_collected_latest_schedule
+                        name: Team Collected
+                      - entity: sensor.salmon_run__power_eggs_personally_collected_latest_schedule
+                        name: Personally Collected
+                      - entity: sensor.salmon_run__golden_eggs_personally_collected_latest_schedule
+                        name: Personally Collected
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:bignumber-card
+                        entity: sensor.salmon_run__shifts_worked_latest_schedule
+                        title: Shifts Worked
+                        scale: 25px
+                      - type: custom:bignumber-card
+                        entity: sensor.salmon_run__shifts_completed_latest_schedule
+                        title: Shifts Completed
+                        scale: 25px
+                  - type: entities
+                    entities:
+                      - entity: sensor.salmon_run__points_latest_schedule
+                        name: Points earned
+                        icon: mdi:star-four-points
+                      - entity: sensor.salmon_run__crew_rescued_latest_schedule
+                        name: Crew Members rescued
+                        icon: mdi:lifebuoy
+                      - entity: sensor.salmon_run__times_overwhelmed_latest_schedule
+                        name: Times Overwhelmed (Splatted)
+                        icon: mdi:skull
+                  - type: markdown
+                    content: >
+                      ## Lifetime Performance
+                  - type: glance
+                    columns: 2
+                    theme: dark_theme
+                    entities:
+                      - entity: sensor.salmon_run__power_eggs_collected
+                        name: Personally Collected
+                      - entity: sensor.salmon_run__golden_eggs_collected
+                        name: Personally Collected
+                  - type: custom:bignumber-card
+                    entity: sensor.salmon_run__shifts_worked
+                    title: Shifts Worked
+                    scale: 25px
+                  - type: entities
+                    entities:
+                      - entity: sensor.salmon_run__points_cumulative
+                        name: Points earned (Lifetime)
+                        icon: mdi:star-four-points
+                      - entity: sensor.salmon_run__crew_rescued
+                        name: Crew Members rescued
+                        icon: mdi:lifebuoy
+            # - type: custom:list-card
+            #   entity: sensor.splatoon_2_log
+            #   row_limit: 10
+            #   title: Recent Battles
+            #   columns:
+            #     - title: Date
+            #       field: published
+            #     - title: Mode
+            #       field: title
+            #       regex: "(Turf War|Tower Control|Rainmaker|Clam Blitz|Splat Zones)"
+            #     - title: Stage
+            #       field: title
+            #       regex: "/ (.+?) /"
+            #     - title: Result
+            #       field: title
+            #       add_link: link
+            #       regex: "(Lost|Won)"
 
   - title: Applications / Servers
     id: servers
     icon: mdi:settings
     background: center / cover repeat url("/local/img/spl2-bg-dark.png")
     cards:
-      - type: entities
+      - id: c2933814dc6549d2b189e6dcf5e0178a  # Automatically created id
+        type: entities
         title: Mac Mini Servers
         entities:
           - entity: switch.forever_nodered
@@ -325,12 +515,14 @@ views:
           - switch.docker_neubott
           - switch.docker_tgbridge
           - switch.docker_icecast
-      - type: custom:tracker-card
+      - id: c7c7e7c7f4c04c9ea231b85d03e2c90a  # Automatically created id
+        type: custom:tracker-card
         title: Updates
         trackers:
           - sensor.custom_card_tracker
           - sensor.custom_component_tracker
-      - type: custom:vertical-stack-in-card
+      - id: 6cc0c0a3a191450b978e3172a0928962  # Automatically created id
+        type: custom:vertical-stack-in-card
         cards:
           - type: entities
             title: Server Info (Mac Mini)
@@ -344,11 +536,11 @@ views:
             max: 100
             severity:
               - value: 75
-                style: 'var(--label-badge-green)'
+                style: var(--label-badge-green)
               - value: 85
-                style: 'var(--label-badge-yellow)'
+                style: var(--label-badge-yellow)
               - value: 95
-                style: 'var(--label-badge-red)'
+                style: var(--label-badge-red)
           - type: custom:bignumber-card
             title: Disk Usage (/mnt/media)
             entity: sensor.disk_use_percent_mntmedia
@@ -357,11 +549,11 @@ views:
             max: 100
             severity:
               - value: 75
-                style: 'var(--label-badge-green)'
+                style: var(--label-badge-green)
               - value: 85
-                style: 'var(--label-badge-yellow)'
+                style: var(--label-badge-yellow)
               - value: 95
-                style: 'var(--label-badge-red)'
+                style: var(--label-badge-red)
           - type: custom:bignumber-card
             title: Disk Usage (/mnt/plexvideo)
             entity: sensor.disk_use_percent_mntplexvideo
@@ -370,18 +562,19 @@ views:
             max: 100
             severity:
               - value: 75
-                style: 'var(--label-badge-green)'
+                style: var(--label-badge-green)
               - value: 85
-                style: 'var(--label-badge-yellow)'
+                style: var(--label-badge-yellow)
               - value: 95
-                style: 'var(--label-badge-red)'
+                style: var(--label-badge-red)
           - type: history-graph
             refresh_interval: 3600
             entities:
               - sensor.load_1m
               - sensor.load_5m
               - sensor.load_15m
-      - type: entities
+      - id: cc6aefdd29a24ca59b1b8ec560255cd7  # Automatically created id
+        type: entities
         entities:
           - type: call-service
             name: HASS Server Control
@@ -389,75 +582,79 @@ views:
             action_name: Reboot
             service: homeassistant.restart
             service_data:
-              do_it: 'yes'
-  - title: Bucket Server
-    id: bucket
-    icon: mdi:bitbucket
-    cards:
-      - type: custom:bignumber-card
-        entity: sensor.bucket_quotes
-        scale: 50px
-      - type: entities
-        title: Words of Wisdom
-        entities:
-          - entity: sensor.bucket_facts
-            secondary_info: last-changed
-          - entity: sensor.bucket_protips
-            secondary_info: last-changed
-      - type: entities
-        title: Generic Triggers
-        entities:
-          - entity: sensor.general_chat_jams
-            secondary_info: last-changed
-          - entity: sensor.raocowisms
-            secondary_info: last-changed
-            name: Raocow 'Things'
-          - entity: sensor.what_did_general_chat_miss
-            secondary_info: last-changed
-          - entity: sensor.splatoon_things
-            secondary_info: last-changed
-            name: "Gimme Squids"
-          - entity: sensor.battle_royale_memes
-            secondary_info: last-changed
-            name: "100 Xs Parachute Into A Y"
-      - type: glance
-        title: Factoids about People
-        column_width: calc(100% / 5)
-        entities:
-          - entity: sensor.ash_factoids
-            name: Ash
-          - entity: sensor.brian_factoids
-            name: Brian
-          - entity: sensor.bucket_factoids
-            name: Bucket
-          - entity: sensor.casey_factoids
-            name: Casey
-          - entity: sensor.harley_factoids
-            name: Harley
-          - entity: sensor.hinchy_factoids
-            name: Hinchy
-          - entity: sensor.neu_factoids
-            name: Lily
-          - entity: sensor.phil_factoids
-            name: Phil
-          - entity: sensor.quetz_factoids
-            name: Quetz
-          - entity: sensor.sam_factoids
-            name: Sam
-          - entity: sensor.spicy_factoids
-            name: Spicy
-          - entity: sensor.spriteclad_factoids
-            name: Spriteclad
-          - entity: sensor.ted_facts
-            name: Ted
-          - entity: sensor.teriki_factoids
-            name: Teriki
-          - entity: sensor.tobi_factoids
-            name: Tobi
-      - type: glance
-        title: Image Triggers
-        column_width: calc(100% / 3)
-        entities:
-          - sensor.buns
-          - sensor.buns_and_deers
-          - sensor.deers
+              do_it: yes
+      - id: d5dc1d12e52341bdaba27985ab843927  # Automatically created id
+        type: custom:slideshow-card
+        # flush: true
+        style:
+          border-radius: 25px
+        cards:
+          - type: custom:vertical-stack-in-card
+            cards:
+              - type: custom:bignumber-card
+                entity: sensor.bucket_quotes
+                scale: 30px
+              - type: entities
+                title: Bucket's Wisdom
+                entities:
+                  - entity: sensor.bucket_facts
+                    secondary_info: last-changed
+                  - entity: sensor.bucket_protips
+                    secondary_info: last-changed
+              - type: entities
+                title: Generic Triggers
+                entities:
+                  - entity: sensor.general_chat_jams
+                    secondary_info: last-changed
+                  - entity: sensor.raocowisms
+                    secondary_info: last-changed
+                    name: Raocow 'Things'
+                  - entity: sensor.what_did_general_chat_miss
+                    secondary_info: last-changed
+                  - entity: sensor.splatoon_things
+                    secondary_info: last-changed
+                    name: Gimme Squids
+                  - entity: sensor.battle_royale_memes
+                    secondary_info: last-changed
+                    name: 100 Xs Parachute Into A Y
+          - type: glance
+            title: Bucket's Factoids about People
+            column_width: calc(100% / 5)
+            entities:
+              - entity: sensor.ash_factoids
+                name: Ash
+              - entity: sensor.brian_factoids
+                name: Brian
+              - entity: sensor.bucket_factoids
+                name: Bucket
+              - entity: sensor.casey_factoids
+                name: Casey
+              - entity: sensor.harley_factoids
+                name: Harley
+              - entity: sensor.hinchy_factoids
+                name: Hinchy
+              - entity: sensor.neu_factoids
+                name: Lily
+              - entity: sensor.phil_factoids
+                name: Phil
+              - entity: sensor.quetz_factoids
+                name: Quetz
+              - entity: sensor.sam_factoids
+                name: Sam
+              - entity: sensor.spicy_factoids
+                name: Spicy
+              - entity: sensor.spriteclad_factoids
+                name: Spriteclad
+              - entity: sensor.ted_facts
+                name: Ted
+              - entity: sensor.teriki_factoids
+                name: Teriki
+              - entity: sensor.tobi_factoids
+                name: Tobi
+          - type: glance
+            title: Bucket's Image Triggers
+            column_width: calc(100% / 3)
+            entities:
+              - sensor.buns
+              - sensor.buns_and_deers
+              - sensor.deers

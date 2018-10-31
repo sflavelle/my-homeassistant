@@ -18,3 +18,9 @@
       state: on
       brightness: 83
       color_temp: 323
+- name: Bedroom VR Mode
+  entities:
+    light.simon:
+      state: on
+      brightness: 159
+      rgb_color: [0,255,0]

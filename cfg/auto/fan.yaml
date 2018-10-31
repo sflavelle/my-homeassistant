@@ -8,8 +8,8 @@
       hours: 2
   action:
     - service: homeassistant.turn_off
-      entity_id: switch.fan
-    - service: notify.ios_simons_iphone
+      entity_id: switch.simon_towerfan
+    - service: notify.html5_note9
       data_template:
         message: "Your fan was switched off at {{ now() }}."
     - service: homeassistant.turn_off
@@ -17,16 +17,15 @@
 
 
 - alias: "ONLY run the fan for two hours"
-  initial_state: 'on'
   trigger:
     platform: state
-    entity_id: switch.fan
+    entity_id: switch.simon_towerfan
     to: 'on'
     for:
       hours: 2
   action:
     - service: homeassistant.turn_off
-      entity_id: switch.fan
-    - service: notify.lily_flavelles_iphone
+      entity_id: switch.simon_towerfan
+    - service: notify.html5_note9
       data_template:
         message: "Your fan was switched off at {{ now() }}."

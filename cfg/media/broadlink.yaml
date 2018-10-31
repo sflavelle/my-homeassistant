@@ -1,0 +1,5 @@
+- platform: broadlink
+  host: 192.168.0.64
+  mac: '78:0f:77:5a:b4:8a'
+  name: Simon's TV
+  ircodes_ini: 'cfg/ircodes/samsung.ini'

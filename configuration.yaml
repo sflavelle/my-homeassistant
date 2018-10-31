@@ -130,6 +130,16 @@ frontend:
 # Enables configuration UI
 config:
 
+custom_updater:
+  track:
+    - cards
+    - components
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+    - https://raw.githubusercontent.com/rdehuyss/homeassistant-lovelace-google-calendar-card/master/custom_updater.json
+    - https://raw.githubusercontent.com/kuuji/button-card/0.0.2/tracker.json
+    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
+
 # Enables Map UI
 map:
 
@@ -205,9 +215,6 @@ ios:
 
 google_assistant:
   project_id: homeassistneu
-  client_id: !secret ga_client
-  access_token: !secret ga_access
-  agent_user_id: simonsayslps@gmail.com
   api_key: !secret ga_api
   exposed_domains:
     - switch
@@ -323,10 +330,7 @@ wake_on_lan:
 wemo:
   static:
     - 192.168.0.100
-    - 192.168.0.101
-
-light:
-  - platform: lifx
+    # - 192.168.0.101
 
 # Various Location Tracking
 
@@ -337,6 +341,10 @@ device_tracker:
   - platform: netgear
     host: 192.168.0.1
     password: !secret router_pass
+  - platform: gpslogger
+  - platform: tile
+    username: !secret tile_user
+    password: !secret tile_pass
 
 media_player: !include_dir_merge_list cfg/media/
 media_extractor: # Enable media_extractor service

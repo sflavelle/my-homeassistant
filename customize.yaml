@@ -128,3 +128,8 @@ sensor.london_time:
   friendly_name: London UK
 sensor.california_time:
   friendly_name: California
+
+sensor.salmon_run__power_eggs*:
+  entity_picture: /local/img/spl2_icons/PowerEgg.png
+sensor.salmon_run__golden_eggs*:
+  entity_picture: /local/img/spl2_icons/GoldenEgg.png

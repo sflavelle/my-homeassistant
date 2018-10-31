@@ -1,32 +1,32 @@
 - platform: template
   sensors:
     batt_nexus:
-      friendly_name: Nexus 6P
+      friendly_name: Galaxy Note 9
       unit_of_measurement: "%"
       value_template: >-
-            {%- if states.device_tracker.nexus6p.attributes.battery %}
-                {{ states.device_tracker.nexus6p.attributes.battery|round }}
+            {%- if states.device_tracker.note9.attributes.battery %}
+                {{ states.device_tracker.note9.attributes.battery|round }}
             {% else %}
                 ???
             {%- endif %}
-    batt_iphone:
-      friendly_name: iPhone
-      unit_of_measurement: "%"
-      value_template: >-
-            {%- if states.device_tracker.heytherecharlie.attributes.battery %}
-                {{ states.device_tracker.heytherecharlie.attributes.battery|round }}
-            {% else %}
-                ???
-            {%- endif %}
-    batt_watch:
-      value_template: >-
-            {%- if states.device_tracker.simonsapple_watch.attributes.battery %}
-                {{ states.device_tracker.simonsapple_watch.attributes.battery|round }}
-            {% else %}
-                ???
-            {%- endif %}
-      friendly_name: Apple Watch
-      unit_of_measurement: "%"
+    # batt_iphone:
+    #   friendly_name: iPhone
+    #   unit_of_measurement: "%"
+    #   value_template: >-
+    #         {%- if states.device_tracker.heytherecharlie.attributes.battery %}
+    #             {{ states.device_tracker.heytherecharlie.attributes.battery|round }}
+    #         {% else %}
+    #             ???
+    #         {%- endif %}
+    # batt_watch:
+    #   value_template: >-
+    #         {%- if states.device_tracker.simonsapple_watch.attributes.battery %}
+    #             {{ states.device_tracker.simonsapple_watch.attributes.battery|round }}
+    #         {% else %}
+    #             ???
+    #         {%- endif %}
+    #   friendly_name: Apple Watch
+    #   unit_of_measurement: "%"
     batt_ipad:
       value_template: >-
             {%- if states.device_tracker.simonflavellesipad.attributes.battery %}

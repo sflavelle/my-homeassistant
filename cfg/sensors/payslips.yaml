@@ -13,7 +13,7 @@
       entity_id: sensor.recent_payslip_data
       value_template: >-
         {% if state_attr('sensor.recent_payslip_data', 'date') != "None" %}
-          {{ strptime(state_attr('sensor.recent_payslip_data', 'date'), '%A %I:%M%p') }}"
+          {{ state_attr('sensor.recent_payslip_data', 'date') }}
         {% else %}
           No History
         {% endif %}

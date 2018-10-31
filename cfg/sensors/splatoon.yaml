@@ -5,12 +5,10 @@
   select: "#w4 > div:nth-of-type(1) > .user-number"
   name: "Splatoon 2 - Battles Fought"
   unit_of_measurement: "battles"
-- platform: scrape
-  scan_interval: 180
-  resource: https://stat.ink/@Neurario/spl2?filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
-  select: ".battles-summary > div:nth-of-type(3) .user-number"
+- platform: mqtt
+  state_topic: "splatoon/battle/victory_rate"
   name: "Splatoon 2 - Win Percentage (Last 50 Battles)"
-  value_template: '{{ (value | replace ("%","") | float) }}'
+  #  value_template: '{{ round(value * 100) }}'
   unit_of_measurement: "%"
 - platform: scrape
   scan_interval: 180
@@ -21,20 +19,18 @@
   unit_of_measurement: "%"
 
 # Battle Specifics
-- platform: scrape
-  scan_interval: 180
-  resource: https://stat.ink/@Neurario/spl2?_lang_=en-US&filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
-  select: '.battles-summary a[data-disp*="Kills"] > .auto-tooltip' 
+- platform: mqtt
+  state_topic: "splatoon/battle/kill_count_average"
   name: "Splatoon 2 - Splat Average"
-  value_template: '{{ float(value) }}'
   unit_of_measurement: "splats"
-- platform: scrape
-  scan_interval: 180
-  resource: https://stat.ink/@Neurario/spl2?_lang_=en-US&filter%5Brule%5D=&filter%5Bmap%5D=&filter%5Bweapon%5D=&filter%5Brank%5D=&filter%5Bresult%5D=&filter%5Bterm%5D=last-50-battles&filter%5Bterm_from%5D=&filter%5Bterm_to%5D=&filter%5Btimezone%5D=America%2FLos_Angeles
-  select: '.battles-summary a[data-disp*="Deaths"] > .auto-tooltip'
+- platform: mqtt
+  state_topic: "splatoon/battle/death_count_average"
   name: "Splatoon 2 - Splatted Average"
-  value_template: '{{ float(value) }}'
   unit_of_measurement: "splats"
+- platform: mqtt
+  state_topic: "splatoon/battle/special_count_average"
+  name: "Splatoon 2 - Specials Used Average"
+  unit_of_measurement: "specials"
 - platform: scrape
   scan_interval: 180
   resource: https://stat.ink/@Neurario/spl2
@@ -63,3 +59,70 @@
 - platform: feedparser
   name: Splatoon 2 Log
   feed_url: "https://stat.ink/@Neurario.2.en-US.rss"
+
+# Official API Testing (NodeRED currently)
+## Salmon Run
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/job_num"
+  name: Salmon Run - Shifts Worked
+  unit_of_measurement: "shifts"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/ikura_total"
+  name: Salmon Run - Power Eggs collected
+  unit_of_measurement: "Power Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/golden_ikura_total"
+  name: Salmon Run - Golden Eggs Collected
+  unit_of_measurement: "Golden Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/help_total"
+  name: Salmon Run - Crew Rescued
+  unit_of_measurement: "rescues"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/kuma_point"
+  name: Salmon Run - Points (Current Schedule)
+  unit_of_measurement: "p"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/kuma_point_total"
+  name: Salmon Run - Points (Cumulative)
+  unit_of_measurement: "p"
+  ## Salmon Run - Latest Schedule
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/grade"
+  name: Salmon Run - Grade
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/job_num"
+  name: Salmon Run - Shifts Worked (Latest Schedule)
+  unit_of_measurement: "shifts"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/clear_num"
+  name: Salmon Run - Shifts Completed (Latest Schedule)
+  unit_of_measurement: "shifts"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/team_ikura_total"
+  name: Salmon Run - Power Eggs collected (Latest Schedule)
+  unit_of_measurement: "Power Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/my_ikura_total"
+  name: Salmon Run - Power Eggs Personally Collected (Latest Schedule)
+  unit_of_measurement: "Power Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/team_golden_ikura_total"
+  name: Salmon Run - Golden Eggs Collected (Latest Schedule)
+  unit_of_measurement: "Golden Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/my_golden_ikura_total"
+  name: Salmon Run - Golden Eggs Personally Collected (Latest Schedule)
+  unit_of_measurement: "Golden Eggs"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/kuma_point_total"
+  name: Salmon Run - Points (Latest Schedule)
+  unit_of_measurement: "p"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/help_total"
+  name: Salmon Run - Crew Rescued (Latest Schedule)
+  unit_of_measurement: "rescues"
+- platform: mqtt
+  state_topic: "splatoon/salmonrun/latest/dead_total"
+  name: Salmon Run - Times Overwhelmed (Latest Schedule)
+  unit_of_measurement: "splats"

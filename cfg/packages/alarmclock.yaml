@@ -10,6 +10,9 @@ input_select:
     options:
       - Nothing
       - Bill Wurtz (la de da)
+      - 9/21/18
+      - This Is September
+      - Shelter (Piano)
 
 input_boolean:
   work_routines:
@@ -22,7 +25,8 @@ automation:
     initial_state: on
     trigger:
       platform: template
-      value_template: "{{ states('sensor.time') == (((state_attr('input_datetime.simon_alarmtime' , 'timestamp')) - (15 * 60))|timestamp_custom('%H:%M', false)) }}"
+      value_template: "{{ states('sensor.time') == (((state_attr('input_datetime.simon_alarmtime' , 'timestamp')))|timestamp_custom('%H:%M', false)) }}"
+      # value_template: "{{ states('sensor.time') == (((state_attr('input_datetime.simon_alarmtime' , 'timestamp')) - (15 * 60))|timestamp_custom('%H:%M', false)) }}"
     condition:
       - condition: state
         entity_id: input_select.simon_presence
@@ -53,9 +57,12 @@ script:
     sequence:
       - service: media_extractor.play_media
         data_template:
-          entity_id: media_player.google_home_simon
+          entity_id: media_player.homehub_simon
           media_content_id: >
             {% if is_state('input_select.simon_alarmsound', 'Bill Wurtz (la de da)') %} https://www.youtube.com/watch?v=V0HCZ4YGqbw
+            {% elif is_state('input_select.simon_alarmsound', '9/21/18') %} https://www.youtube.com/watch?v=CG7YHFT4hjw
+            {% elif is_state('input_select.simon_alarmsound', 'This Is September') %} https://www.youtube.com/watch?v=w_TxAtoahLs
+            {% elif is_state('input_select.simon_alarmsound', 'Shelter (Piano)') %} https://www.youtube.com/watch?v=JvTYQkgaHSo
             {% else %} https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3
             {% endif %}
-          media_content_type: "music"
+          media_content_type: "video"

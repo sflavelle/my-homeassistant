@@ -18,7 +18,7 @@ resources:
     type: js
   - url: /local/slider-entity-row.js
     type: js
-  - url: /local/mini-media-player.js?v=0.8.8
+  - url: /local/mini-media-player.js?v=0.9.1
     type: module
   - url: /local/column-card.js
     type: js
@@ -26,7 +26,7 @@ resources:
     type: js
   - url: /local/time-input-row.js
     type: js
-  - url: /local/fold-entity-row.js?v=41bf08
+  - url: /local/fold-entity-row.js?v=855537
     type: js
 views:
   - title: Dashboard
@@ -220,6 +220,20 @@ views:
                 name: 'Set Alarm For:'
               - entity: script.bedroom_alarm
                 name: Test Alarm
+      - type: glance
+        entities:
+          - entity: device_tracker.tile_69f061b9c360de89
+            name: Car Keys
+            icon: mdi:key-variant
+          - entity: device_tracker.tile_72a0317bb4979414
+            name: Don ID
+            icon: mdi:account-card-details
+          - entity: device_tracker.tile_8f6df71f52ca6dc7
+            name: iPad-top
+            icon: mdi:tablet
+          - entity: device_tracker.tile_b1ee6843e8ba255c
+            name: Wallet
+            icon: mdi:wallet
       - id: deb4abf97e3f4550b43d4822fa267450  # Automatically created id
         type: entities
         entities:
@@ -308,6 +322,13 @@ views:
         show_progress: true
         icon: mdi:google-home
         max_volume: 50
+      - id: a2dd847500c646769408e06af405c325  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.simons_speaker
+        artwork: cover
+        power_color: true
+        show_progress: true
+        max_volume: 30
       - id: f1846cc6438c43d492a0cc4fe753f6f5  # Automatically created id
         type: custom:mini-media-player
         entity: media_player.spotify

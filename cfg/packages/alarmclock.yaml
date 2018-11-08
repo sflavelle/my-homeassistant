@@ -9,10 +9,13 @@ input_select:
     name: Simon's Alarm Sound
     options:
       - Nothing
-      - Bill Wurtz (la de da)
       - 9/21/18
-      - This Is September
+      - Bill Wurtz (la de da)
+      - BRAIN POWER BUT...
+      - Everybody Do The Rao
+      - Potato Knishes
       - Shelter (Piano)
+      - This Is September
 
 input_boolean:
   work_routines:
@@ -55,14 +58,21 @@ script:
           color_temp: 323
   bedroom_alarm:
     sequence:
+      - service: media_player.volume_set
+        data:
+          entity_id: media_player.simons_speaker
+          volume_level: 0.15
       - service: media_extractor.play_media
         data_template:
-          entity_id: media_player.homehub_simon
+          entity_id: media_player.simons_speaker
           media_content_id: >
             {% if is_state('input_select.simon_alarmsound', 'Bill Wurtz (la de da)') %} https://www.youtube.com/watch?v=V0HCZ4YGqbw
             {% elif is_state('input_select.simon_alarmsound', '9/21/18') %} https://www.youtube.com/watch?v=CG7YHFT4hjw
             {% elif is_state('input_select.simon_alarmsound', 'This Is September') %} https://www.youtube.com/watch?v=w_TxAtoahLs
             {% elif is_state('input_select.simon_alarmsound', 'Shelter (Piano)') %} https://www.youtube.com/watch?v=JvTYQkgaHSo
+            {% elif is_state('input_select.simon_alarmsound', 'Everybody Do The Rao') %} https://www.youtube.com/watch?v=G-LwK75_VSQ
+            {% elif is_state('input_select.simon_alarmsound', 'Potato Knishes') %} https://www.youtube.com/watch?v=IFfLCuHSZ-U
+            {% elif is_state('input_select.simon_alarmsound', 'BRAIN POWER BUT...') %} https://www.youtube.com/watch?v=IdOUYooRJek
             {% else %} https://raw.githubusercontent.com/anars/blank-audio/master/1-second-of-silence.mp3
             {% endif %}
-          media_content_type: "video"
+          media_content_type: "audio"
